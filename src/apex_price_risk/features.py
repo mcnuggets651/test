@@ -14,7 +14,9 @@ FEATURE_NAMES: tuple[str, ...] = (
     "selected_velocity_pct_hour",
     "now_cost_scaled",
     "cost_change_event",
+    "cost_change_event_fall",
     "cost_change_start",
+    "cost_change_start_fall",
     "available",
     "chance_next_scaled",
     "chance_missing",
@@ -50,7 +52,7 @@ def build_feature_rows(
     rows: list[FeatureRow] = []
     for player in current.players:
         prev = previous_map.get(player.element_id)
-        features = _features_for_player(current, player, prev, elapsed_hours)
+        features = _features_for_player(current, player, prev, elapsed_hours, previous)
         rows.append(
             FeatureRow(
                 observed_at_utc=current.captured_at_utc,
@@ -83,8 +85,9 @@ def build_labeled_examples(
         if not future:
             continue
         future_maps = [snapshot.player_map() for snapshot in future]
+        current_map = current.player_map()
         for row in build_feature_rows(current, previous):
-            current_player = current.player_map()[row.element_id]
+            current_player = current_map[row.element_id]
             future_players = [mapping.get(row.element_id) for mapping in future_maps]
             observed = [player for player in future_players if player is not None]
             if not observed:
@@ -106,6 +109,7 @@ def _features_for_player(
     player: PlayerSnapshot,
     previous: PlayerSnapshot | None,
     elapsed_hours: float,
+    previous_snapshot: PriceSnapshot | None,
 ) -> tuple[float, ...]:
     owners = max(snapshot.total_players * player.selected_by_percent / 100.0, 1.0)
     net_event = player.transfers_in_event - player.transfers_out_event
@@ -114,10 +118,20 @@ def _features_for_player(
     selected_velocity = 0.0
     if previous is not None and 0.25 <= elapsed_hours <= 12.0:
         previous_owners = max(snapshot.total_players * previous.selected_by_percent / 100.0, 1.0)
-        delta_net = (player.transfers_in_event - previous.transfers_in_event) - (
-            player.transfers_out_event - previous.transfers_out_event
+        counters_monotonic = (
+            player.transfers_in_event >= previous.transfers_in_event
+            and player.transfers_out_event >= previous.transfers_out_event
         )
-        net_velocity = delta_net / max(previous_owners, owners) / elapsed_hours
+        same_event = (
+            previous_snapshot is not None
+            and snapshot.current_event_id is not None
+            and snapshot.current_event_id == previous_snapshot.current_event_id
+        )
+        if counters_monotonic and same_event:
+            delta_net = (player.transfers_in_event - previous.transfers_in_event) - (
+                player.transfers_out_event - previous.transfers_out_event
+            )
+            net_velocity = delta_net / max(previous_owners, owners) / elapsed_hours
         selected_velocity = (player.selected_by_percent - previous.selected_by_percent) / elapsed_hours
 
     chance_missing = float(player.chance_of_playing_next_round is None)
@@ -142,7 +156,9 @@ def _features_for_player(
         selected_velocity / 100.0,
         player.now_cost / 100.0,
         float(player.cost_change_event),
+        float(player.cost_change_event_fall),
         float(player.cost_change_start),
+        float(player.cost_change_start_fall),
         float(player.status == "a"),
         chance_next,
         chance_missing,

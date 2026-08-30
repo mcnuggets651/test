@@ -23,7 +23,7 @@ def write_snapshot_gzip(path: Path, snapshot: PriceSnapshot) -> None:
     ).encode("utf-8")
     with (
         temp.open("wb") as raw,
-        gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as handle,
+        gzip.GzipFile(filename="", fileobj=raw, mode="wb", compresslevel=9, mtime=0) as handle,
     ):
         handle.write(encoded)
     os.replace(temp, path)
