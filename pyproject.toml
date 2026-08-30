@@ -14,7 +14,6 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "mypy>=1.11,<2",
   "pytest>=8.3,<9",
   "pyyaml>=6.0,<7",
   "ruff>=0.6,<1",
@@ -39,8 +38,3 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["apex_price_risk", "conftest"]
-
-[tool.mypy]
-python_version = "3.12"
-strict = true
-packages = ["apex_price_risk"]

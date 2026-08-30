@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -25,5 +25,7 @@ jobs:
         run: ruff check src tests
       - name: Tests
         run: pytest
+      - name: Compile package
+        run: python -m compileall -q src
       - name: Architecture boundary
         run: python -m apex_price_risk.cli architecture-check

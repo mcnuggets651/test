@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from conftest import make_snapshot
-
 from apex_price_risk.features import FEATURE_NAMES, build_feature_rows, build_labeled_examples
+from conftest import make_snapshot
 
 
 def test_features_only_use_current_and_past() -> None:

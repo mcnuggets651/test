@@ -15,3 +15,20 @@ def test_hard_boundary_constants() -> None:
 def test_repository_has_no_runtime_coupling() -> None:
     root = Path(__file__).resolve().parents[1]
     assert architecture_check(root) == []
+
+
+def test_architecture_guard_rejects_apex_runtime_import(tmp_path: Path) -> None:
+    source = tmp_path / "src"
+    source.mkdir()
+    (source / "bad.py").write_text("import apex\n", encoding="utf-8")
+    errors = architecture_check(tmp_path)
+    assert any("Forbidden runtime dependency" in error for error in errors)
+
+
+def test_architecture_guard_rejects_apex_workflow_coupling(tmp_path: Path) -> None:
+    workflow_dir = tmp_path / ".github" / "workflows"
+    workflow_dir.mkdir(parents=True)
+    (tmp_path / "src").mkdir()
+    (workflow_dir / "bad.yml").write_text("run: mcnuggets651/fpl-apex\n", encoding="utf-8")
+    errors = architecture_check(tmp_path)
+    assert any("Forbidden Apex coupling marker" in error for error in errors)
