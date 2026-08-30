@@ -11,7 +11,7 @@ import numpy as np
 
 from .boundary import FORECAST_HORIZON_HOURS, PRODUCTION_INFLUENCE, SERVING_AUTHORIZED
 from .features import FEATURE_NAMES, build_feature_rows
-from .schemas import FEATURE_VERSION, SCHEMA_VERSION, ForecastBundle, ForecastRow, PriceSnapshot
+from .schemas import FEATURE_VERSION, LABEL_VERSION, SCHEMA_VERSION, ForecastBundle, ForecastRow, PriceSnapshot
 
 
 @dataclass(frozen=True, slots=True)
@@ -48,6 +48,7 @@ class DirectionModel:
 class ModelBundle:
     schema_version: int
     feature_version: int
+    label_version: int
     created_at_utc: str
     model_id: str
     rise: DirectionModel
@@ -65,6 +66,7 @@ class ModelBundle:
         return cls(
             schema_version=int(payload["schema_version"]),
             feature_version=int(payload["feature_version"]),
+            label_version=int(payload.get("label_version", 1)),
             created_at_utc=str(payload["created_at_utc"]),
             model_id=str(payload["model_id"]),
             rise=DirectionModel(**payload["rise"]),
@@ -80,10 +82,11 @@ def cold_start_bundle(created_at: datetime | None = None) -> ModelBundle:
     created_at = (created_at or datetime.now(UTC)).astimezone(UTC)
     rise = DirectionModel(kind="cold_start")
     fall = DirectionModel(kind="cold_start")
-    training_summary: dict[str, Any] = {"status": "COLD_START"}
+    training_summary: dict[str, Any] = {"status": "COLD_START", "label_version": LABEL_VERSION}
     hash_payload = {
         "schema_version": SCHEMA_VERSION,
         "feature_version": FEATURE_VERSION,
+        "label_version": LABEL_VERSION,
         "created_at_utc": created_at.isoformat(),
         "rise": asdict(rise),
         "fall": asdict(fall),
@@ -95,6 +98,7 @@ def cold_start_bundle(created_at: datetime | None = None) -> ModelBundle:
     return ModelBundle(
         schema_version=SCHEMA_VERSION,
         feature_version=FEATURE_VERSION,
+        label_version=LABEL_VERSION,
         created_at_utc=created_at.isoformat(),
         model_id=_model_id(hash_payload),
         rise=rise,
@@ -114,20 +118,23 @@ def make_model_bundle(
     created_at: datetime | None = None,
 ) -> ModelBundle:
     created_at = (created_at or datetime.now(UTC)).astimezone(UTC)
+    summary = {**training_summary, "label_version": LABEL_VERSION}
     hash_payload = {
         "schema_version": SCHEMA_VERSION,
         "feature_version": FEATURE_VERSION,
+        "label_version": LABEL_VERSION,
         "created_at_utc": created_at.isoformat(),
         "rise": asdict(rise),
         "fall": asdict(fall),
         "prospective_qualified": False,
         "serving_authorized": SERVING_AUTHORIZED,
         "production_influence": PRODUCTION_INFLUENCE,
-        "training_summary": training_summary,
+        "training_summary": summary,
     }
     return ModelBundle(
         schema_version=SCHEMA_VERSION,
         feature_version=FEATURE_VERSION,
+        label_version=LABEL_VERSION,
         created_at_utc=created_at.isoformat(),
         model_id=_model_id(hash_payload),
         rise=rise,
@@ -135,7 +142,7 @@ def make_model_bundle(
         prospective_qualified=False,
         serving_authorized=SERVING_AUTHORIZED,
         production_influence=PRODUCTION_INFLUENCE,
-        training_summary=training_summary,
+        training_summary=summary,
     )
 
 

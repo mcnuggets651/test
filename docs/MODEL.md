@@ -13,13 +13,19 @@ Features are frozen as `FEATURE_VERSION=1` and include:
 - short-window net transfer velocity using only the previous snapshot;
 - ownership level and ownership velocity;
 - current price;
-- current-GW and season price-change counters;
+- current-GW and season price-change counters, including fall counters;
 - availability/status and chance-of-playing information;
 - position;
 - UTC time-of-day;
 - time to next deadline.
 
+Official ownership is rounded to one decimal place. V1 applies a 0.05 percentage-point denominator floor so displayed `0.0%` ownership cannot create artificial per-owner transfer spikes. Event-transfer velocity is suppressed across Gameweek counter resets or other non-monotonic counter changes.
+
 No expected-points projection, Apex recommendation, captaincy signal or private manager field is a feature.
+
+## Labels
+
+`LABEL_VERSION=2` uses an interval-censoring-safe 24-hour outcome contract. A move first observed only after the 24-hour boundary is not credited to the forecast because its exact side of the boundary is unknowable. See `DATA_CONTRACT.md`.
 
 ## Cold start
 
@@ -29,25 +35,29 @@ Until enough labelled observations exist, V1 emits a transparent heuristic forec
 
 Rise and fall are separate calibrated logistic models.
 
-The dataset is split by observation time, not random rows:
+The dataset is divided chronologically using nominal 70% and 85% boundary times, with a **27-hour purge gap** before both calibration and test periods. The purge is longer than the 24-hour target plus three-hour observation grace, preventing labels from an earlier partition from consuming snapshots in the next partition's feature-time region.
 
-- first 70% of observation timestamps: fit feature scaling and base logistic model;
-- next 15%: fit Platt probability calibration;
-- final 15%: untouched internal test metrics.
+- training: observations before the first purge boundary;
+- calibration: observations after the first purge and ending before the second purge;
+- test: observations after the second purge;
+- scaler and base logistic model fit on training only;
+- Platt calibration fits on calibration only;
+- final metrics use untouched test only.
 
 Minimum training requirements per direction:
 
 - 1,200 labelled rows;
 - 20 positive outcomes;
 - 200 negative outcomes;
-- 10 unique observation timestamps;
-- both classes present in train, calibration and test periods.
+- 32 unique observation timestamps;
+- at least 14 days of observation span;
+- both classes present in purged train, calibration and test periods.
 
 If any requirement fails, that direction remains cold-start.
 
 ## Metrics
 
-Internal chronological test metrics:
+Internal purged chronological test metrics:
 
 - Brier score;
 - Brier skill versus training-period base-rate forecast;
@@ -56,7 +66,7 @@ Internal chronological test metrics:
 - 10-bin expected calibration error;
 - test prevalence.
 
-Separately, `evaluate` scores the actual timestamped forecasts that were sealed prospectively. That prospective archive, not the training report, is the evidence used by governance.
+Separately, `evaluate` scores the actual timestamped forecasts that were sealed prospectively using the same `LABEL_VERSION`. That prospective archive, not the training report, is the evidence used by governance.
 
 ## Why not a more complex model yet?
 

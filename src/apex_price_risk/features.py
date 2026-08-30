@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, datetime
 
+from .outcomes import label_price_move_within_horizon
 from .schemas import FeatureRow, PlayerSnapshot, PriceSnapshot
 
 FEATURE_NAMES: tuple[str, ...] = (
@@ -72,38 +73,31 @@ def build_feature_rows(
 def build_labeled_examples(
     snapshots: list[PriceSnapshot], horizon_hours: int = 24, grace_hours: int = 3
 ) -> list[LabeledExample]:
-    if horizon_hours <= 0:
-        raise ValueError("horizon_hours must be positive")
+    if horizon_hours <= 0 or grace_hours < 0:
+        raise ValueError("horizon_hours must be positive and grace_hours non-negative")
     ordered = sorted(snapshots, key=lambda snapshot: snapshot.captured_at_utc)
     examples: list[LabeledExample] = []
     for index, current in enumerate(ordered):
-        current_time = _dt(current.captured_at_utc)
-        if not ordered or _dt(ordered[-1].captured_at_utc) < current_time + timedelta(hours=horizon_hours):
-            continue
         previous = ordered[index - 1] if index > 0 else None
-        future = [
-            snapshot
-            for snapshot in ordered[index + 1 :]
-            if current_time < _dt(snapshot.captured_at_utc)
-            <= current_time + timedelta(hours=horizon_hours + grace_hours)
-        ]
-        if not future:
-            continue
-        future_maps = [snapshot.player_map() for snapshot in future]
-        current_map = current.player_map()
+        later = ordered[index + 1 :]
         for row in build_feature_rows(current, previous):
-            current_player = current_map[row.element_id]
-            future_players = [mapping.get(row.element_id) for mapping in future_maps]
-            observed = [player for player in future_players if player is not None]
-            if not observed:
+            outcome = label_price_move_within_horizon(
+                current,
+                row.element_id,
+                later,
+                horizon_hours=horizon_hours,
+                grace_hours=grace_hours,
+            )
+            if outcome is None:
                 continue
+            rise, fall = outcome
             examples.append(
                 LabeledExample(
                     observed_at_utc=row.observed_at_utc,
                     element_id=row.element_id,
                     features=row.features,
-                    rise_24h=int(any(player.now_cost > current_player.now_cost for player in observed)),
-                    fall_24h=int(any(player.now_cost < current_player.now_cost for player in observed)),
+                    rise_24h=rise,
+                    fall_24h=fall,
                 )
             )
     return examples

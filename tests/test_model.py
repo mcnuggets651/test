@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 
 from apex_price_risk.model import ModelBundle, build_forecast, cold_start_bundle
+from apex_price_risk.schemas import LABEL_VERSION
 from conftest import make_snapshot
 
 
@@ -11,6 +12,7 @@ def test_cold_start_roundtrip_is_non_serving() -> None:
     restored = ModelBundle.from_dict(model.to_dict())
     assert restored.rise.kind == "cold_start"
     assert restored.fall.kind == "cold_start"
+    assert restored.label_version == LABEL_VERSION
     assert restored.serving_authorized is False
     assert restored.production_influence == "NONE"
 
@@ -24,3 +26,10 @@ def test_forecast_is_explicitly_advisory_only() -> None:
     assert len(forecast.rows) == 1
     assert 0.0 <= forecast.rows[0].p_rise_24h <= 1.0
     assert forecast.rows[0].model_status == "COLD_START"
+
+
+def test_legacy_model_bundle_without_label_version_is_explicitly_v1() -> None:
+    payload = cold_start_bundle(datetime(2026, 8, 30, tzinfo=UTC)).to_dict()
+    payload.pop("label_version")
+    restored = ModelBundle.from_dict(payload)
+    assert restored.label_version == 1

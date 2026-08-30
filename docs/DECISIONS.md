@@ -35,3 +35,11 @@ Accepted. Prospective model quality can justify a review, never self-authorize i
 ## ADR-009 — Price signal never changes xP
 
 Permanent. Price is an execution/budget risk, not a football points projection.
+
+## ADR-010 — Interval-censored boundary labels
+
+Accepted. A move first observed only after the 24-hour target is excluded if its exact timing across the boundary is unknown. The observation grace interval confirms label maturity; it does not extend the prediction target.
+
+## ADR-011 — Purged chronological model evaluation
+
+Accepted. Training, calibration and test feature-time regions are separated by 27-hour purge gaps so a 24-hour outcome label plus observation grace cannot leak across adjacent model partitions.

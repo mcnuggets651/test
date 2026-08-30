@@ -5,6 +5,7 @@ from typing import Any
 
 SCHEMA_VERSION = 1
 FEATURE_VERSION = 1
+LABEL_VERSION = 2
 
 
 @dataclass(frozen=True, slots=True)

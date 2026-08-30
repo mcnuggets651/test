@@ -1,24 +1,28 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 from sklearn.metrics import average_precision_score, brier_score_loss, log_loss
 
-from .schemas import ForecastBundle, PriceSnapshot
+from .outcomes import label_price_move_within_horizon
+from .schemas import LABEL_VERSION, ForecastBundle, PriceSnapshot
 
 
 def evaluate_forecast_history(
     snapshots: list[PriceSnapshot], prediction_paths: list[Path]
 ) -> dict[str, Any]:
     if not snapshots:
-        return {"status": "INSUFFICIENT", "reason": "NO_SNAPSHOTS", "paired_rows": 0}
+        return {
+            "status": "INSUFFICIENT",
+            "reason": "NO_SNAPSHOTS",
+            "paired_rows": 0,
+            "label_version": LABEL_VERSION,
+        }
     ordered = sorted(snapshots, key=lambda item: item.captured_at_utc)
     snapshot_by_time = {item.captured_at_utc: item for item in ordered}
-    last_time = _dt(ordered[-1].captured_at_utc)
     rise_y: list[int] = []
     rise_p: list[float] = []
     fall_y: list[int] = []
@@ -31,29 +35,21 @@ def evaluate_forecast_history(
         source = snapshot_by_time.get(forecast.source_snapshot_at_utc)
         if source is None:
             continue
-        source_time = _dt(source.captured_at_utc)
-        if last_time < source_time + timedelta(hours=forecast.horizon_hours):
-            continue
-        future = [
-            snapshot
-            for snapshot in ordered
-            if source_time < _dt(snapshot.captured_at_utc)
-            <= source_time + timedelta(hours=forecast.horizon_hours + 3)
-        ]
-        if not future:
-            continue
-        future_maps = [snapshot.player_map() for snapshot in future]
-        source_map = source.player_map()
+        later = [snapshot for snapshot in ordered if snapshot.captured_at_utc > source.captured_at_utc]
         paired_this_forecast = 0
         for row in forecast.rows:
-            current = source_map.get(row.element_id)
-            if current is None:
+            outcome = label_price_move_within_horizon(
+                source,
+                row.element_id,
+                later,
+                horizon_hours=forecast.horizon_hours,
+                grace_hours=3,
+            )
+            if outcome is None:
                 continue
-            observed = [mapping[row.element_id] for mapping in future_maps if row.element_id in mapping]
-            if not observed:
-                continue
-            rise_y.append(int(any(player.now_cost > current.now_cost for player in observed)))
-            fall_y.append(int(any(player.now_cost < current.now_cost for player in observed)))
+            rise, fall = outcome
+            rise_y.append(rise)
+            fall_y.append(fall)
             rise_p.append(row.p_rise_24h)
             fall_p.append(row.p_fall_24h)
             paired_this_forecast += 1
@@ -61,9 +57,15 @@ def evaluate_forecast_history(
             evaluated_forecasts += 1
 
     if not rise_y:
-        return {"status": "INSUFFICIENT", "reason": "NO_MATURE_FORECASTS", "paired_rows": 0}
+        return {
+            "status": "INSUFFICIENT",
+            "reason": "NO_MATURE_UNAMBIGUOUS_FORECASTS",
+            "paired_rows": 0,
+            "label_version": LABEL_VERSION,
+        }
     return {
         "status": "EVALUATED",
+        "label_version": LABEL_VERSION,
         "evaluated_forecasts": evaluated_forecasts,
         "paired_rows": len(rise_y),
         "rise": _metrics(rise_y, rise_p),
@@ -108,7 +110,3 @@ def _calibration_bins(
             }
         )
     return bins
-
-
-def _dt(value: str) -> datetime:
-    return datetime.fromisoformat(value.replace("Z", "+00:00"))
