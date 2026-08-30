@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Callable
 from datetime import UTC, datetime
-from typing import Any, Callable
+from typing import Any
 from urllib.request import Request, urlopen
 
-from .schemas import PlayerSnapshot, PriceSnapshot, SCHEMA_VERSION
+from .schemas import SCHEMA_VERSION, PlayerSnapshot, PriceSnapshot
 
 FPL_BOOTSTRAP_URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
 FPL_PRICE_CHANGES_PAGE = "https://fantasy.premierleague.com/en/price-changes"

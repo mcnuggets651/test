@@ -31,11 +31,14 @@ testpaths = ["tests"]
 addopts = "-q"
 
 [tool.ruff]
-line-length = 100
+line-length = 120
 target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["apex_price_risk", "conftest"]
 
 [tool.mypy]
 python_version = "3.12"

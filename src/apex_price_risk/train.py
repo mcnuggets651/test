@@ -8,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, brier_score_loss, log_loss
 from sklearn.preprocessing import StandardScaler
 
-from .features import FEATURE_NAMES, LabeledExample, build_labeled_examples
+from .features import LabeledExample, build_labeled_examples
 from .model import DirectionModel, ModelBundle, make_model_bundle
 from .schemas import PriceSnapshot
 

@@ -11,7 +11,7 @@ import numpy as np
 
 from .boundary import FORECAST_HORIZON_HOURS, PRODUCTION_INFLUENCE, SERVING_AUTHORIZED
 from .features import FEATURE_NAMES, build_feature_rows
-from .schemas import FEATURE_VERSION, ForecastBundle, ForecastRow, PriceSnapshot, SCHEMA_VERSION
+from .schemas import FEATURE_VERSION, SCHEMA_VERSION, ForecastBundle, ForecastRow, PriceSnapshot
 
 
 @dataclass(frozen=True, slots=True)
