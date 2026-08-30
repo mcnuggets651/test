@@ -1,0 +1,114 @@
+from __future__ import annotations
+
+import json
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+from sklearn.metrics import average_precision_score, brier_score_loss, log_loss
+
+from .schemas import ForecastBundle, PriceSnapshot
+
+
+def evaluate_forecast_history(
+    snapshots: list[PriceSnapshot], prediction_paths: list[Path]
+) -> dict[str, Any]:
+    if not snapshots:
+        return {"status": "INSUFFICIENT", "reason": "NO_SNAPSHOTS", "paired_rows": 0}
+    ordered = sorted(snapshots, key=lambda item: item.captured_at_utc)
+    snapshot_by_time = {item.captured_at_utc: item for item in ordered}
+    last_time = _dt(ordered[-1].captured_at_utc)
+    rise_y: list[int] = []
+    rise_p: list[float] = []
+    fall_y: list[int] = []
+    fall_p: list[float] = []
+    evaluated_forecasts = 0
+
+    for path in sorted(prediction_paths):
+        with path.open("r", encoding="utf-8") as handle:
+            forecast = ForecastBundle.from_dict(json.load(handle))
+        source = snapshot_by_time.get(forecast.source_snapshot_at_utc)
+        if source is None:
+            continue
+        source_time = _dt(source.captured_at_utc)
+        if last_time < source_time + timedelta(hours=forecast.horizon_hours):
+            continue
+        future = [
+            snapshot
+            for snapshot in ordered
+            if source_time < _dt(snapshot.captured_at_utc)
+            <= source_time + timedelta(hours=forecast.horizon_hours + 3)
+        ]
+        if not future:
+            continue
+        future_maps = [snapshot.player_map() for snapshot in future]
+        source_map = source.player_map()
+        paired_this_forecast = 0
+        for row in forecast.rows:
+            current = source_map.get(row.element_id)
+            if current is None:
+                continue
+            observed = [mapping[row.element_id] for mapping in future_maps if row.element_id in mapping]
+            if not observed:
+                continue
+            rise_y.append(int(any(player.now_cost > current.now_cost for player in observed)))
+            fall_y.append(int(any(player.now_cost < current.now_cost for player in observed)))
+            rise_p.append(row.p_rise_24h)
+            fall_p.append(row.p_fall_24h)
+            paired_this_forecast += 1
+        if paired_this_forecast:
+            evaluated_forecasts += 1
+
+    if not rise_y:
+        return {"status": "INSUFFICIENT", "reason": "NO_MATURE_FORECASTS", "paired_rows": 0}
+    return {
+        "status": "EVALUATED",
+        "evaluated_forecasts": evaluated_forecasts,
+        "paired_rows": len(rise_y),
+        "rise": _metrics(rise_y, rise_p),
+        "fall": _metrics(fall_y, fall_p),
+        "integration_authorized": False,
+    }
+
+
+def _metrics(labels: list[int], probabilities: list[float]) -> dict[str, Any]:
+    y = np.asarray(labels, dtype=int)
+    p = np.clip(np.asarray(probabilities, dtype=float), 1e-9, 1.0 - 1e-9)
+    result: dict[str, Any] = {
+        "n": int(len(y)),
+        "positives": int(y.sum()),
+        "prevalence": float(y.mean()),
+        "brier": float(brier_score_loss(y, p)),
+        "log_loss": float(log_loss(y, p, labels=[0, 1])),
+        "calibration_bins": _calibration_bins(y, p),
+    }
+    result["average_precision"] = (
+        float(average_precision_score(y, p)) if len(set(int(v) for v in y.tolist())) > 1 else None
+    )
+    return result
+
+
+def _calibration_bins(
+    labels: np.ndarray[Any, np.dtype[np.int_]], probabilities: np.ndarray[Any, np.dtype[np.float64]]
+) -> list[dict[str, float | int]]:
+    bins: list[dict[str, float | int]] = []
+    edges = np.linspace(0.0, 1.0, 11)
+    for low, high in zip(edges[:-1], edges[1:], strict=True):
+        mask = (probabilities >= low) & (probabilities < high if high < 1.0 else probabilities <= high)
+        if not mask.any():
+            continue
+        bins.append(
+            {
+                "low": float(low),
+                "high": float(high),
+                "n": int(mask.sum()),
+                "mean_probability": float(probabilities[mask].mean()),
+                "observed_rate": float(labels[mask].mean()),
+            }
+        )
+    return bins
+
+
+def _dt(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))

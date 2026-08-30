@@ -1,0 +1,71 @@
+name: Price Risk Capture
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apex-price-risk-data
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install .
+      - name: Verify non-serving architecture
+        run: python -m apex_price_risk.cli architecture-check
+      - name: Prepare append-only observations worktree
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATA=/tmp/apr-data
+          if git ls-remote --exit-code origin refs/heads/observations >/dev/null 2>&1; then
+            git fetch origin observations:refs/remotes/origin/observations
+            git worktree add --detach "$DATA" refs/remotes/origin/observations
+          else
+            git worktree add --detach "$DATA"
+            git -C "$DATA" switch --orphan observations
+            git -C "$DATA" rm -rf . || true
+            printf '# Apex Price Risk observations\n\nMachine-written point-in-time public FPL evidence.\n' > "$DATA/README.md"
+          fi
+      - name: Capture Official FPL and seal forecast
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATA=/tmp/apr-data
+          STAMP=$(date -u +%Y%m%dT%H%M%SZ)
+          mkdir -p "$DATA/snapshots" "$DATA/predictions"
+          PREVIOUS=$(find "$DATA/snapshots" -type f -name '*.json.gz' 2>/dev/null | sort | tail -n 1 || true)
+          MODEL=$(find "$DATA/models" -type f -name '*.json' 2>/dev/null | sort | tail -n 1 || true)
+          python -m apex_price_risk.cli capture --output /tmp/current.json.gz
+          ARGS=(--snapshot /tmp/current.json.gz --output /tmp/forecast.json --code-sha "$GITHUB_SHA")
+          if [ -n "$PREVIOUS" ]; then ARGS+=(--previous "$PREVIOUS"); fi
+          if [ -n "$MODEL" ]; then ARGS+=(--model "$MODEL"); fi
+          python -m apex_price_risk.cli forecast "${ARGS[@]}"
+          cp /tmp/current.json.gz "$DATA/snapshots/$STAMP.json.gz"
+          cp /tmp/forecast.json "$DATA/predictions/$STAMP.json"
+      - name: Append evidence atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATA=/tmp/apr-data
+          git -C "$DATA" config user.name "apex-price-risk[bot]"
+          git -C "$DATA" config user.email "apex-price-risk[bot]@users.noreply.github.com"
+          git -C "$DATA" add README.md snapshots predictions
+          if git -C "$DATA" diff --cached --quiet; then exit 0; fi
+          git -C "$DATA" commit -m "Capture prospective price-risk evidence"
+          git -C "$DATA" push origin HEAD:observations
