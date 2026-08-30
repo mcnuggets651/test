@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime, timedelta
 from typing import Any, Literal
 
 import numpy as np
@@ -10,12 +11,14 @@ from sklearn.preprocessing import StandardScaler
 
 from .features import LabeledExample, build_labeled_examples
 from .model import DirectionModel, ModelBundle, make_model_bundle
-from .schemas import PriceSnapshot
+from .schemas import LABEL_VERSION, PriceSnapshot
 
 MIN_EXAMPLES = 1200
 MIN_POSITIVES = 20
 MIN_NEGATIVES = 200
-MIN_UNIQUE_TIMES = 10
+MIN_UNIQUE_TIMES = 32
+MIN_OBSERVATION_SPAN_HOURS = 14 * 24
+PURGE_HOURS = 27
 
 
 @dataclass(frozen=True, slots=True)
@@ -35,6 +38,8 @@ def train_model_bundle(snapshots: list[PriceSnapshot]) -> ModelBundle:
         training_summary={
             "status": "SHADOW_TRAINED" if rise.kind == fall.kind == "trained" else "COLD_START_PARTIAL",
             "n_examples": len(examples),
+            "label_version": LABEL_VERSION,
+            "purge_hours": PURGE_HOURS,
             "rise": rise_summary,
             "fall": fall_summary,
             "prospective_qualification": "NOT_EVALUATED_FOR_INTEGRATION",
@@ -61,7 +66,7 @@ def _train_direction(
     times = np.asarray([example.observed_at_utc for example in examples], dtype=object)
     split = _chronological_split(times)
     if not _split_has_both_classes(labels, split):
-        summary["status"] = "INSUFFICIENT_CLASS_COVERAGE_IN_TIME_SPLIT"
+        summary["status"] = "INSUFFICIENT_CLASS_COVERAGE_IN_PURGED_TIME_SPLIT"
         return DirectionModel(kind="cold_start"), summary
 
     scaler = StandardScaler().fit(x[split.train])
@@ -88,7 +93,16 @@ def _train_direction(
         "test_prevalence": float(y_test.mean()),
         "ece_10": _expected_calibration_error(y_test, test_prob, 10),
     }
-    summary.update({"status": "TRAINED", "metrics": metrics})
+    summary.update(
+        {
+            "status": "TRAINED",
+            "metrics": metrics,
+            "train_rows": int(split.train.sum()),
+            "calibration_rows": int(split.calibration.sum()),
+            "test_rows": int(split.test.sum()),
+            "purge_hours": PURGE_HOURS,
+        }
+    )
     return (
         DirectionModel(
             kind="trained",
@@ -111,17 +125,35 @@ def _enough_data(examples: list[LabeledExample], labels: np.ndarray[Any, np.dtyp
         return False
     positives = int(labels.sum())
     negatives = int(len(labels) - positives)
-    unique_times = len({example.observed_at_utc for example in examples})
-    return positives >= MIN_POSITIVES and negatives >= MIN_NEGATIVES and unique_times >= MIN_UNIQUE_TIMES
+    unique_times = sorted({_dt(example.observed_at_utc) for example in examples})
+    if len(unique_times) < MIN_UNIQUE_TIMES:
+        return False
+    span_hours = (unique_times[-1] - unique_times[0]).total_seconds() / 3600.0
+    return (
+        positives >= MIN_POSITIVES
+        and negatives >= MIN_NEGATIVES
+        and span_hours >= MIN_OBSERVATION_SPAN_HOURS
+    )
 
 
 def _chronological_split(times: np.ndarray[Any, np.dtype[object]]) -> Split:
-    unique_times = sorted(set(str(value) for value in times.tolist()))
-    first_cut = unique_times[max(1, int(len(unique_times) * 0.70)) - 1]
-    second_cut = unique_times[max(2, int(len(unique_times) * 0.85)) - 1]
-    train = np.asarray([str(value) <= first_cut for value in times], dtype=bool)
-    calibration = np.asarray([first_cut < str(value) <= second_cut for value in times], dtype=bool)
-    test = np.asarray([str(value) > second_cut for value in times], dtype=bool)
+    parsed = np.asarray([_dt(str(value)) for value in times], dtype=object)
+    unique_times = sorted(set(parsed.tolist()))
+    if len(unique_times) < 3:
+        empty = np.zeros(len(times), dtype=bool)
+        return Split(train=empty, calibration=empty.copy(), test=empty.copy())
+
+    calibration_start = unique_times[min(len(unique_times) - 2, int(len(unique_times) * 0.70))]
+    test_start = unique_times[min(len(unique_times) - 1, int(len(unique_times) * 0.85))]
+    purge = timedelta(hours=PURGE_HOURS)
+    train_end = calibration_start - purge
+    calibration_end = test_start - purge
+
+    train = np.asarray([value <= train_end for value in parsed], dtype=bool)
+    calibration = np.asarray(
+        [calibration_start <= value <= calibration_end for value in parsed], dtype=bool
+    )
+    test = np.asarray([value >= test_start for value in parsed], dtype=bool)
     return Split(train=train, calibration=calibration, test=test)
 
 
@@ -147,3 +179,7 @@ def _expected_calibration_error(
             continue
         error += float(mask.sum()) / total * abs(float(probabilities[mask].mean()) - float(labels[mask].mean()))
     return error
+
+
+def _dt(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
