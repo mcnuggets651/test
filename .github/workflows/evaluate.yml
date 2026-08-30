@@ -1,0 +1,59 @@
+name: Price Risk Train and Evaluate
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 8 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apex-price-risk-data
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install .
+      - name: Verify non-serving architecture
+        run: python -m apex_price_risk.cli architecture-check
+      - name: Load prospective evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATA=/tmp/apr-data
+          git ls-remote --exit-code origin refs/heads/observations >/dev/null
+          git fetch origin observations:refs/remotes/origin/observations
+          git worktree add --detach "$DATA" refs/remotes/origin/observations
+      - name: Train chronologically and score matured sealed forecasts
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATA=/tmp/apr-data
+          STAMP=$(date -u +%Y%m%dT%H%M%SZ)
+          mkdir -p "$DATA/models" "$DATA/evaluations"
+          python -m apex_price_risk.cli train --observations "$DATA/snapshots" --output /tmp/model.json
+          python -m apex_price_risk.cli evaluate --observations "$DATA/snapshots" --predictions "$DATA/predictions" --output /tmp/evaluation.json
+          cp /tmp/model.json "$DATA/models/$STAMP.json"
+          cp /tmp/evaluation.json "$DATA/evaluations/$STAMP.json"
+      - name: Append model and evaluation evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATA=/tmp/apr-data
+          git -C "$DATA" config user.name "apex-price-risk[bot]"
+          git -C "$DATA" config user.email "apex-price-risk[bot]@users.noreply.github.com"
+          git -C "$DATA" add models evaluations
+          git -C "$DATA" commit -m "Train shadow price model and evaluate prospective forecasts"
+          git -C "$DATA" push origin HEAD:observations
