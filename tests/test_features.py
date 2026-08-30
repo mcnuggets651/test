@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from apex_price_risk.features import FEATURE_NAMES, build_feature_rows, build_labeled_examples
+from apex_price_risk.features import FEATURE_NAMES, OWNERSHIP_FLOOR_PERCENT, build_feature_rows, build_labeled_examples
 from conftest import make_snapshot
 
 
@@ -34,3 +34,16 @@ def test_event_counter_reset_does_not_create_false_transfer_velocity() -> None:
 def test_feature_contract_contains_fall_price_counters() -> None:
     assert "cost_change_event_fall" in FEATURE_NAMES
     assert "cost_change_start_fall" in FEATURE_NAMES
+
+
+def test_rounded_zero_ownership_uses_public_precision_floor() -> None:
+    snapshot = make_snapshot(
+        "2026-08-30T12:00:00Z",
+        transfers_in=100,
+        transfers_out=0,
+        selected_by_percent="0.0",
+    )
+    row = build_feature_rows(snapshot, None)[0]
+    pressure_index = FEATURE_NAMES.index("net_event_per_owner")
+    expected_owners = 1_000_000 * OWNERSHIP_FLOOR_PERCENT / 100.0
+    assert row.features[pressure_index] == 100 / expected_owners

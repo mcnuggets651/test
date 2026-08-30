@@ -29,6 +29,11 @@ FEATURE_NAMES: tuple[str, ...] = (
     "hours_to_deadline_scaled",
 )
 
+# Official selected_by_percent is rounded to one decimal place. A displayed 0.0%
+# therefore does not mean one owner. Use half a display quantum as a conservative
+# denominator floor so low-owned players cannot create artificial velocity explosions.
+OWNERSHIP_FLOOR_PERCENT = 0.05
+
 
 @dataclass(frozen=True, slots=True)
 class LabeledExample:
@@ -111,13 +116,14 @@ def _features_for_player(
     elapsed_hours: float,
     previous_snapshot: PriceSnapshot | None,
 ) -> tuple[float, ...]:
-    owners = max(snapshot.total_players * player.selected_by_percent / 100.0, 1.0)
+    owners = _estimated_owners(snapshot.total_players, player.selected_by_percent)
     net_event = player.transfers_in_event - player.transfers_out_event
     gross_event = player.transfers_in_event + player.transfers_out_event
     net_velocity = 0.0
     selected_velocity = 0.0
     if previous is not None and 0.25 <= elapsed_hours <= 12.0:
-        previous_owners = max(snapshot.total_players * previous.selected_by_percent / 100.0, 1.0)
+        previous_total = snapshot.total_players if previous_snapshot is None else previous_snapshot.total_players
+        previous_owners = _estimated_owners(previous_total, previous.selected_by_percent)
         counters_monotonic = (
             player.transfers_in_event >= previous.transfers_in_event
             and player.transfers_out_event >= previous.transfers_out_event
@@ -170,6 +176,11 @@ def _features_for_player(
         math.cos(radians),
         hours_to_deadline / 168.0,
     )
+
+
+def _estimated_owners(total_players: int, selected_by_percent: float) -> float:
+    effective_percent = max(selected_by_percent, OWNERSHIP_FLOOR_PERCENT)
+    return max(total_players * effective_percent / 100.0, 1.0)
 
 
 def _dt(value: str) -> datetime:

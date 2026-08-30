@@ -9,7 +9,13 @@ from apex_price_risk.official import capture_from_bootstrap
 from apex_price_risk.schemas import PriceSnapshot
 
 
-def bootstrap_payload(*, price: int = 75, transfers_in: int = 1000, transfers_out: int = 200) -> dict[str, Any]:
+def bootstrap_payload(
+    *,
+    price: int = 75,
+    transfers_in: int = 1000,
+    transfers_out: int = 200,
+    selected_by_percent: str = "10.0",
+) -> dict[str, Any]:
     return {
         "total_players": 1_000_000,
         "events": [
@@ -24,7 +30,7 @@ def bootstrap_payload(*, price: int = 75, transfers_in: int = 1000, transfers_ou
                 "team": 1,
                 "element_type": 3,
                 "now_cost": price,
-                "selected_by_percent": "10.0",
+                "selected_by_percent": selected_by_percent,
                 "transfers_in_event": transfers_in,
                 "transfers_out_event": transfers_out,
                 "transfers_in": transfers_in + 100,
@@ -49,10 +55,16 @@ def make_snapshot(
     price: int = 75,
     transfers_in: int = 1000,
     transfers_out: int = 200,
+    selected_by_percent: str = "10.0",
 ) -> PriceSnapshot:
     when = datetime.fromisoformat(at.replace("Z", "+00:00")).astimezone(UTC)
     return capture_from_bootstrap(
-        bootstrap_payload(price=price, transfers_in=transfers_in, transfers_out=transfers_out),
+        bootstrap_payload(
+            price=price,
+            transfers_in=transfers_in,
+            transfers_out=transfers_out,
+            selected_by_percent=selected_by_percent,
+        ),
         when,
     )
 

@@ -1,8 +1,10 @@
 # Operations
 
-## Scheduled collection
+## Scheduled collection and deployment smoke
 
 `Price Risk Capture` runs at minute 17 every three hours. GitHub cron can be delayed; the timestamp inside each snapshot is the actual UTC acquisition time and is authoritative.
+
+A code deployment to `main` that changes `src/**`, `pyproject.toml`, or the capture workflow also triggers one immediate capture. This is intentional: every deployed acquisition/model version proves that it can fetch live Official FPL data and seal a forecast before relying on the schedule. Documentation-only changes do not create extra observations.
 
 Sequence:
 
