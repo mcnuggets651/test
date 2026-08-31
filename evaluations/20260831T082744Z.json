@@ -1,0 +1,55 @@
+{
+  "evaluated_forecasts": 2,
+  "fall": {
+    "average_precision": 1.0,
+    "brier": 0.8678190450626088,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.02393335608695652,
+        "n": 46,
+        "observed_rate": 0.9130434782608695
+      }
+    ],
+    "log_loss": 3.5154317917305495,
+    "n": 46,
+    "positives": 42,
+    "prevalence": 0.9130434782608695
+  },
+  "integration_authorized": false,
+  "label_version": 2,
+  "paired_rows": 46,
+  "rise": {
+    "average_precision": 1.0,
+    "brier": 0.0484005775567819,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.011713833809523812,
+        "n": 42,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.203712375,
+        "n": 2,
+        "observed_rate": 1.0
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.30989677000000004,
+        "n": 2,
+        "observed_rate": 1.0
+      }
+    ],
+    "log_loss": 0.13087011752442124,
+    "n": 46,
+    "positives": 4,
+    "prevalence": 0.08695652173913043
+  },
+  "status": "EVALUATED"
+}
