@@ -1,0 +1,5648 @@
+{
+  "code_sha": "e3489c3b49ba130485da4fedbabeab1575b8dfb2",
+  "feature_version": 1,
+  "generated_at_utc": "2026-09-01T06:37:21.209788+00:00",
+  "horizon_hours": 24,
+  "model_id": "bd1b8a33f1f7c43aa19e4b2c49350e0eab71a5d0b69193677bb7fe4a5536a8f8",
+  "production_influence": "NONE",
+  "rows": [
+    {
+      "confidence": "LOW",
+      "element_id": 1,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01010521,
+      "p_rise_24h": 0.01217159,
+      "web_name": "Raya"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 2,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01312707,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Arrizabalaga"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 3,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01251046,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Meslier"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 4,
+      "model_status": "COLD_START",
+      "now_cost": 80,
+      "p_fall_24h": 0.01498228,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gabriel"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 5,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.04861585,
+      "p_rise_24h": 0.0099518,
+      "web_name": "J.Timber"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 6,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.05841425,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Saliba"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 7,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01230859,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lewis-Skelly"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 8,
+      "model_status": "COLD_START",
+      "now_cost": 56,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01675034,
+      "web_name": "Calafiori"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 9,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.02622843,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hincapie"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 10,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01635969,
+      "web_name": "White"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 11,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01703691,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mosquera"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 12,
+      "model_status": "COLD_START",
+      "now_cost": 95,
+      "p_fall_24h": 0.00995794,
+      "p_rise_24h": 0.01309854,
+      "web_name": "Saka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 13,
+      "model_status": "COLD_START",
+      "now_cost": 75,
+      "p_fall_24h": 0.01759685,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rice"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 14,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.02285079,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Eze"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 15,
+      "model_status": "COLD_START",
+      "now_cost": 66,
+      "p_fall_24h": 0.01056359,
+      "p_rise_24h": 0.01212843,
+      "web_name": "\u00d8degaard"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 16,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.02293388,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Madueke"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 17,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.02606077,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Merino"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 18,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.02807696,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Martinelli"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 19,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.02036966,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Zubimendi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 20,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.0173714,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dowman"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 22,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.01129562,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Nwaneri"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 23,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01001365,
+      "p_rise_24h": 0.01212843,
+      "web_name": "F\u00e1bio Vieira"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 24,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02634653,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Nelson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 25,
+      "model_status": "COLD_START",
+      "now_cost": 74,
+      "p_fall_24h": 0.03744446,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gy\u00f6keres"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 26,
+      "model_status": "COLD_START",
+      "now_cost": 75,
+      "p_fall_24h": 0.01306966,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Havertz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 27,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.02221308,
+      "p_rise_24h": 0.01212843,
+      "web_name": "G.Jesus"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 31,
+      "model_status": "COLD_START",
+      "now_cost": 44,
+      "p_fall_24h": 0.01009446,
+      "p_rise_24h": 0.01218932,
+      "web_name": "Konsa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 452,
+      "model_status": "COLD_START",
+      "now_cost": 69,
+      "p_fall_24h": 0.03356982,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bruno G."
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 557,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.01812595,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tzolis"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 29,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0103814,
+      "p_rise_24h": 0.01441752,
+      "web_name": "M.Bizot"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 30,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0582448,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Digne"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 32,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01296331,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Cash"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 33,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01228713,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mings"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 34,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01070296,
+      "p_rise_24h": 0.0123956,
+      "web_name": "Pau"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 35,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01148302,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bogarde"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 36,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01052927,
+      "p_rise_24h": 0.01245423,
+      "web_name": "Maatsen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 37,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01023575,
+      "p_rise_24h": 0.01243923,
+      "web_name": "Lindel\u00f6f"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 38,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01035921,
+      "p_rise_24h": 0.01212843,
+      "web_name": "A.Garc\u00eda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 39,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.04935018,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Nedeljkovic"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 41,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01464546,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Buend\u00eda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 44,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02471204,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bailey"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 45,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01572838,
+      "p_rise_24h": 0.01212843,
+      "web_name": "McGinn"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 46,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01484337,
+      "web_name": "Barkley"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 47,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0114993,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kamara"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 48,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02938293,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Onana"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 49,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02114747,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Iling Jr"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 50,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0101779,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Burrowes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 51,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.029884,
+      "web_name": "George Hemmings"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 52,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01135107,
+      "p_rise_24h": 0.01254457,
+      "web_name": "Alysson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 53,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.06175969,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Manzambi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 54,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.05473576,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Gomes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 55,
+      "model_status": "COLD_START",
+      "now_cost": 78,
+      "p_fall_24h": 0.05661273,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Watkins"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 56,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01520849,
+      "p_rise_24h": 0.01463939,
+      "web_name": "Abraham"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 160,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.02204912,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Garnacho"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 166,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02266552,
+      "web_name": "N.Jackson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 582,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.04877692,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Madjo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 596,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01325975,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ruggeri"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 597,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02084584,
+      "web_name": "Suzuki"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 606,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.09866221,
+      "web_name": "Rowe"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 607,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02831943,
+      "web_name": "Lynch"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 611,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.09697095,
+      "web_name": "Wan-Bissaka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 618,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.12638489,
+      "web_name": "Goretzka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 57,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01442042,
+      "web_name": "Petrovi\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 58,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01454535,
+      "web_name": "Forster"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 59,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.03852443,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Dennis"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 60,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01170209,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hill"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 61,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01301287,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Truffert"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 62,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01635235,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Diakit\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 63,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0227021,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Milosavljevi\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 64,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01113803,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Smith"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 65,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02709005,
+      "p_rise_24h": 0.0099518,
+      "web_name": "J.Araujo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 66,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02259024,
+      "web_name": "Soler"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 67,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.02208677,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rayan"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 68,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01374931,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tavernier"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 69,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03218274,
+      "web_name": "Scott"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 70,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01555232,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kluivert"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 71,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02373645,
+      "web_name": "Cook"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 72,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01599966,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gannon-Doak"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 73,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01491404,
+      "web_name": "Adams"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 74,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01418932,
+      "web_name": "Brooks"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 75,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01898584,
+      "web_name": "Christie"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 76,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01115191,
+      "p_rise_24h": 0.01212843,
+      "web_name": "T\u00f3th.A"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 77,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.03214628,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Adli"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 78,
+      "model_status": "COLD_START",
+      "now_cost": 74,
+      "p_fall_24h": 0.06948506,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Kroupi.Jr"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 79,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01979822,
+      "web_name": "Evanilson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 80,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.03337723,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Enes \u00dcnal"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 81,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01320102,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rodr\u00edguez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 566,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02036118,
+      "web_name": "Silva"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 573,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01521666,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sanchez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 608,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03701899,
+      "web_name": "Jebbison"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 615,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03032035,
+      "web_name": "Di Gregorio"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 82,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01595041,
+      "web_name": "Kelleher"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 83,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01221285,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Valdimarsson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 84,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01364591,
+      "web_name": "Collins"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 85,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.06243678,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Van den Berg"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 86,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0726618,
+      "web_name": "Lewis-Potter"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 87,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02253637,
+      "web_name": "Ajer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 88,
+      "model_status": "COLD_START",
+      "now_cost": 46,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02101033,
+      "web_name": "Kayode"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 89,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01338497,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Henry"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 90,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01089843,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hickey"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 92,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01103321,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ji-soo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 93,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01301649,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Schuster"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 94,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02165641,
+      "web_name": "Schade"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 95,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.02599057,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O.Dango"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 96,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01376324,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Damsgaard"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 97,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.06189794,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Jensen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 98,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.04508956,
+      "web_name": "Janelt"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 99,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01987075,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Milambo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 100,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01389959,
+      "web_name": "Carvalho"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 102,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02069517,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Yarmoliuk"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 103,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01347118,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dasilva"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 105,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01464972,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Anthony"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 106,
+      "model_status": "COLD_START",
+      "now_cost": 80,
+      "p_fall_24h": 0.02072428,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Thiago"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 107,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02095693,
+      "web_name": "Furo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 108,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01210819,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Wilson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 565,
+      "model_status": "COLD_START",
+      "now_cost": 56,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.04710941,
+      "web_name": "M.Sangar\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 620,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.31069623,
+      "web_name": "Diouf"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 109,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01441306,
+      "web_name": "Verbruggen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 111,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01499816,
+      "web_name": "Steele"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 113,
+      "model_status": "COLD_START",
+      "now_cost": 44,
+      "p_fall_24h": 0.01420135,
+      "p_rise_24h": 0.01212843,
+      "web_name": "F.Kad\u0131o\u011flu"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 114,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01615542,
+      "web_name": "Boscagli"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 115,
+      "model_status": "COLD_START",
+      "now_cost": 47,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.10059517,
+      "web_name": "De Cuyper"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 116,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01514776,
+      "web_name": "Dunk"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 117,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01015856,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Coppola"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 118,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01202298,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Igor"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 119,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01074677,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Costinha"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 120,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01078704,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Svoboda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 121,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.04243165,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Mitoma"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 122,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.0479618,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Minteh"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 123,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.24149527,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Hinshelwood"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 124,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02526476,
+      "web_name": "Gro\u00df"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 125,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.05233734,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Georginio"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 126,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01509762,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O'Riley"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 127,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02934171,
+      "web_name": "Gomez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 128,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02224013,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Buonanotte"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 129,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.08659347,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Ayari"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 130,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02167731,
+      "web_name": "Wieffer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 132,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.05217471,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Howell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 133,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02082606,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Watson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 134,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0104452,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Oriola"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 135,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01553307,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Yohanna"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 137,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02211948,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Tzimas"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 138,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.13003114,
+      "web_name": "Kostoulas"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 139,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02294634,
+      "p_rise_24h": 0.01000805,
+      "web_name": "Ferguson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 328,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01584714,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Struijk"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 504,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01149344,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Vuskovic"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 594,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01191625,
+      "p_rise_24h": 0.01212843,
+      "web_name": "David"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 600,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01299985,
+      "web_name": "Osman"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 605,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Yalcouy\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 614,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.05166316,
+      "web_name": "Hadjam"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 624,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01336444,
+      "web_name": "Cozier-Duberry"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 28,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01474911,
+      "web_name": "Martinez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 40,
+      "model_status": "COLD_START",
+      "now_cost": 75,
+      "p_fall_24h": 0.0105469,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rogers"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 101,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.03384869,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Henderson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 136,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.02340935,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Welbeck"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 140,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.05661659,
+      "p_rise_24h": 0.01212843,
+      "web_name": "S\u00e1nchez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 141,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02589443,
+      "p_rise_24h": 0.0099518,
+      "web_name": "J\u00f6rgensen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 142,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02261834,
+      "p_rise_24h": 0.01212843,
+      "web_name": "James"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 143,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.11426533,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Chalobah"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 144,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01381425,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gusto"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 145,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02617696,
+      "web_name": "Fofana"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 146,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.04125745,
+      "p_rise_24h": 0.0099518,
+      "web_name": "B.Badiashile"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 147,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01623395,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tosin"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 148,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03515592,
+      "web_name": "Hato"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 149,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01924882,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Colwill"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 150,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.11208059,
+      "p_rise_24h": 0.0099518,
+      "web_name": "M.Sarr"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 151,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01104995,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Acheampong"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 152,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.13175594,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Palestra"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 154,
+      "model_status": "COLD_START",
+      "now_cost": 96,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02198379,
+      "web_name": "Palmer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 155,
+      "model_status": "COLD_START",
+      "now_cost": 69,
+      "p_fall_24h": 0.055793,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Enzo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 156,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0150558,
+      "web_name": "Neto"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 157,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.04414579,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Est\u00eav\u00e3o"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 158,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.02007533,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gittens"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 159,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.1101983,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Caicedo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 161,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Lavia"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 163,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01264525,
+      "p_rise_24h": 0.01212843,
+      "web_name": "D.Essugo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 164,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.02384834,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Quenda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 165,
+      "model_status": "COLD_START",
+      "now_cost": 76,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01491343,
+      "web_name": "Jo\u00e3o Pedro"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 168,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01727144,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Marc Guiu"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 169,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0147045,
+      "web_name": "Mheuka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 170,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01817307,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Emegha"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 200,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01603848,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lacroix"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 560,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01472581,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Penders"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 561,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01026353,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Anselmino"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 568,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0142833,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Barco"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 578,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.01816566,
+      "p_rise_24h": 0.01349516,
+      "web_name": "Mudryk"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 583,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01916193,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Chavarria"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 91,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01324553,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Pinnock"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 104,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.03702921,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Onyeka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 110,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0165086,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rushworth"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 171,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0104557,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dovin"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 172,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01521803,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Wilson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 173,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01601888,
+      "web_name": "Thomas"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 174,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01440744,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kitching"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 175,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01297785,
+      "p_rise_24h": 0.01212843,
+      "web_name": "van Ewijk"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 176,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01204846,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dasilva"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 177,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.03314804,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Kesler-Hayden"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 178,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01302137,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bidwell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 179,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01171768,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Latibeaudiere"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 180,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.03829254,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Woolfenden"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 181,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.05054667,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Brau"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 182,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01296654,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Amenda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 183,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01838595,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rudoni"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 184,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01740386,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Grimes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 185,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01776247,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sakamoto"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 186,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01984114,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mason-Clark"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 187,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01321683,
+      "web_name": "Eccles"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 188,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.03191054,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Torp"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 189,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01331737,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Shepherd"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 190,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02983494,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tchaouna"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 191,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01163069,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Borges Rodrigues"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 192,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.10223851,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Andrews"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 193,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.09281226,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Wright"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 194,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01013933,
+      "p_rise_24h": 0.01335111,
+      "web_name": "Thomas-Asante"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 195,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01596634,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Simms"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 196,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02771193,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Markelo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 197,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.03597996,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Bassette"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 492,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01778619,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Awoniyi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 575,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01865987,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Yirenkyi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 584,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02277163,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hamer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 599,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01026508,
+      "p_rise_24h": 0.01258662,
+      "web_name": "Cherif"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 623,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Bentley"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 42,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01553073,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Guessand"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 153,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01412744,
+      "web_name": "Disasi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 198,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0113967,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Henderson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 199,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01385088,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Benitez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 201,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.03184941,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mu\u00f1oz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 202,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01544564,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Richards"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 203,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01827764,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Canvot"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 204,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01766785,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mitchell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 205,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01357379,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sosa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 206,
+      "model_status": "COLD_START",
+      "now_cost": 44,
+      "p_fall_24h": 0.07826858,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Chadi Riad"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 207,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01362974,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mingueza"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 208,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.36139299,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Sarr"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 210,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01198459,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Wharton"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 211,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02096066,
+      "web_name": "Yeremy"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 212,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0148321,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hughes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 213,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01931444,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lerma"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 214,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01025198,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kamada"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 215,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01134328,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Devenny"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 216,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01634711,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Esse"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 217,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.01052863,
+      "p_rise_24h": 0.01615841,
+      "web_name": "M.Fran\u00e7a"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 218,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.01397217,
+      "p_rise_24h": 0.01240432,
+      "web_name": "Doucour\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 219,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01069561,
+      "p_rise_24h": 0.01212843,
+      "web_name": "J.Rak-Sakyi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 220,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02064692,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Cardines"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 221,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01147389,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Drakes-Thomas"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 222,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01120065,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Strand Larsen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 223,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.45,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Mateta"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 224,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01494507,
+      "web_name": "Nketiah"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 225,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01984031,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Uche"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 241,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01500903,
+      "p_rise_24h": 0.01212843,
+      "web_name": "McNeil"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 555,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0101127,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Matthews"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 577,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01357835,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tomiyasu"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 588,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02081447,
+      "web_name": "Khalaili"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 595,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01036065,
+      "p_rise_24h": 0.01219683,
+      "web_name": "Gozo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 21,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.04848841,
+      "p_rise_24h": 0.0099518,
+      "web_name": "N\u00f8rgaard"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 209,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.03077017,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Johnson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 226,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01041777,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Pickford"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 227,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0126378,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Travers"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 228,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01187675,
+      "p_rise_24h": 0.01212843,
+      "web_name": "King"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 229,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02476013,
+      "web_name": "Tarkowski"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 230,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01026809,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Branthwaite"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 231,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.03200943,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Keane"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 232,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.02249037,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O'Brien"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 233,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02032682,
+      "web_name": "Mykolenko"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 234,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01287255,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Patterson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 235,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01246987,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Aznou"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 236,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.01323123,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dewsbury-Hall"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 237,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01697786,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ndiaye"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 239,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01553307,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Garner"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 240,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01044115,
+      "p_rise_24h": 0.01219683,
+      "web_name": "Iroegbunam"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 242,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01445993,
+      "p_rise_24h": 0.01212843,
+      "web_name": "George"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 243,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0157125,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Alcaraz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 244,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.08910024,
+      "web_name": "Armstrong"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 245,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.01565748,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dibling"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 246,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01202298,
+      "p_rise_24h": 0.01212843,
+      "web_name": "R\u00f6hl"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 247,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0208522,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hackney"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 248,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.02358102,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Beto"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 249,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02952976,
+      "web_name": "Barry"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 250,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01324999,
+      "web_name": "Leno"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 251,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01038794,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lecomte"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 252,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01861432,
+      "web_name": "McNally"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 253,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.04008913,
+      "web_name": "Andersen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 254,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01118795,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Robinson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 255,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01081815,
+      "p_rise_24h": 0.01212843,
+      "web_name": "J.Cuenca"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 256,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01663342,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tete"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 257,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01032862,
+      "p_rise_24h": 0.01221399,
+      "web_name": "Bassey"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 258,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.06411395,
+      "web_name": "Castagne"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 261,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0162101,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Iwobi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 262,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02076898,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Smith Rowe"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 263,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01504891,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kevin"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 264,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01247686,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bobb"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 265,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01430808,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Berge"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 266,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02117988,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Cairney"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 268,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02102942,
+      "web_name": "King"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 269,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01458259,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sessegnon"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 270,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01405212,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Reed"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 271,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01861455,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Muniz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 272,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01055711,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kusi-Asare"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 569,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02322894,
+      "web_name": "Gonzalo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 570,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0165949,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Palacios"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 580,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01409756,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Charles"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 610,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01984031,
+      "p_rise_24h": 0.01454003,
+      "web_name": "De Fougerolles"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 626,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Zepa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 273,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01065081,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Phillips"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 274,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.03747958,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Butland"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 275,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02188107,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Cartwright"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 276,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02509554,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Lo-Tutala"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 277,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.21586591,
+      "web_name": "Egan"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 278,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.04281919,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Hughes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 279,
+      "model_status": "COLD_START",
+      "now_cost": 41,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Ajayi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 280,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.03332728,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Coyle"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 281,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01414865,
+      "web_name": "Drameh"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 282,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02374914,
+      "web_name": "Giles"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 283,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02156066,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Jacob"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 284,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01012279,
+      "p_rise_24h": 0.01219683,
+      "web_name": "McCarthy"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 285,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01321744,
+      "p_rise_24h": 0.01212843,
+      "web_name": "McNair"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 286,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03362599,
+      "web_name": "Belloumi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 287,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.04723773,
+      "web_name": "Millar"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 288,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01037603,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dowell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 289,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.04595471,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Crooks"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 290,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02888433,
+      "web_name": "Slater"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 291,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02057237,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Matazo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 292,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01233083,
+      "p_rise_24h": 0.01212843,
+      "web_name": "\u00d6m\u00fcr"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 293,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02170506,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Kamara"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 294,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.03499903,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Zambrano"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 295,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0112113,
+      "p_rise_24h": 0.01212843,
+      "web_name": "McBurnie"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 296,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01133891,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Akintola"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 297,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02749032,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Gyabi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 298,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.04958393,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Destan"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 299,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.04311307,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Burstow"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 340,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02319019,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Gelhardt"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 556,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01303806,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Targett"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 563,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01370792,
+      "web_name": "Morita"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 572,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.1350699,
+      "web_name": "Tzolakis"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 574,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01616642,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hjert\u00f8-Dahl"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 576,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01340637,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Stroud"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 585,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01110715,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Herrington"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 586,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02997294,
+      "web_name": "Mendy"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 589,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01103179,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gourna-Douath"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 617,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02034329,
+      "web_name": "Cho"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 259,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01202882,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Diop"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 267,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01399315,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Luki\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 300,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01376625,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Walton"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 301,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01047879,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Palmer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 302,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01607848,
+      "web_name": "Button"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 303,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01376984,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kipr\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 304,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01133181,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O'Shea"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 305,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0143551,
+      "web_name": "Davis"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 306,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01241382,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Greaves"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 307,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01228329,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Johnson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 308,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.012865,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Furlong"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 309,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01327709,
+      "p_rise_24h": 0.01212843,
+      "web_name": "N\u00fa\u00f1ez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 310,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02131907,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Matusiwa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 311,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02134265,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Burns"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 312,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.03395116,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Taylor"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 313,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01799598,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Clarke"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 314,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0118152,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ogbene"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 315,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01208858,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Fatawu"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 316,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.04352579,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Emersonn"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 317,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.1288116,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Hirst"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 318,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.09219759,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Philogene"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 319,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02392279,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Szmodics"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 320,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.09290647,
+      "web_name": "Akpom"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 321,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0357672,
+      "web_name": "Walle Egeli"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 322,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.12684933,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Al-Hamadi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 323,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01139159,
+      "p_rise_24h": 0.01212843,
+      "web_name": "McAteer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 324,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01762202,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mehmeti"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 554,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.04172236,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Van Oevelen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 562,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01807139,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Maeda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 564,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01229797,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Scherpen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 571,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.04812582,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Florentino"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 591,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.05001571,
+      "web_name": "Enciso"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 592,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0109695,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ouattara"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 602,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.039503,
+      "web_name": "Humphreys"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 619,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03423718,
+      "web_name": "Palacios"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 260,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.03431765,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Wilson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 326,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01506857,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Perri"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 327,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01032307,
+      "p_rise_24h": 0.01271755,
+      "web_name": "Bijol"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 329,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0485033,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Rodon"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 330,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01005894,
+      "p_rise_24h": 0.01215658,
+      "web_name": "Bogle"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 331,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01467103,
+      "web_name": "Gudmundsson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 332,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01926235,
+      "web_name": "Justin"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 333,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02095405,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Bornauw"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 334,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01267066,
+      "web_name": "Muharemovi\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 335,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01405029,
+      "web_name": "Stach"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 336,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.0245486,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Okafor"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 337,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02011982,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Aaronson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 338,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01660572,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ampadu"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 339,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02278616,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Longstaff"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 341,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01026485,
+      "p_rise_24h": 0.01233477,
+      "web_name": "Gnonto"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 342,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02011596,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Harrison"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 343,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01237379,
+      "p_rise_24h": 0.01212843,
+      "web_name": "James"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 344,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02061531,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Gruev"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 345,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.01638135,
+      "p_rise_24h": 0.01257988,
+      "web_name": "Tanaka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 346,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01174045,
+      "p_rise_24h": 0.01221304,
+      "web_name": "Calvert-Lewin"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 347,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01330323,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Nmecha"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 348,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.07952073,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Piroe"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 349,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02209647,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Mateo Joseph"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 385,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01663941,
+      "web_name": "Trafford"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 598,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01376799,
+      "web_name": "Elvedi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 603,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0213621,
+      "web_name": "Lienou"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 604,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.06323758,
+      "web_name": "Cresswell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 625,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Cairns"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 350,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01243008,
+      "p_rise_24h": 0.01212843,
+      "web_name": "A.Becker"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 351,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02624525,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mamardashvili"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 352,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01347613,
+      "web_name": "Woodman"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 353,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02561964,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Pecsi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 354,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02017516,
+      "p_rise_24h": 0.01086988,
+      "web_name": "Jaros"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 355,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01442061,
+      "web_name": "Davies"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 356,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.01659876,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Virgil"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 357,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01863091,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Frimpong"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 358,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01999793,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kerkez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 359,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02515835,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Gomez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 360,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02146188,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Bradley"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 361,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01066989,
+      "p_rise_24h": 0.01240432,
+      "web_name": "Lucky"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 362,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0160818,
+      "web_name": "Jacquet"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 363,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02600978,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Leoni"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 364,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01349604,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tsimikas"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 365,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.25413718,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Ramsay"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 366,
+      "model_status": "COLD_START",
+      "now_cost": 75,
+      "p_fall_24h": 0.017108,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Wirtz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 367,
+      "model_status": "COLD_START",
+      "now_cost": 70,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01876201,
+      "web_name": "Gakpo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 368,
+      "model_status": "COLD_START",
+      "now_cost": 70,
+      "p_fall_24h": 0.01168012,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Szoboszlai"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 369,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.04031487,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ngumoha"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 370,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.17402737,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Chiesa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 371,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.02442766,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gravenberch"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 372,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0167354,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mac Allister"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 373,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0489061,
+      "p_rise_24h": 0.0099518,
+      "web_name": "C.Jones"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 374,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01429766,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Endo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 375,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01266764,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Nyoni"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 376,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02032171,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Bajcetic"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 377,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.15268968,
+      "web_name": "Munoz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 378,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01530726,
+      "p_rise_24h": 0.01212843,
+      "web_name": "McConnell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 379,
+      "model_status": "COLD_START",
+      "now_cost": 90,
+      "p_fall_24h": 0.01149394,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Isak"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 380,
+      "model_status": "COLD_START",
+      "now_cost": 75,
+      "p_fall_24h": 0.07804479,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Ekitik\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 381,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01215375,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Koumas"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 382,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01984031,
+      "p_rise_24h": 0.01027943,
+      "web_name": "Danns"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 383,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.01789985,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Elliott"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 579,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.03954585,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Araujo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 238,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.02026507,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Grealish"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 384,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01465141,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Donnarumma"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 386,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01227381,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bettinelli"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 387,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.01574954,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O'Reilly"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 388,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01114583,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gu\u00e9hi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 389,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.08639595,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Matheus N."
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 390,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01139984,
+      "p_rise_24h": 0.01212843,
+      "web_name": "R\u00faben"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 391,
+      "model_status": "COLD_START",
+      "now_cost": 56,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0387391,
+      "web_name": "Gvardiol"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 392,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.04660061,
+      "p_rise_24h": 0.01212843,
+      "web_name": "A\u00eft-Nouri"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 393,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01452814,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Khusanov"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 394,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02269922,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Alleyne"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 395,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02397789,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lewis"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 396,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01143133,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Vitor Reis"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 397,
+      "model_status": "COLD_START",
+      "now_cost": 85,
+      "p_fall_24h": 0.02046278,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Semenyo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 398,
+      "model_status": "COLD_START",
+      "now_cost": 70,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03247414,
+      "web_name": "Foden"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 399,
+      "model_status": "COLD_START",
+      "now_cost": 77,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.29719805,
+      "web_name": "Cherki"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 400,
+      "model_status": "COLD_START",
+      "now_cost": 74,
+      "p_fall_24h": 0.09334768,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Doku"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 402,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.02697004,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Rodrigo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 404,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.11345875,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Reijnders"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 406,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01920324,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kova\u010di\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 407,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01304709,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Echeverri"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 408,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02321285,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Phillips"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 409,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01712939,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mukasa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 410,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.01198741,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Monga"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 411,
+      "model_status": "COLD_START",
+      "now_cost": 155,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01489597,
+      "web_name": "Haaland"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 481,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.02122405,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Anderson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 587,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.011683,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rulli"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 616,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.31841176,
+      "web_name": "Bouaddi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 621,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.12797188,
+      "web_name": "McAidoo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 622,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.29684031,
+      "web_name": "Braithwaite"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 43,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.02078903,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tielemans"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 131,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.04352688,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Baleba"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 162,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02329768,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Andrey Santos"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 325,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01163894,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Darlow"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 412,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01545794,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lammens"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 413,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02652211,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Bayindir"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 414,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02597511,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Heaton"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 415,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.04815768,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dorgu"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 416,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02784569,
+      "p_rise_24h": 0.0099518,
+      "web_name": "De Ligt"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 417,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01627244,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dalot"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 418,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01628826,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Maguire"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 419,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01351784,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Martinez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 420,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.02063074,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Yoro"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 421,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02208123,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Heaven"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 422,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01741796,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mazraoui"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 423,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01849277,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Shaw"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 424,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01248338,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Amass"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 425,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.02752054,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Fredricson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 426,
+      "model_status": "COLD_START",
+      "now_cost": 120,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01265486,
+      "web_name": "B.Fernandes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 427,
+      "model_status": "COLD_START",
+      "now_cost": 80,
+      "p_fall_24h": 0.02356318,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mbeumo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 428,
+      "model_status": "COLD_START",
+      "now_cost": 80,
+      "p_fall_24h": 0.01903395,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Cunha"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 429,
+      "model_status": "COLD_START",
+      "now_cost": 70,
+      "p_fall_24h": 0.0163197,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rashford"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 430,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.03162053,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Mount"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 431,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.25469548,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Amad"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 432,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01532813,
+      "web_name": "Mainoo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 433,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02077383,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Ugarte"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 434,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01106598,
+      "p_rise_24h": 0.01212843,
+      "web_name": "J.Fletcher"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 435,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01417296,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Lacey"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 436,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01086849,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Collyer"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 437,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01289507,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bendito Mantato"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 438,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01421024,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Fletcher"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 439,
+      "model_status": "COLD_START",
+      "now_cost": 70,
+      "p_fall_24h": 0.02447841,
+      "p_rise_24h": 0.01212843,
+      "web_name": "\u0160e\u0161ko"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 440,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.02065247,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Zirkzee"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 441,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01372369,
+      "web_name": "Obi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 405,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0531397,
+      "web_name": "N.Gonzalez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 442,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01751043,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Pope"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 443,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01211313,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gillespie"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 444,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0134862,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Jaouen"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 445,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02087281,
+      "web_name": "Thiaw"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 446,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02144888,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sch\u00e4r"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 447,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02432665,
+      "web_name": "Botman"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 448,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.10769465,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Burn"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 449,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.17702464,
+      "web_name": "Hall"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 450,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.04069904,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Livramento"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 451,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0507022,
+      "p_rise_24h": 0.0099518,
+      "web_name": "A.Murphy"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 453,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.01154438,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Barnes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 454,
+      "model_status": "COLD_START",
+      "now_cost": 61,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Elanga"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 456,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01940051,
+      "p_rise_24h": 0.01212843,
+      "web_name": "J.Ramsey"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 457,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.03448467,
+      "p_rise_24h": 0.01212843,
+      "web_name": "J.Murphy"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 458,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.03422302,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Joelinton"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 459,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01610257,
+      "web_name": "L.Miley"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 460,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.09812713,
+      "web_name": "Willock"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 461,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.03463211,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tour\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 462,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02217405,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Steur"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 463,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.0224998,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Woltemade"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 464,
+      "model_status": "COLD_START",
+      "now_cost": 61,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Wissa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 465,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.24632892,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Osula"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 466,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01736972,
+      "web_name": "Neave"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 559,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02181651,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bamba"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 567,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.06276836,
+      "web_name": "Horn\u00ed\u010dek"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 593,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.45,
+      "web_name": "Dedi\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 609,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.07902581,
+      "web_name": "Shahar"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 167,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.06590485,
+      "web_name": "Delap"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 467,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01252318,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sels"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 468,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01210351,
+      "p_rise_24h": 0.01212843,
+      "web_name": "John"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 469,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01108671,
+      "p_rise_24h": 0.01212843,
+      "web_name": "N.Williams"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 470,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0177231,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Morato"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 471,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01287042,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Milenkovi\u0107"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 472,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01287044,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Murillo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 473,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01389124,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Aina"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 474,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01243714,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Jair Cunha"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 475,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02084645,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Savona"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 476,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01280425,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O.Richards"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 477,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01224119,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Abbott"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 478,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01270903,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Netz"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 479,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01208987,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bindon"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 480,
+      "model_status": "COLD_START",
+      "now_cost": 79,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01696488,
+      "web_name": "Gibbs-White"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 482,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.01907474,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hudson-Odoi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 483,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.07042663,
+      "web_name": "Ndoye"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 484,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.03182072,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hutchinson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 485,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.03426467,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Bakwa"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 486,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03365086,
+      "web_name": "McAtee"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 487,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0133347,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dominguez"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 488,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.1147777,
+      "p_rise_24h": 0.0099518,
+      "web_name": "I.Sangar\u00e9"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 489,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.00996303,
+      "p_rise_24h": 0.01220678,
+      "web_name": "Yates"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 490,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.03452649,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Wood"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 491,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.02147808,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Igor Jesus"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 493,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02015581,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kalimuendo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 558,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01339426,
+      "web_name": "Schlager"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 581,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02303783,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Diomande"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 590,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01258311,
+      "web_name": "Benda"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 112,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02640644,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Van Hecke"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 401,
+      "model_status": "COLD_START",
+      "now_cost": 70,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.06102581,
+      "web_name": "Marmoush"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 403,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.0455352,
+      "p_rise_24h": 0.0099518,
+      "web_name": "S\u00e1vio"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 455,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.03156796,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tonali"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 494,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.08783092,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Vicario"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 495,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01411954,
+      "web_name": "Austin"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 496,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01529199,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Kinsky"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 497,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01001947,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Dubravka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 498,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.03625799,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Senesi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 499,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0171395,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Pedro Porro"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 500,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.13731832,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Romero"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 501,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01870071,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Danso"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 502,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01642473,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Robertson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 503,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01905023,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Van de Ven"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 505,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.12563177,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Spence"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 506,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01795023,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Udogie"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 507,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02735702,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Phillips"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 508,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01426927,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Davies"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 509,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01055718,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Byfield"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 510,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01153046,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rowswell"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 511,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01160258,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Souza"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 512,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.0269301,
+      "web_name": "Kudus"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 513,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.02677686,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Xavi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 514,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.05548186,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Tel"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 515,
+      "model_status": "COLD_START",
+      "now_cost": 64,
+      "p_fall_24h": 0.21908952,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Maddison"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 516,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01446458,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bentancur"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 517,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.02017773,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Odobert"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 518,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.01051382,
+      "p_rise_24h": 0.01976093,
+      "web_name": "P.M.Sarr"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 519,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.03265858,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gallagher"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 520,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01911361,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Bergvall"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 521,
+      "model_status": "COLD_START",
+      "now_cost": 65,
+      "p_fall_24h": 0.02178085,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Kulusevski"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 522,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01412431,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Gray"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 523,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02305549,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Moore"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 524,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01690349,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Olusesi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 525,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.03393983,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Fernandes"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 526,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.02867392,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Solanke"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 527,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.07252174,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Richarlison"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 528,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01771047,
+      "web_name": "Scarlett"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 601,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.03564597,
+      "web_name": "Williams-Barnett"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 529,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01550387,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Roefs"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 530,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.04423653,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Patterson"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 531,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01291402,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ellborg"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 532,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01799111,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Ballard"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 533,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.01011528,
+      "p_rise_24h": 0.01218826,
+      "web_name": "Mukiele"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 534,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01507288,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Hume"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 535,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.02353324,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Alderete"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 536,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.01196613,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Reinildo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 537,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.02845317,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Seelt"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 538,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.03961375,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Hjelde"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 539,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.01428885,
+      "p_rise_24h": 0.01212843,
+      "web_name": "O'Nien"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 540,
+      "model_status": "COLD_START",
+      "now_cost": 40,
+      "p_fall_24h": 0.04310637,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Masuaku"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 541,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.00998926,
+      "p_rise_24h": 0.01291149,
+      "web_name": "Meunier"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 542,
+      "model_status": "COLD_START",
+      "now_cost": 59,
+      "p_fall_24h": 0.04158731,
+      "p_rise_24h": 0.01212843,
+      "web_name": "E.Le F\u00e9e"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 543,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.03893823,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Diarra"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 544,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0101826,
+      "p_rise_24h": 0.01226561,
+      "web_name": "Xhaka"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 545,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01486262,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Sadiki"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 546,
+      "model_status": "COLD_START",
+      "now_cost": 49,
+      "p_fall_24h": 0.04248205,
+      "p_rise_24h": 0.0099518,
+      "web_name": "Adingra"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 547,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01062503,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Mundle"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 548,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0134334,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Rigg"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 549,
+      "model_status": "COLD_START",
+      "now_cost": 54,
+      "p_fall_24h": 0.02202779,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Talbi"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 550,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.01019577,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Jocelin.T"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 551,
+      "model_status": "COLD_START",
+      "now_cost": 50,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02921418,
+      "web_name": "Angulo"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 552,
+      "model_status": "COLD_START",
+      "now_cost": 60,
+      "p_fall_24h": 0.03179898,
+      "p_rise_24h": 0.01212843,
+      "web_name": "Brobbey"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 553,
+      "model_status": "COLD_START",
+      "now_cost": 55,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.02568122,
+      "web_name": "Isidor"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 612,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.01469996,
+      "web_name": "Methalie"
+    },
+    {
+      "confidence": "LOW",
+      "element_id": 613,
+      "model_status": "COLD_START",
+      "now_cost": 45,
+      "p_fall_24h": 0.0099518,
+      "p_rise_24h": 0.10575841,
+      "web_name": "Ahoka"
+    }
+  ],
+  "schema_version": 1,
+  "serving_authorized": false,
+  "source_bootstrap_sha256": "fca2ebf0d5c9a0c22cc6ea17e7c109ef45d16cc604232ce5fed5cd1f6aa91ca4",
+  "source_snapshot_at_utc": "2026-09-01T06:37:20.066919+00:00"
+}
