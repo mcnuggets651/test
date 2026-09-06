@@ -31,17 +31,22 @@ jobs:
       - name: Pure adapter tests
         run: python test_live_gw.py
 
-      - name: Install pinned open-source stack
-        run: bash bootstrap.sh
+      - name: Install pinned free stack and refreshed public mappings
+        run: bash bootstrap_v2.sh
 
       - name: Generate genuine GW4 Dastan projections
         run: |
-          .venv/bin/python live_gw.py \
+          .venv/bin/python live_gw_v2.py \
             --gameweek 4 \
             --dastan-repo .vendor/smartplayfpl-dastan \
+            --smartplay-public-repo .vendor/smartplayfpl-public \
             --work-dir "$RUNNER_TEMP/dastan-smartplay-free" \
             --output-dir output \
             --reference smartplay_gw4_spotcheck.csv
+
+      - name: Validate SmartPlay Solver projection contract
+        if: success()
+        run: .venv/bin/smartplay-solver validate-projections output/dastan_gw4_solver.csv --gameweek 4 --horizon 1
 
       - name: Print acceptance evidence
         if: always()
