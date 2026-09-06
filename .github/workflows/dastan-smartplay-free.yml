@@ -1,0 +1,55 @@
+name: Dastan SmartPlay Free Acceptance
+
+on:
+  push:
+    branches:
+      - prototype/dastan-smartplay
+    paths:
+      - experiments/dastan_smartplay_free/**
+      - .github/workflows/dastan-smartplay-free.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gw4-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: experiments/dastan_smartplay_free
+    steps:
+      - name: Checkout prototype branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pure adapter tests
+        run: python test_live_gw.py
+
+      - name: Install pinned open-source stack
+        run: bash bootstrap.sh
+
+      - name: Generate genuine GW4 Dastan projections
+        run: |
+          .venv/bin/python live_gw.py \
+            --gameweek 4 \
+            --dastan-repo .vendor/smartplayfpl-dastan \
+            --work-dir "$RUNNER_TEMP/dastan-smartplay-free" \
+            --output-dir output \
+            --reference smartplay_gw4_spotcheck.csv
+
+      - name: Print acceptance evidence
+        if: always()
+        run: |
+          if [[ -f output/dastan_gw4_acceptance.json ]]; then
+            cat output/dastan_gw4_acceptance.json
+          fi
+          if [[ -f output/dastan_gw4_solver.csv ]]; then
+            echo '--- top solver rows ---'
+            head -n 21 output/dastan_gw4_solver.csv
+          fi
