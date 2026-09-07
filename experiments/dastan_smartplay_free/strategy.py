@@ -456,6 +456,7 @@ def main(argv: list[str] | None = None) -> int:
 
     acceptance = projection_dir / f"dastan_gw{gameweek}_acceptance.json"
     solver_csv = projection_dir / f"dastan_gw{gameweek}_solver.csv"
+    fixtures_csv = projection_dir / f"dastan_gw{gameweek}_fixtures.csv"
     reference = root / f"smartplay_gw{gameweek}_spotcheck.csv"
 
     if args.force_refresh or not reusable_acceptance(
@@ -481,8 +482,10 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print(f"Reusing fresh GW{gameweek} Dastan projection snapshot: {acceptance}")
 
-    if not acceptance.exists() or not solver_csv.exists():
-        raise RuntimeError("projection run did not produce the required acceptance and solver files")
+    if not acceptance.exists() or not solver_csv.exists() or not fixtures_csv.exists():
+        raise RuntimeError(
+            "projection run did not produce the required acceptance, aggregate solver and per-fixture files"
+        )
 
     python = str(root / ".venv" / "bin" / "python")
     solver = str(root / ".venv" / "bin" / "smartplay-solver")
@@ -558,6 +561,7 @@ def main(argv: list[str] | None = None) -> int:
         "inputs": {
             "projection_acceptance_sha256": sha256_file(acceptance),
             "projection_csv_sha256": sha256_file(solver_csv),
+            "projection_fixtures_sha256": sha256_file(fixtures_csv),
         },
         "solution": {
             "summary_sha256": sha256_file(solution_dir / "summary.md"),
