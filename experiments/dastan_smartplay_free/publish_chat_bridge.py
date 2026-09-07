@@ -167,9 +167,11 @@ def branch_exists(repo: Path, branch: str) -> bool:
 
 
 def ensure_author(worktree: Path) -> None:
-    if not git_text(worktree, "config", "user.name"):
+    name = git(worktree, "config", "user.name", check=False).stdout.strip()
+    email = git(worktree, "config", "user.email", check=False).stdout.strip()
+    if not name:
         git(worktree, "config", "user.name", "Dastan Local Bridge")
-    if not git_text(worktree, "config", "user.email"):
+    if not email:
         git(worktree, "config", "user.email", "dastan-local@users.noreply.github.com")
 
 
