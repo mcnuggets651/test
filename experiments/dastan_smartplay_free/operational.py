@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 PRIVATE_REPO_SLUG = "mcnuggets651/fpl"
-OPERATIONAL_SCHEMA = "dastan-smartplay-operational-v2"
+OPERATIONAL_SCHEMA = "dastan-smartplay-operational-v3"
 STRATEGY_SCHEMA = "dastan-smartplay-free-strategy-v2"
 AI_SIDECAR_FILES = (
     "ai_decision_context.json",
@@ -34,7 +34,7 @@ QUERY_FILES = (
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
+        for block in iter(lambda: handle.read(1024 * 1024, b""), b""):
             digest.update(block)
     return digest.hexdigest()
 
@@ -269,6 +269,16 @@ def generate_ai_sidecar(snapshot: Path, output_dir: Path) -> dict[str, Any]:
         raise
 
 
+def publish_chat_sidecar(output_dir: Path, private_repo: Path) -> dict[str, Any]:
+    import publish_chat_bridge
+
+    return publish_chat_bridge.publish(
+        state_dir=output_dir,
+        private_repo=private_repo,
+        script_dir=Path(__file__).resolve().parent,
+    )
+
+
 def public_repo_root(root: Path) -> Path | None:
     result = subprocess.run(
         ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
@@ -281,7 +291,10 @@ def public_repo_root(root: Path) -> Path | None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Operational £0 owner solve: private authority-aware state -> live Dastan -> SmartPlay Solver -> read-only AI context"
+        description=(
+            "Operational £0 owner solve: private authority-aware state -> live Dastan -> "
+            "SmartPlay Solver -> read-only AI context -> private Git chat bridge"
+        )
     )
     parser.add_argument("--private-repo", type=Path, help="local checkout of mcnuggets651/fpl")
     parser.add_argument("--output-dir", type=Path)
@@ -289,6 +302,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--force-refresh", action="store_true")
     parser.add_argument("--plan-b", action="store_true")
     parser.add_argument("--no-hits", action="store_true")
+    parser.add_argument(
+        "--no-chat-publish",
+        action="store_true",
+        help="keep the result local instead of syncing the private ChatGPT-readable bridge",
+    )
     parser.add_argument("--max-projection-age-hours", type=float, default=6.0)
     args = parser.parse_args(argv)
     if args.max_projection_age_hours <= 0:
@@ -356,6 +374,34 @@ def main(argv: list[str] | None = None) -> int:
                     file=sys.stderr,
                 )
 
+            if ai_metadata.get("status") != "ready":
+                chat_metadata: dict[str, Any] = {
+                    "status": "skipped",
+                    "reason": "ai_context_unavailable",
+                    "core_model_result_valid": True,
+                }
+            elif args.no_chat_publish:
+                chat_metadata = {
+                    "status": "disabled",
+                    "reason": "--no-chat-publish",
+                    "core_model_result_valid": True,
+                }
+            else:
+                try:
+                    chat_metadata = publish_chat_sidecar(output_dir, private_repo)
+                except Exception as exc:
+                    chat_metadata = {
+                        "status": "failed",
+                        "error_type": type(exc).__name__,
+                        "message": str(exc)[:500],
+                        "core_model_result_valid": True,
+                    }
+                    print(
+                        "WARNING: core Dastan/SmartPlay solve and AI context succeeded, but private chat sync failed: "
+                        f"{type(exc).__name__}: {str(exc)[:300]}",
+                        file=sys.stderr,
+                    )
+
             operational_manifest = {
                 "schema": OPERATIONAL_SCHEMA,
                 "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -372,12 +418,15 @@ def main(argv: list[str] | None = None) -> int:
                 },
                 "strategy_manifest_sha256": sha256_file(strategy_manifest_path),
                 "ai_decision_context": ai_metadata,
+                "chat_bridge": chat_metadata,
                 "operational_contract": {
                     "horizon": 1,
                     "owner_state": "authority-aware latest immutable PRIVATE_MANAGER",
                     "private_snapshot_retained": False,
                     "ai_layer": "read-only post-solve sidecar",
                     "ai_failure_invalidates_core_model": False,
+                    "chat_bridge": "private Git immutable run commit plus latest pointer",
+                    "chat_publish_failure_invalidates_core_model": False,
                     "cost": "zero_paid_services",
                 },
             }
@@ -391,7 +440,12 @@ def main(argv: list[str] | None = None) -> int:
             if ai_metadata.get("status") == "ready":
                 print(f"AI decision context: {output_dir / str(ai_metadata['context_file'])}")
                 print(f"AI decision brief: {output_dir / str(ai_metadata['brief_file'])}")
-                print("Chat use: attach ai_decision_context.json and ask for a current-context interpretation.")
+            if chat_metadata.get("status") == "ready":
+                print(
+                    "Chat bridge synced: "
+                    f"{chat_metadata['repository']}@{chat_metadata['branch']}:{chat_metadata['pointer_path']}"
+                )
+                print("Chat use: ask ChatGPT for the latest Dastan recommendation; no file upload is required.")
     return 0
 
 
