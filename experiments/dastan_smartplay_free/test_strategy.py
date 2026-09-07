@@ -28,12 +28,14 @@ def apex_snapshot() -> dict:
             "run_id": "run-1",
             "release_tag": "tag-1",
             "published_at": "2026-09-07T00:00:00Z",
+            "target_gameweek": 4,
         },
         "team_state": {
             "entry_id": 63984,
             "published_gw": 3,
             "bank_tenths": 5,
             "free_transfers": 2,
+            "active_chip": None,
             "state_complete_for_transfers": True,
             "squad": squad,
         },
@@ -50,6 +52,7 @@ class StrategyStateTests(unittest.TestCase):
         self.assertEqual(team["transfers"]["value"], sum(45 + i for i in range(15)))
         self.assertEqual(provenance["mode"], "apex_private_strategy_snapshot")
         self.assertEqual(provenance["entry_id"], 63984)
+        self.assertEqual(provenance["target_gameweek"], 4)
         self.assertNotIn("squad", provenance)
 
     def test_apex_snapshot_fails_closed_without_private_attestation(self) -> None:
@@ -63,6 +66,18 @@ class StrategyStateTests(unittest.TestCase):
         payload["team_state"]["state_complete_for_transfers"] = False
         with self.assertRaisesRegex(ValueError, "complete for transfers"):
             strategy.solver_team_from_apex_snapshot(payload)
+
+    def test_apex_snapshot_fails_closed_on_active_chip(self) -> None:
+        payload = apex_snapshot()
+        payload["team_state"]["active_chip"] = "wildcard"
+        with self.assertRaisesRegex(ValueError, "active chip"):
+            strategy.solver_team_from_apex_snapshot(payload)
+
+    def test_private_snapshot_gameweek_must_match_live_is_next(self) -> None:
+        _, provenance = strategy.solver_team_from_apex_snapshot(apex_snapshot())
+        strategy.validate_team_state_gameweek(provenance, 4)
+        with self.assertRaisesRegex(ValueError, "targets GW4.*GW5"):
+            strategy.validate_team_state_gameweek(provenance, 5)
 
     def test_solver_team_rejects_duplicate_elements(self) -> None:
         team, _ = strategy.solver_team_from_apex_snapshot(apex_snapshot())
