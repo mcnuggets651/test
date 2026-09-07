@@ -33,14 +33,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pure adapter, strategy and operational unit tests
-        run: python -m unittest -v test_live_gw.py test_strategy.py test_operational.py
+      - name: Pure adapter, strategy, operational and AI-context unit tests
+        run: python -m unittest -v test_live_gw.py test_strategy.py test_operational.py test_ai_context.py
 
       - name: Install pinned free stack and refreshed public mappings
         run: bash bootstrap_v2.sh
 
-      - name: Export, parity, acceptance and operational regression tests
-        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py test_strategy.py test_operational.py
+      - name: Export, parity, acceptance, operational and AI-context regression tests
+        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py test_strategy.py test_operational.py test_ai_context.py
 
       - name: Prepare public offline solver runtime
         run: |
@@ -93,6 +93,7 @@ jobs:
           name: dastan-gw4-public-${{ github.sha }}
           path: |
             experiments/dastan_smartplay_free/output/dastan_gw4_solver.csv
+            experiments/dastan_smartplay_free/output/dastan_gw4_fixtures.csv
             experiments/dastan_smartplay_free/output/dastan_gw4_acceptance.json
             experiments/dastan_smartplay_free/output/wheels/*.whl
             experiments/dastan_smartplay_free/output/smartplay-solver-src.tgz
