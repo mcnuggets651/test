@@ -14,7 +14,7 @@ The acceptance workflow has demonstrated a complete live GW4 run with:
 - current Coventry/Hull Understat mappings verified;
 - exact released Dastan weights used for inference;
 - SmartPlay Solver projection validation passed;
-- adapter, acceptance, strategy, operational-orchestration and AI-context tests green.
+- adapter, acceptance, strategy, operational-orchestration, AI-context and private-chat-publisher tests.
 
 The hosted SmartPlay service applies a separate early-season serving overlay during
 GW1–5. Hosted values are therefore **diagnostic only** in that period. This engine is
@@ -33,7 +33,7 @@ The public model/solver stack is consumed at exact commits:
 
 ## Architecture
 
-`authority-aware private owner state -> Official FPL + Understat -> live adapter -> Dastan feature builder/weights -> SmartPlay Solver -> verified strategy manifest -> private AI decision context -> AI interpretation`
+`authority-aware private owner state -> Official FPL + Understat -> live adapter -> Dastan feature builder/weights -> SmartPlay Solver -> verified strategy manifest -> private AI decision context -> private Git chat bridge -> AI interpretation`
 
 The adapter does not retrain Dastan and does not implement a second model. It calls
 Dastan's own public reconstruction, feature-building and inference code, with the thin
@@ -41,6 +41,10 @@ current-season identity/fixture boundary required to serve the live season.
 
 The AI layer is a read-only sidecar. It **cannot change Dastan xP, expected minutes,
 SmartPlay constraints, Solver output, owner state, or account state**.
+
+The chat bridge is transport only. It does not make Dastan an Apex serving model and
+cannot submit an FPL action. Public Apex machine authority remains external to this
+experiment.
 
 No SmartPlay website scraping is performed.
 
@@ -75,6 +79,16 @@ For deadline-sensitive decisions, force a new public projection reconstruction:
 python3 operational.py --private-repo ~/fpl --force-refresh
 ```
 
+**Normal successful runs automatically publish the completed private AI context to
+the private `mcnuggets651/fpl:dastan-results` chat bridge.** No file upload to ChatGPT
+is required after a successful sync.
+
+For a deliberately local-only run:
+
+```bash
+python3 operational.py --private-repo ~/fpl --force-refresh --no-chat-publish
+```
+
 Useful policy switches are passed through to the strategy runner:
 
 ```bash
@@ -100,13 +114,15 @@ default policy.
 8. refuses output inside either the public or private Git worktree;
 9. uses an exclusive per-entry lock to prevent concurrent solves from racing the same state;
 10. generates the private AI sidecar only **after** the core strategy manifest is verified;
-11. records AI-sidecar status/hashes in `operational_manifest.json`;
-12. treats AI-sidecar failure as non-destructive: the completed Dastan/SmartPlay result remains valid;
-13. deletes the temporary private snapshot automatically.
+11. removes stale/partial prior AI handoff files before/after a failed AI-sidecar build;
+12. automatically publishes a successful AI context to the private chat bridge unless `--no-chat-publish` is supplied;
+13. records AI-sidecar and chat-bridge status/hashes in `operational_manifest.json`;
+14. treats AI-sidecar or chat-publish failure as non-destructive: the completed Dastan/SmartPlay result remains valid;
+15. deletes the temporary private snapshot automatically.
 
 ## AI-in-the-loop interpretation
 
-A successful operational run now creates three additional private local files:
+A successful operational run creates three additional private local files:
 
 - `ai_decision_context.json`
 - `ai_decision_brief.md`
@@ -118,7 +134,7 @@ CI**.
 `ai_decision_context.json` contains a structured, hash-verified handoff with:
 
 - exact bank, free transfers and transfer budget;
-- the current 15-player squad with exact purchase/selling prices;
+- the current 15-player squad with exact purchase/selling/current prices;
 - every Dastan GW+1 player xP and expected-minutes forecast;
 - per-fixture Dastan evidence including `p60` and `p_any`;
 - the exact SmartPlay transfers, XI, captain, vice-captain and bench order;
@@ -145,20 +161,76 @@ The AI contract is deliberately strict:
 See [`AI_DECISION_CONTRACT.md`](AI_DECISION_CONTRACT.md) for the full trust boundary,
 schema and failure-isolation rules.
 
-### Using the model with ChatGPT
+## Private ChatGPT bridge
 
-After the local run completes, attach:
+The normal user experience is now:
 
 ```text
-~/.local/share/dastan-smartplay-free/entry-<id>/gw<gw>/ai_decision_context.json
+Mac operational.py
+  -> verified Dastan + SmartPlay result
+  -> private AI decision context
+  -> mcnuggets651/fpl:dastan-results
+  -> connected ChatGPT
 ```
 
-to ChatGPT and ask:
+The publisher is `publish_chat_bridge.py`.
 
-> Interpret this Dastan + SmartPlay decision for the current FPL deadline. Use the model numbers as fixed evidence, research current external context, challenge one-week structural weaknesses, and give one final recommendation. Do not invent unsolved numerical counterfactuals.
+### Private two-commit protocol
 
-`ai_decision_brief.md` contains the same ready-to-use instruction plus the headline
-transfer/XI/captain result for quick inspection.
+For every successful publish it creates:
+
+1. an immutable run commit under
+   `dastan/runs/entry-<id>/gw<gw>/<timestamp>-<context-sha-prefix>/`;
+2. a second fast-forward commit updating
+   `dastan/latest/entry-<id>.json` to point at that exact run commit.
+
+The immutable run contains only the already validated private AI/strategy handoff:
+
+- `ai_decision_context.json`
+- `ai_decision_context.sha256`
+- `ai_decision_brief.md`
+- `strategy_manifest.json`
+- `bridge_run_manifest.json`
+
+The publisher:
+
+- requires the real private repo origin to be `mcnuggets651/fpl`;
+- requires the dedicated private `dastan-results` branch;
+- validates context schema/privacy/horizon/checksums/strategy binding before publishing;
+- refuses to overwrite an existing immutable run path;
+- uses fast-forward pushes only and never force-pushes;
+- uses a temporary detached worktree so the normal `~/fpl` checkout/branch is not switched or modified;
+- safely supplies a local commit identity if the Mac has no Git author configured;
+- never uploads the owner context to the public experiment repository.
+
+The governed private retrieval/authority contract is documented in
+`mcnuggets651/fpl:main/DASTAN_CHAT_BRIDGE.md`.
+
+### Using the model with ChatGPT — no upload
+
+After Terminal prints:
+
+```text
+Chat bridge synced: mcnuggets651/fpl@dastan-results:dastan/latest/entry-63984.json
+```
+
+you can simply ask a connected ChatGPT session:
+
+> What does the latest Dastan run recommend, and do you agree after checking this week's team news and European minutes?
+
+The ChatGPT retrieval contract is:
+
+1. read `dastan/latest/entry-63984.json` from private branch `dastan-results`;
+2. validate pointer schema/entry/GW/status;
+3. fetch `context_path` from the exact immutable `run_commit_sha`, not movable branch head;
+4. validate the context schema, horizon, freshness and integrity;
+5. state raw Dastan/SmartPlay evidence first;
+6. research current external football evidence separately;
+7. interpret/challenge the model without rewriting its numbers;
+8. give one final conversational recommendation.
+
+If there is no valid current pointer, ChatGPT must request a fresh local model run rather
+than pretending a stale run is current.
 
 This gives the intended separation:
 
@@ -236,14 +308,15 @@ A successful operational run contains:
 - `ai_decision_context.sha256`
 - `ai_decision_brief.md`
 
-`strategy_manifest.json` binds the owner-state source hash, Dastan acceptance/projection
-hashes and Solver outputs. `operational_manifest.json` additionally binds the private
-query-code head/files, immutable manager release, strategy manifest and AI-context
-status/hash.
+`strategy_manifest.json` binds the owner-state source hash, aggregate and per-fixture
+Dastan projection hashes, acceptance hash and Solver outputs. `operational_manifest.json`
+additionally binds the private query-code head/files, immutable manager release,
+strategy manifest, AI-context status/hash and chat-bridge status/run/pointer provenance.
 
 `operational_manifest.json` remains privacy-safe and does not contain the full squad.
 The AI context intentionally contains exact manager decision state, so it is classified
-`PRIVATE_MANAGER_LOCAL_ONLY` and must not be committed or publicly uploaded.
+`PRIVATE_MANAGER_LOCAL_ONLY`: it may be persisted only through the governed private
+chat bridge, never committed/uploaded publicly.
 
 ## Scientific boundary
 
@@ -256,8 +329,8 @@ overlay is not present in the open Dastan release. From GW6 the acceptance polic
 require hosted spot-check parity when a current manually captured reference is
 available.
 
-The AI layer does not weaken either boundary. It can discuss longer-term squad
-structure qualitatively, but it must not label fabricated future Dastan numbers as
+The AI/chat layers do not weaken either boundary. They can discuss longer-term squad
+structure qualitatively, but they must not label fabricated future Dastan numbers as
 model evidence.
 
 ## Tests
@@ -271,7 +344,9 @@ python3 -m unittest -v \
   test_check_acceptance.py \
   test_strategy.py \
   test_operational.py \
-  test_ai_context.py
+  test_ai_context.py \
+  test_operational_ai_cleanup.py \
+  test_publish_chat_bridge.py
 ```
 
 `test_strategy.py` covers private attestation, exact 15-player state, FT/bank extraction,
@@ -280,28 +355,39 @@ floor, active-chip/stale-gameweek rejection, SHA-256 binding and projection fres
 
 `test_operational.py` covers private-repo identity, dirty-query rejection, credential
 resolution, suppression of private query stdout, snapshot permissions, strategy hash
-binding, command policy forwarding, AI-sidecar provenance and failure isolation.
+binding, command policy forwarding, AI-sidecar/chat-sync orchestration and independent
+failure isolation.
 
 `test_ai_context.py` covers strict private-state whitelisting, exact owner-state
 requirements, source/output hash verification, projection probability evidence,
 structured transfer/XI/captain/bench extraction, private file permissions, checksums
 and the no-invented-counterfactual rule.
 
+`test_operational_ai_cleanup.py` proves stale/partial AI handoff files cannot survive a
+failed replacement attempt.
+
+`test_publish_chat_bridge.py` uses a real temporary bare Git remote to prove checksum/
+privacy rejection, missing-branch failure, two-commit immutable publication, exact
+pointer-to-run SHA binding, immutable rerun refusal, Git-identity fallback and normal
+private-working-tree isolation.
+
 The public GitHub acceptance workflow additionally performs a genuine GW4 Dastan
 reconstruction and SmartPlay projection-contract validation. Its one-day artifact is
 public-only: aggregate/per-fixture projections, acceptance files, exact pinned Solver
 source, a CPython 3.13-compatible HiGHS wheel and the exact Official FPL bootstrap/
-fixtures used for the offline reproducibility check. **No owner state or AI decision
+fixtures used for the offline reproducibility check. **No owner state or AI/chat
 context is uploaded by this branch.**
 
 ## Cost boundary
 
 The permanent runtime is the user's Mac. Dastan, SmartPlay Solver, Official FPL,
 Understat and the current mapping source are free/public. Owner state is read from the
-existing private GitHub persistence/query plane. The AI context builder is Python
-standard-library only.
+existing private GitHub persistence/query plane. The AI-context builder and chat
+publisher are Python standard-library/Git only.
 
-No paid API, hosted SmartPlay subscription, second daemon or cloud service is required.
+No paid API, hosted SmartPlay subscription, second daemon or cloud inference service is
+required. The private Git bridge uses the existing private repository and existing Git
+authentication.
 
 The public GitHub Action is reproducible acceptance evidence only; normal operation is
 local and does not depend on Actions.
