@@ -71,7 +71,9 @@ The runner requires the snapshot to be:
 - immutable;
 - transfer-complete;
 - exactly 15 unique players;
-- complete for purchase prices, selling prices, bank and free transfers.
+- complete for purchase prices, selling prices, bank and free transfers;
+- targeted at the exact current Official-FPL `is_next` gameweek;
+- free of an active chip (the no-chip GW+1 runner fails closed rather than ignoring one).
 
 It converts that state to SmartPlay's team schema in a mode-`0600` temporary file,
 uses it for the solve, and deletes the temporary file afterwards. The strategy manifest
@@ -148,8 +150,8 @@ python -m unittest -v \
 
 `test_strategy.py` specifically checks private attestation, exact 15-player state,
 FT/bank extraction, duplicate rejection, public-state acknowledgement, private solver
-command construction, the certified one-minute GW+1 candidate floor, SHA-256 binding
-and freshness/future-time rejection.
+command construction, the certified one-minute GW+1 candidate floor, active-chip and
+stale-gameweek rejection, SHA-256 binding and freshness/future-time rejection.
 
 The GitHub acceptance workflow then performs a genuine public GW4 reconstruction and
 SmartPlay projection-contract validation. Its one-day artifact contains only public
