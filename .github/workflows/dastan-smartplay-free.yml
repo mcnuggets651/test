@@ -42,6 +42,13 @@ jobs:
       - name: Export, parity and acceptance regression tests
         run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py test_strategy.py
 
+      - name: Prepare public offline solver runtime
+        run: |
+          mkdir -p output/wheels
+          .venv/bin/python -m pip download --only-binary=:all: --no-deps highspy==1.11.0 -d output/wheels
+          tar --exclude=.git -czf output/smartplay-solver-src.tgz -C .vendor/smartplayfpl-solver .
+          printf '%s\n' '7ec56e944982020f8709db5d00b0b78821fb1f38' > output/smartplay-solver-src.sha
+
       - name: Generate genuine GW4 open-Dastan projections
         run: |
           .venv/bin/python live_gw_v2.py \
@@ -58,7 +65,7 @@ jobs:
       - name: Validate open stack and hosted-parity diagnostic
         run: .venv/bin/python check_acceptance.py output/dastan_gw4_acceptance.json --parity-mode auto
 
-      - name: Upload public acceptance inputs
+      - name: Upload public acceptance/runtime bundle
         if: success()
         uses: actions/upload-artifact@v4
         with:
@@ -66,6 +73,9 @@ jobs:
           path: |
             experiments/dastan_smartplay_free/output/dastan_gw4_solver.csv
             experiments/dastan_smartplay_free/output/dastan_gw4_acceptance.json
+            experiments/dastan_smartplay_free/output/wheels/*.whl
+            experiments/dastan_smartplay_free/output/smartplay-solver-src.tgz
+            experiments/dastan_smartplay_free/output/smartplay-solver-src.sha
           if-no-files-found: error
           retention-days: 1
 
