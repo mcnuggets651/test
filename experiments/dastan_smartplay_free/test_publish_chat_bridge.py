@@ -59,7 +59,7 @@ class PublishChatBridgeTests(unittest.TestCase):
         (state / "ai_decision_brief.md").write_text("# private brief\n", encoding="utf-8")
         return state
 
-    def make_remote(self, base: Path) -> Path:
+    def make_remote(self, base: Path, *, configure_private_author: bool = True) -> Path:
         bare = base / "remote.git"
         run("git", "init", "--bare", str(bare))
         seed = base / "seed"
@@ -76,8 +76,9 @@ class PublishChatBridgeTests(unittest.TestCase):
 
         private = base / "private"
         run("git", "clone", str(bare), str(private))
-        run("git", "config", "user.email", "test@example.com", cwd=private)
-        run("git", "config", "user.name", "Test", cwd=private)
+        if configure_private_author:
+            run("git", "config", "user.email", "test@example.com", cwd=private)
+            run("git", "config", "user.name", "Test", cwd=private)
         return private
 
     def test_validate_bundle_rejects_bad_checksum(self) -> None:
@@ -99,11 +100,27 @@ class PublishChatBridgeTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "unsafe for public"):
                 bridge.validate_local_bundle(state)
 
-    def test_full_publish_creates_immutable_run_then_latest_pointer(self) -> None:
+    def test_missing_results_branch_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
             state = self.make_state(base)
             private = self.make_remote(base)
+            run("git", "push", "origin", "--delete", bridge.RESULTS_BRANCH, cwd=private)
+            with self.assertRaisesRegex(RuntimeError, "does not exist"):
+                bridge.publish(
+                    state_dir=state,
+                    private_repo=private,
+                    require_github_origin=False,
+                    script_dir=private,
+                )
+
+    def test_full_publish_creates_immutable_run_then_latest_pointer(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            state = self.make_state(base)
+            private = self.make_remote(base, configure_private_author=False)
+            self.assertEqual(run("git", "status", "--porcelain", cwd=private), "")
+
             result = bridge.publish(
                 state_dir=state,
                 private_repo=private,
@@ -116,6 +133,7 @@ class PublishChatBridgeTests(unittest.TestCase):
             self.assertEqual(len(result["run_commit_sha"]), 40)
             self.assertEqual(len(result["pointer_commit_sha"]), 40)
             self.assertNotEqual(result["run_commit_sha"], result["pointer_commit_sha"])
+            self.assertEqual(run("git", "status", "--porcelain", cwd=private), "")
 
             run("git", "fetch", "origin", bridge.RESULTS_BRANCH, cwd=private)
             pointer_raw = run(
@@ -139,6 +157,16 @@ class PublishChatBridgeTests(unittest.TestCase):
                 hashlib.sha256((committed_context + "\n").encode("utf-8")).hexdigest(),
                 result["context_sha256"],
             )
+
+            author = run(
+                "git",
+                "show",
+                "-s",
+                "--format=%an <%ae>",
+                result["run_commit_sha"],
+                cwd=private,
+            )
+            self.assertEqual(author, "Dastan Local Bridge <dastan-local@users.noreply.github.com>")
 
             with self.assertRaisesRegex(RuntimeError, "immutable run path already exists"):
                 bridge.publish(
