@@ -14,7 +14,7 @@ The acceptance workflow has demonstrated a complete live GW4 run with:
 - current Coventry/Hull Understat mappings verified;
 - exact released Dastan weights used for inference;
 - SmartPlay Solver projection validation passed;
-- adapter, acceptance, strategy and operational-orchestration tests green.
+- adapter, acceptance, strategy, operational-orchestration and AI-context tests green.
 
 The hosted SmartPlay service applies a separate early-season serving overlay during
 GW1–5. Hosted values are therefore **diagnostic only** in that period. This engine is
@@ -33,12 +33,14 @@ The public model/solver stack is consumed at exact commits:
 
 ## Architecture
 
-`authority-aware private owner state -> Official FPL + Understat -> live adapter ->
-Dastan feature builder/weights -> SmartPlay Solver -> one recommendation`
+`authority-aware private owner state -> Official FPL + Understat -> live adapter -> Dastan feature builder/weights -> SmartPlay Solver -> verified strategy manifest -> private AI decision context -> AI interpretation`
 
 The adapter does not retrain Dastan and does not implement a second model. It calls
 Dastan's own public reconstruction, feature-building and inference code, with the thin
 current-season identity/fixture boundary required to serve the live season.
+
+The AI layer is a read-only sidecar. It **cannot change Dastan xP, expected minutes,
+SmartPlay constraints, Solver output, owner state, or account state**.
 
 No SmartPlay website scraping is performed.
 
@@ -54,14 +56,14 @@ closed when a current authority-matched manager state is unavailable.
 From this directory:
 
 ```bash
-python operational.py --private-repo /path/to/fpl
+python3 operational.py --private-repo /path/to/fpl
 ```
 
 If the private `fpl` checkout is a sibling of this public repository, or
 `FPL_PRIVATE_REPO` is set, `--private-repo` can be omitted:
 
 ```bash
-python operational.py
+python3 operational.py
 ```
 
 Authentication is taken from `GITHUB_TOKEN` when present; otherwise the runner uses
@@ -70,14 +72,14 @@ Authentication is taken from `GITHUB_TOKEN` when present; otherwise the runner u
 For deadline-sensitive decisions, force a new public projection reconstruction:
 
 ```bash
-python operational.py --force-refresh
+python3 operational.py --private-repo ~/fpl --force-refresh
 ```
 
 Useful policy switches are passed through to the strategy runner:
 
 ```bash
-python operational.py --posture neutral --plan-b
-python operational.py --no-hits
+python3 operational.py --posture neutral --plan-b
+python3 operational.py --no-hits
 ```
 
 Normal operation leaves hits available to the Solver; it will only use them when its
@@ -97,9 +99,72 @@ default policy.
 7. validates that `strategy_manifest.json` is SHA-256-bound to the queried snapshot;
 8. refuses output inside either the public or private Git worktree;
 9. uses an exclusive per-entry lock to prevent concurrent solves from racing the same state;
-10. writes a privacy-safe `operational_manifest.json` containing query-code SHA/provenance,
-    manager release identity and hashes, but not the 15-player squad;
-11. deletes the temporary private snapshot automatically.
+10. generates the private AI sidecar only **after** the core strategy manifest is verified;
+11. records AI-sidecar status/hashes in `operational_manifest.json`;
+12. treats AI-sidecar failure as non-destructive: the completed Dastan/SmartPlay result remains valid;
+13. deletes the temporary private snapshot automatically.
+
+## AI-in-the-loop interpretation
+
+A successful operational run now creates three additional private local files:
+
+- `ai_decision_context.json`
+- `ai_decision_brief.md`
+- `ai_decision_context.sha256`
+
+All three are written atomically at mode `0600`. They are **never uploaded by public
+CI**.
+
+`ai_decision_context.json` contains a structured, hash-verified handoff with:
+
+- exact bank, free transfers and transfer budget;
+- the current 15-player squad with exact purchase/selling prices;
+- every Dastan GW+1 player xP and expected-minutes forecast;
+- per-fixture Dastan evidence including `p60` and `p_any`;
+- the exact SmartPlay transfers, XI, captain, vice-captain and bench order;
+- Solver total xP, Solver statistics xP and objective score;
+- Dastan acceptance/provenance;
+- SHA-256 hashes for the private snapshot, model inputs and Solver outputs;
+- a machine-readable AI interpretation contract.
+
+The source private snapshot is **not copied wholesale**. Only a decision-relevant
+whitelist is retained, so unrelated private fields do not leak into the AI bundle.
+
+The AI contract is deliberately strict:
+
+- Dastan xP/minutes remain fixed model evidence;
+- SmartPlay output remains fixed optimizer evidence;
+- AI may add separately sourced live context such as injuries, European/cup minutes,
+  press conferences, role/set-piece changes and price-change risk;
+- AI must not silently replace model values;
+- AI must not fabricate future-GW Dastan projections;
+- AI must not attach a made-up numerical edge to an unsolved structural alternative;
+- the final answer should separate **model result**, **external evidence**,
+  **AI interpretation**, and **final recommendation**.
+
+See [`AI_DECISION_CONTRACT.md`](AI_DECISION_CONTRACT.md) for the full trust boundary,
+schema and failure-isolation rules.
+
+### Using the model with ChatGPT
+
+After the local run completes, attach:
+
+```text
+~/.local/share/dastan-smartplay-free/entry-<id>/gw<gw>/ai_decision_context.json
+```
+
+to ChatGPT and ask:
+
+> Interpret this Dastan + SmartPlay decision for the current FPL deadline. Use the model numbers as fixed evidence, research current external context, challenge one-week structural weaknesses, and give one final recommendation. Do not invent unsolved numerical counterfactuals.
+
+`ai_decision_brief.md` contains the same ready-to-use instruction plus the headline
+transfer/XI/captain result for quick inspection.
+
+This gives the intended separation:
+
+`Dastan + SmartPlay = quantitative anchor`
+
+`AI = current-context interpretation, challenge and explanation`
 
 ## Lower-level strategy runner
 
@@ -107,7 +172,7 @@ default policy.
 obtained:
 
 ```bash
-python strategy.py --apex-strategy-snapshot /private/path/strategy_snapshot.json
+python3 strategy.py --apex-strategy-snapshot /private/path/strategy_snapshot.json
 ```
 
 The private Apex snapshot must be:
@@ -123,7 +188,7 @@ The private Apex snapshot must be:
 A native SmartPlay team JSON is also accepted:
 
 ```bash
-python strategy.py --team-file /private/path/team.json
+python3 strategy.py --team-file /private/path/team.json
 ```
 
 Public entry mode is a guarded fallback only. Official FPL does not expose the current
@@ -131,7 +196,7 @@ FT counter and can hide transfers made since the most recent deadline, so the ca
 must explicitly confirm the revealed state and provide FT/bank:
 
 ```bash
-python strategy.py \
+python3 strategy.py \
   --entry-id 63984 \
   --public-state-is-current \
   --free-transfers 2 \
@@ -161,16 +226,24 @@ A successful operational run contains:
 
 - `projections/dastan_gw<gw>_acceptance.json`
 - `projections/dastan_gw<gw>_solver.csv`
+- `projections/dastan_gw<gw>_fixtures.csv`
 - `solution/summary.md`
 - `solution/picks.csv`
 - `solution/solution.json`
 - `strategy_manifest.json`
 - `operational_manifest.json`
+- `ai_decision_context.json`
+- `ai_decision_context.sha256`
+- `ai_decision_brief.md`
 
 `strategy_manifest.json` binds the owner-state source hash, Dastan acceptance/projection
 hashes and Solver outputs. `operational_manifest.json` additionally binds the private
-query-code head/files and immutable manager release used to obtain that owner state.
-Neither manifest contains the full private squad.
+query-code head/files, immutable manager release, strategy manifest and AI-context
+status/hash.
+
+`operational_manifest.json` remains privacy-safe and does not contain the full squad.
+The AI context intentionally contains exact manager decision state, so it is classified
+`PRIVATE_MANAGER_LOCAL_ONLY` and must not be committed or publicly uploaded.
 
 ## Scientific boundary
 
@@ -183,17 +256,22 @@ overlay is not present in the open Dastan release. From GW6 the acceptance polic
 require hosted spot-check parity when a current manually captured reference is
 available.
 
+The AI layer does not weaken either boundary. It can discuss longer-term squad
+structure qualitatively, but it must not label fabricated future Dastan numbers as
+model evidence.
+
 ## Tests
 
 Pure regression suite:
 
 ```bash
-python -m unittest -v \
+python3 -m unittest -v \
   test_live_gw.py \
   test_live_gw_v2.py \
   test_check_acceptance.py \
   test_strategy.py \
-  test_operational.py
+  test_operational.py \
+  test_ai_context.py
 ```
 
 `test_strategy.py` covers private attestation, exact 15-player state, FT/bank extraction,
@@ -202,21 +280,28 @@ floor, active-chip/stale-gameweek rejection, SHA-256 binding and projection fres
 
 `test_operational.py` covers private-repo identity, dirty-query rejection, credential
 resolution, suppression of private query stdout, snapshot permissions, strategy hash
-binding, command policy forwarding, and a full fake-owner orchestration from private
-query through the final operational manifest.
+binding, command policy forwarding, AI-sidecar provenance and failure isolation.
+
+`test_ai_context.py` covers strict private-state whitelisting, exact owner-state
+requirements, source/output hash verification, projection probability evidence,
+structured transfer/XI/captain/bench extraction, private file permissions, checksums
+and the no-invented-counterfactual rule.
 
 The public GitHub acceptance workflow additionally performs a genuine GW4 Dastan
 reconstruction and SmartPlay projection-contract validation. Its one-day artifact is
-public-only: projection/acceptance files, exact pinned Solver source, a CPython
-3.13-compatible HiGHS wheel and the exact Official FPL bootstrap/fixtures used for the
-offline reproducibility check. **No owner state is uploaded by this branch.**
+public-only: aggregate/per-fixture projections, acceptance files, exact pinned Solver
+source, a CPython 3.13-compatible HiGHS wheel and the exact Official FPL bootstrap/
+fixtures used for the offline reproducibility check. **No owner state or AI decision
+context is uploaded by this branch.**
 
 ## Cost boundary
 
 The permanent runtime is the user's Mac. Dastan, SmartPlay Solver, Official FPL,
 Understat and the current mapping source are free/public. Owner state is read from the
-existing private GitHub persistence/query plane. No paid API, hosted SmartPlay
-subscription, second daemon or cloud service is required.
+existing private GitHub persistence/query plane. The AI context builder is Python
+standard-library only.
+
+No paid API, hosted SmartPlay subscription, second daemon or cloud service is required.
 
 The public GitHub Action is reproducible acceptance evidence only; normal operation is
 local and does not depend on Actions.
