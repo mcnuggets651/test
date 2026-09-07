@@ -19,6 +19,11 @@ from typing import Any, Iterator
 PRIVATE_REPO_SLUG = "mcnuggets651/fpl"
 OPERATIONAL_SCHEMA = "dastan-smartplay-operational-v2"
 STRATEGY_SCHEMA = "dastan-smartplay-free-strategy-v2"
+AI_SIDECAR_FILES = (
+    "ai_decision_context.json",
+    "ai_decision_context.sha256",
+    "ai_decision_brief.md",
+)
 QUERY_FILES = (
     "tools/apex_strategy_query.py",
     "tools/apex_private_query.py",
@@ -248,10 +253,20 @@ def validate_strategy_manifest(path: Path, identity: dict[str, Any]) -> dict[str
     return payload
 
 
+def clear_ai_sidecar(output_dir: Path) -> None:
+    for name in AI_SIDECAR_FILES:
+        (output_dir / name).unlink(missing_ok=True)
+
+
 def generate_ai_sidecar(snapshot: Path, output_dir: Path) -> dict[str, Any]:
     import ai_context
 
-    return ai_context.write_bundle(output_dir, snapshot)
+    clear_ai_sidecar(output_dir)
+    try:
+        return ai_context.write_bundle(output_dir, snapshot)
+    except Exception:
+        clear_ai_sidecar(output_dir)
+        raise
 
 
 def public_repo_root(root: Path) -> Path | None:
