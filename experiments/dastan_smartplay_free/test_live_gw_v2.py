@@ -89,12 +89,12 @@ class LiveGWV2Tests(unittest.TestCase):
             "available": True,
             "matched": 5,
             "total": 5,
-            "mae": 0.08,
+            "mae": 0.072,
             "rows": [
                 {"smartplay_xpts": 4.6, "xpts": 4.62, "delta": 0.02},
                 {"smartplay_xpts": 4.7, "xpts": 4.72, "delta": 0.02},
                 {"smartplay_xpts": 3.0, "xpts": 3.04, "delta": 0.04},
-                {"smartplay_xpts": 4.1, "xpts": 4.16, "delta": 0.06},
+                {"smartplay_xpts": 4.1, "xpts": 4.14, "delta": 0.04},
                 {"smartplay_xpts": 2.2, "xpts": 2.44, "delta": 0.24},
             ],
         }
