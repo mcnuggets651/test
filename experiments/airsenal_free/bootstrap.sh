@@ -41,13 +41,17 @@ resolve_exact_python() {
   done
 
   if [[ "$(uname -s)" == "Darwin" ]] && command -v brew >/dev/null 2>&1; then
-    brew update --quiet
+    # This function is called in a command substitution. Homebrew can print
+    # advisory text on stdout even for successful operations, so suppress all
+    # Homebrew command output here. The only stdout from this function must be
+    # the final exact interpreter path emitted by printf below.
+    brew update --quiet >/dev/null 2>&1
     if brew list --versions python@3.12 >/dev/null 2>&1; then
       brew upgrade python@3.12 >/dev/null 2>&1 || true
     else
-      brew install python@3.12 >/dev/null
+      brew install python@3.12 >/dev/null 2>&1
     fi
-    candidate="$(brew --prefix python@3.12)/bin/python3.12"
+    candidate="$(brew --prefix python@3.12 2>/dev/null)/bin/python3.12"
     if python_is_exact "$candidate"; then
       printf '%s\n' "$candidate"
       return 0
