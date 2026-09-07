@@ -47,6 +47,13 @@ The permanent entry point is `strategy.py`. It always discovers the live `is_nex
 Official FPL gameweek, generates/reuses a fresh Dastan GW+1 projection, checks the
 acceptance contract, validates the SmartPlay projection schema and then solves.
 
+For the certified one-GW solve the runner explicitly passes
+`--min-expected-minutes 1`. The pinned Solver internally treats a zero value as its
+legacy default of 100 minutes, which would wrongly suppress most GW+1 transfer
+candidates. A one-minute floor keeps the full viable player pool while excluding
+literal zero-minute candidates; SmartPlay's existing sub-30-minute EV scaling remains
+active. A regression test locks this behavior.
+
 ### Preferred: exact private Apex owner snapshot
 
 Use the `strategy_snapshot.json` produced by the existing read-only private query
@@ -141,7 +148,8 @@ python -m unittest -v \
 
 `test_strategy.py` specifically checks private attestation, exact 15-player state,
 FT/bank extraction, duplicate rejection, public-state acknowledgement, private solver
-command construction, SHA-256 binding and freshness/future-time rejection.
+command construction, the certified one-minute GW+1 candidate floor, SHA-256 binding
+and freshness/future-time rejection.
 
 The GitHub acceptance workflow then performs a genuine public GW4 reconstruction and
 SmartPlay projection-contract validation. Its one-day artifact contains only public
