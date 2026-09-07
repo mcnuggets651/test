@@ -60,13 +60,10 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12.14"
       - name: Require Apple Silicon runner
         run: test "$(uname -m)" = "arm64"
       - name: Pre-install contract tests
-        run: python -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
+        run: python3 -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
       - name: Bootstrap exact AIrsenal stack
         run: AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh
       - name: Verify pinned Apple Silicon runtime
