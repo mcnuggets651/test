@@ -39,6 +39,13 @@ class ContractTests(unittest.TestCase):
         self.assertNotIn("checkout main", text)
         self.assertNotIn("uv python install", text)
 
+    def test_homebrew_resolver_stdout_is_path_only(self):
+        text = (ROOT / "bootstrap.sh").read_text(encoding="utf-8")
+        self.assertIn("brew update --quiet >/dev/null 2>&1", text)
+        self.assertIn("brew upgrade python@3.12 >/dev/null 2>&1 || true", text)
+        self.assertIn("brew install python@3.12 >/dev/null 2>&1", text)
+        self.assertIn('candidate="$(brew --prefix python@3.12 2>/dev/null)/bin/python3.12"', text)
+
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")
