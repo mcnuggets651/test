@@ -32,10 +32,12 @@ class ContractTests(unittest.TestCase):
     def test_bootstrap_never_floats_upstream_or_uses_global_airsenal_home(self):
         text = (ROOT / "bootstrap.sh").read_text(encoding="utf-8")
         self.assertIn('checkout --quiet --detach "$UPSTREAM_SHA"', text)
-        self.assertIn('sync --project "$UPSTREAM" --frozen --no-dev', text)
+        self.assertIn('sync --python "$EXACT_PYTHON" --project "$UPSTREAM" --frozen --no-dev', text)
         self.assertIn('UV_PROJECT_ENVIRONMENT="$VENV"', text)
         self.assertIn(".local/share/airsenal-chat", text)
+        self.assertIn("exact CPython $PYTHON_VERSION is unavailable; refusing to loosen runtime pin", text)
         self.assertNotIn("checkout main", text)
+        self.assertNotIn("uv python install", text)
 
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
