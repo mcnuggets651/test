@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import csv
 import json
-import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -28,7 +27,7 @@ class AiContextTests(unittest.TestCase):
                     "position": "MID" if element >= 6 else "DEF",
                     "purchase_price_tenths": 50 + element,
                     "selling_price_tenths": 50 + element,
-                    "now_cost_tenths": 51 + element,
+                    "current_price_tenths_at_snapshot": 51 + element,
                     "private_note": "MUST_NOT_LEAK",
                 }
             )
@@ -194,6 +193,7 @@ class AiContextTests(unittest.TestCase):
             "inputs": {
                 "projection_acceptance_sha256": ai_context.sha256_file(acceptance_path),
                 "projection_csv_sha256": ai_context.sha256_file(solver_path),
+                "projection_fixtures_sha256": ai_context.sha256_file(fixtures_path),
             },
             "solution": {
                 "summary_sha256": ai_context.sha256_file(summary),
@@ -214,6 +214,7 @@ class AiContextTests(unittest.TestCase):
             self.assertEqual(bundle["owner_state"]["free_transfers"], 2)
             self.assertEqual(bundle["owner_state"]["bank_millions"], 0.5)
             self.assertEqual(bundle["model_evidence"]["player_count"], 16)
+            self.assertEqual(bundle["current_squad"][0]["current_price_tenths"], 52)
             self.assertEqual(bundle["optimizer_evidence"]["transfers"]["out"][0]["name"], "P1")
             self.assertEqual(bundle["optimizer_evidence"]["transfers"]["in"][0]["name"], "P16")
             self.assertEqual(bundle["optimizer_evidence"]["captain"]["name"], "P2")
@@ -240,6 +241,14 @@ class AiContextTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "summary hash"):
                 ai_context.build_bundle(state, snapshot)
 
+    def test_fixture_hash_mismatch_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            state, snapshot = self.make_state(Path(temp))
+            fixture_path = state / "projections" / "dastan_gw4_fixtures.csv"
+            fixture_path.write_text(fixture_path.read_text(encoding="utf-8") + "\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "fixtures_csv hash"):
+                ai_context.build_bundle(state, snapshot)
+
     def test_non_private_snapshot_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             state, snapshot = self.make_state(Path(temp), scope="PUBLIC_CANONICAL")
@@ -258,7 +267,10 @@ class AiContextTests(unittest.TestCase):
             self.assertEqual(checksum.stat().st_mode & 0o777, 0o600)
             self.assertEqual(metadata["context_sha256"], ai_context.sha256_file(context))
             self.assertIn(metadata["context_sha256"], checksum.read_text(encoding="utf-8"))
-            self.assertIn("Attach `ai_decision_context.json`", brief.read_text(encoding="utf-8"))
+            brief_text = brief.read_text(encoding="utf-8")
+            self.assertIn("Attach `ai_decision_context.json`", brief_text)
+            self.assertIn("- Sell: P1", brief_text)
+            self.assertIn("- Buy: P16", brief_text)
 
     def test_ai_contract_forbids_numeric_invention(self) -> None:
         contract = ai_context.ai_contract()
