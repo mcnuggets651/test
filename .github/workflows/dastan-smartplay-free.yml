@@ -7,6 +7,7 @@ on:
     paths:
       - experiments/dastan_smartplay_free/**
       - .github/workflows/dastan-smartplay-free.yml
+      - .gitignore
   workflow_dispatch:
 
 permissions:
@@ -32,14 +33,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pure adapter unit tests
-        run: python -m unittest -v test_live_gw.py
+      - name: Pure adapter and strategy unit tests
+        run: python -m unittest -v test_live_gw.py test_strategy.py
 
       - name: Install pinned free stack and refreshed public mappings
         run: bash bootstrap_v2.sh
 
       - name: Export, parity and acceptance regression tests
-        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py
+        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py test_strategy.py
 
       - name: Generate genuine GW4 open-Dastan projections
         run: |
@@ -56,6 +57,17 @@ jobs:
 
       - name: Validate open stack and hosted-parity diagnostic
         run: .venv/bin/python check_acceptance.py output/dastan_gw4_acceptance.json --parity-mode auto
+
+      - name: Upload public acceptance inputs
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dastan-gw4-public-${{ github.sha }}
+          path: |
+            experiments/dastan_smartplay_free/output/dastan_gw4_solver.csv
+            experiments/dastan_smartplay_free/output/dastan_gw4_acceptance.json
+          if-no-files-found: error
+          retention-days: 1
 
       - name: Print acceptance evidence
         if: always()
