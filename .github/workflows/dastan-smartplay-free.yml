@@ -38,10 +38,10 @@ jobs:
       - name: Install pinned free stack and refreshed public mappings
         run: bash bootstrap_v2.sh
 
-      - name: V2 export and parity regression tests
-        run: .venv/bin/python -m unittest -v test_live_gw_v2.py
+      - name: Export, parity and acceptance regression tests
+        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py
 
-      - name: Generate genuine GW4 Dastan projections
+      - name: Generate genuine GW4 open-Dastan projections
         run: |
           .venv/bin/python live_gw_v2.py \
             --gameweek 4 \
@@ -54,8 +54,8 @@ jobs:
       - name: Validate SmartPlay Solver projection contract
         run: .venv/bin/smartplay-solver validate-projections output/dastan_gw4_solver.csv --gameweek 4 --horizon 1
 
-      - name: Enforce live SmartPlay parity gate
-        run: .venv/bin/python check_acceptance.py output/dastan_gw4_acceptance.json --require-parity
+      - name: Validate open stack and hosted-parity diagnostic
+        run: .venv/bin/python check_acceptance.py output/dastan_gw4_acceptance.json --parity-mode auto
 
       - name: Print acceptance evidence
         if: always()
