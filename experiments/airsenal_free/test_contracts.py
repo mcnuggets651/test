@@ -67,6 +67,12 @@ class ContractTests(unittest.TestCase):
         self.assertNotIn("cat doctor-post.json", text)
         self.assertNotIn("cat $RUN_LOG", text)
 
+    def test_command_path_stays_inside_active_virtualenv(self):
+        text = (ROOT / "operational.py").read_text(encoding="utf-8")
+        self.assertIn('Path(sys.prefix) / "bin" / name', text)
+        self.assertIn('Path(sys.executable).parent / name', text)
+        self.assertNotIn('Path(sys.executable).resolve().parent / name', text)
+
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")

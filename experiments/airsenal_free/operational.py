@@ -211,9 +211,16 @@ def safe_runtime_env(home: Path, db_path: Path, entry_id: int) -> dict[str, str]
 
 
 def command_path(name: str) -> Path:
-    candidate = Path(sys.executable).resolve().parent / name
-    if candidate.is_file():
-        return candidate
+    # sys.executable may be a symlink on macOS. Resolving it escapes the
+    # active venv into the Homebrew framework bin and hides console scripts
+    # installed in the venv. sys.prefix is the authoritative active env root.
+    candidates = (
+        Path(sys.prefix) / "bin" / name,
+        Path(sys.executable).parent / name,
+    )
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
     found = shutil.which(name)
     if found:
         return Path(found).resolve()
