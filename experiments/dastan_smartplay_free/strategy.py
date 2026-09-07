@@ -18,6 +18,7 @@ SOLVER_SHA = "7ec56e944982020f8709db5d00b0b78821fb1f38"
 SMARTPLAY_PUBLIC_SHA = "9b5bec6ae12541be24decd980e119af90617a868"
 DEFAULT_ENTRY_ID = 63984
 MANIFEST_SCHEMA = "dastan-smartplay-free-strategy-v2"
+GW1_MIN_EXPECTED_MINUTES = 1
 
 
 def run(command: list[str], *, cwd: Path) -> None:
@@ -357,6 +358,8 @@ def build_solve_command(
             str(gameweek),
             "--horizon",
             "1",
+            "--min-expected-minutes",
+            str(GW1_MIN_EXPECTED_MINUTES),
             "--posture",
             posture,
             "--output-dir",
@@ -546,6 +549,7 @@ def main(argv: list[str] | None = None) -> int:
         },
         "scientific_boundary": {
             "projection_horizon": 1,
+            "solver_min_expected_minutes": GW1_MIN_EXPECTED_MINUTES,
             "hosted_smartplay_gw1_5_parity": "diagnostic_only",
         },
     }
