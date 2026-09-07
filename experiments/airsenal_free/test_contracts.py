@@ -51,6 +51,22 @@ class ContractTests(unittest.TestCase):
             mode = (ROOT / name).stat().st_mode
             self.assertTrue(mode & 0o111, f"{name} must retain a Git executable bit")
 
+    def test_run_launcher_emits_only_stable_phase_failure_classes(self):
+        text = (ROOT / "run.sh").read_text(encoding="utf-8")
+        self.assertIn("AIRSENAL_SAFE_FAILURE_CLASS=%s", text)
+        for marker in (
+            "ARGUMENT_VALIDATION_FAILED",
+            "DOCTOR_PRE_FAILED",
+            "BOOTSTRAP_FAILED",
+            "DOCTOR_POST_FAILED",
+            "OPERATIONAL_FAILED",
+        ):
+            self.assertIn(marker, text)
+        self.assertIn("run_guarded", text)
+        self.assertNotIn("cat doctor-pre.json", text)
+        self.assertNotIn("cat doctor-post.json", text)
+        self.assertNotIn("cat $RUN_LOG", text)
+
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")

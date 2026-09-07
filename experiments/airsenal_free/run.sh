@@ -6,13 +6,32 @@ CHAT_HOME="${AIRSENAL_CHAT_HOME:-$HOME/.local/share/airsenal-chat}"
 PRIVATE_REPO=""
 DOCTOR_ONLY=0
 
+safe_fail() {
+  local failure_class="$1"
+  local rc="$2"
+  printf 'AIRSENAL_SAFE_FAILURE_CLASS=%s\n' "$failure_class" >&2
+  exit "$rc"
+}
+
+run_guarded() {
+  local failure_class="$1"
+  shift
+  set +e
+  "$@"
+  local rc=$?
+  set -e
+  if [[ $rc -ne 0 ]]; then
+    safe_fail "$failure_class" "$rc"
+  fi
+}
+
 args=("$@")
 i=0
 while [[ $i -lt ${#args[@]} ]]; do
   case "${args[$i]}" in
     --private-repo)
       i=$((i + 1))
-      [[ $i -lt ${#args[@]} ]] || { echo "ERROR: --private-repo requires a value" >&2; exit 2; }
+      [[ $i -lt ${#args[@]} ]] || safe_fail "ARGUMENT_VALIDATION_FAILED" 2
       PRIVATE_REPO="${args[$i]}"
       ;;
     --private-repo=*) PRIVATE_REPO="${args[$i]#*=}" ;;
@@ -21,23 +40,26 @@ while [[ $i -lt ${#args[@]} ]]; do
   i=$((i + 1))
 done
 
-[[ -n "$PRIVATE_REPO" ]] || { echo "ERROR: --private-repo is required" >&2; exit 2; }
+[[ -n "$PRIVATE_REPO" ]] || safe_fail "ARGUMENT_VALIDATION_FAILED" 2
 
-python3 "$SCRIPT_DIR/doctor.py" \
-  --phase pre \
-  --home "$CHAT_HOME" \
-  --pins "$SCRIPT_DIR/pins.json" \
-  --private-repo "$PRIVATE_REPO" \
-  --json-out "$CHAT_HOME/doctor-pre.json"
+run_guarded "DOCTOR_PRE_FAILED" \
+  python3 "$SCRIPT_DIR/doctor.py" \
+    --phase pre \
+    --home "$CHAT_HOME" \
+    --pins "$SCRIPT_DIR/pins.json" \
+    --private-repo "$PRIVATE_REPO" \
+    --json-out "$CHAT_HOME/doctor-pre.json"
 
-AIRSENAL_CHAT_HOME="$CHAT_HOME" "$SCRIPT_DIR/bootstrap.sh"
+run_guarded "BOOTSTRAP_FAILED" \
+  env AIRSENAL_CHAT_HOME="$CHAT_HOME" "$SCRIPT_DIR/bootstrap.sh"
 
-"$CHAT_HOME/venv/bin/python" "$SCRIPT_DIR/doctor.py" \
-  --phase post \
-  --home "$CHAT_HOME" \
-  --pins "$SCRIPT_DIR/pins.json" \
-  --private-repo "$PRIVATE_REPO" \
-  --json-out "$CHAT_HOME/doctor-post.json"
+run_guarded "DOCTOR_POST_FAILED" \
+  "$CHAT_HOME/venv/bin/python" "$SCRIPT_DIR/doctor.py" \
+    --phase post \
+    --home "$CHAT_HOME" \
+    --pins "$SCRIPT_DIR/pins.json" \
+    --private-repo "$PRIVATE_REPO" \
+    --json-out "$CHAT_HOME/doctor-post.json"
 
 if [[ $DOCTOR_ONLY -eq 1 ]]; then
   echo "AIrsenal doctor checks passed; model execution skipped by --doctor-only."
@@ -50,4 +72,6 @@ for arg in "${args[@]}"; do
   filtered+=("$arg")
 done
 
-exec env AIRSENAL_CHAT_HOME="$CHAT_HOME" "$CHAT_HOME/venv/bin/python" "$SCRIPT_DIR/operational.py" --home "$CHAT_HOME" "${filtered[@]}"
+run_guarded "OPERATIONAL_FAILED" \
+  env AIRSENAL_CHAT_HOME="$CHAT_HOME" "$CHAT_HOME/venv/bin/python" \
+    "$SCRIPT_DIR/operational.py" --home "$CHAT_HOME" "${filtered[@]}"
