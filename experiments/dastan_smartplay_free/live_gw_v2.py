@@ -12,6 +12,10 @@ import pandas as pd
 
 import live_gw as support
 
+PARITY_MAE_MAX = 0.25
+PARITY_MAX_ABS_MAX = 0.50
+PARITY_MIN_ROUNDED_MATCHES = 4
+
 
 def load_current_mappings(public_repo: Path, feature_module) -> tuple[dict[int, int], dict[str, str]]:
     mapping_dir = public_repo / "data" / "mappings"
@@ -86,6 +90,134 @@ def build_current_canonical(
     return merge_understat_players(gameweeks, understat)
 
 
+def build_export_lookup(bootstrap: dict[str, Any]) -> pd.DataFrame:
+    """Official FPL identity metadata, keyed by stable fpl_code.
+
+    Dastan's feature builder intentionally discards display-only columns such as
+    player_name. Reattach them after prediction from Official FPL rather than relying
+    on incidental feature-frame columns.
+    """
+    team_names = {int(team["id"]): str(team["name"]) for team in bootstrap["teams"]}
+    positions = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+    rows: list[dict[str, Any]] = []
+    for player in bootstrap["elements"]:
+        position = positions.get(int(player["element_type"]))
+        if position is None:
+            raise RuntimeError(f"unknown FPL element_type for element {player['id']}")
+        team_id = int(player["team"])
+        if team_id not in team_names:
+            raise RuntimeError(f"unknown FPL team id {team_id} for element {player['id']}")
+        rows.append(
+            {
+                "fpl_code": int(player["code"]),
+                "element": int(player["id"]),
+                "player_name": str(
+                    player.get("web_name") or player.get("second_name") or player["id"]
+                ),
+                "team_name": team_names[team_id],
+                "position": position,
+            }
+        )
+    lookup = pd.DataFrame(rows)
+    duplicates = lookup[lookup.duplicated("fpl_code", keep=False)]
+    if not duplicates.empty:
+        raise RuntimeError(
+            "Official FPL returned duplicate stable fpl_code values: "
+            f"{duplicates['fpl_code'].astype(int).tolist()[:10]}"
+        )
+    return lookup
+
+
+def attach_export_metadata(predicted: pd.DataFrame, lookup: pd.DataFrame) -> pd.DataFrame:
+    """Attach canonical display/identity metadata and fail on identity conflicts."""
+    if "fpl_code" not in predicted.columns:
+        raise RuntimeError("prediction frame has no fpl_code")
+    if lookup["fpl_code"].duplicated().any():
+        raise RuntimeError("export lookup contains duplicate fpl_code values")
+
+    metadata = ["element", "player_name", "team_name", "position"]
+    official = lookup[["fpl_code", *metadata]].rename(
+        columns={column: f"official_{column}" for column in metadata}
+    )
+    out = predicted.merge(official, on="fpl_code", how="left", validate="many_to_one")
+
+    missing_lookup = out["official_element"].isna()
+    if missing_lookup.any():
+        sample = out.loc[missing_lookup, "fpl_code"].astype(int).tolist()[:10]
+        raise RuntimeError(f"Official FPL export metadata missing for fpl_code values: {sample}")
+
+    # Where the model frame preserved canonical identity, verify that it agrees with
+    # Official FPL. player_name is deliberately excluded because it is display-only
+    # and Dastan may omit or format it differently.
+    if "element" in predicted.columns:
+        left = pd.to_numeric(out["element"], errors="coerce")
+        right = pd.to_numeric(out["official_element"], errors="coerce")
+        conflicts = left.notna() & right.notna() & left.ne(right)
+        if conflicts.any():
+            raise RuntimeError("prediction element identity conflicts with Official FPL")
+    for column in ("team_name", "position"):
+        if column in predicted.columns:
+            left = out[column].astype("string")
+            right = out[f"official_{column}"].astype("string")
+            conflicts = left.notna() & right.notna() & left.ne(right)
+            if conflicts.any():
+                sample = out.loc[conflicts, ["fpl_code", column, f"official_{column}"]].head()
+                raise RuntimeError(
+                    f"prediction {column} conflicts with Official FPL:\n{sample.to_string(index=False)}"
+                )
+
+    for column in metadata:
+        out[column] = out[f"official_{column}"]
+        out = out.drop(columns=[f"official_{column}"])
+
+    if out[metadata].isna().any().any():
+        raise RuntimeError("canonical export metadata contains null values")
+    return out
+
+
+def evaluate_reference(comparison: dict[str, Any]) -> dict[str, Any]:
+    """Pre-declared parity gate for the five manually observed SmartPlay values."""
+    thresholds = {
+        "mae_max": PARITY_MAE_MAX,
+        "max_abs_delta_max": PARITY_MAX_ABS_MAX,
+        "min_rounded_1dp_matches": PARITY_MIN_ROUNDED_MATCHES,
+    }
+    if not comparison.get("available"):
+        return {"status": "NOT_CHECKED", "passed": False, "thresholds": thresholds}
+
+    rows = comparison.get("rows", [])
+    matched_rows = [row for row in rows if row.get("xpts") is not None]
+    deltas = [abs(float(row["delta"])) for row in matched_rows if row.get("delta") is not None]
+    rounded_matches = sum(
+        round(float(row["xpts"]), 1) == round(float(row["smartplay_xpts"]), 1)
+        for row in matched_rows
+    )
+    total = int(comparison.get("total", len(rows)))
+    matched = int(comparison.get("matched", len(matched_rows)))
+    mae = comparison.get("mae")
+    max_abs_delta = max(deltas) if deltas else None
+
+    passed = bool(
+        total > 0
+        and matched == total
+        and mae is not None
+        and float(mae) <= PARITY_MAE_MAX
+        and max_abs_delta is not None
+        and max_abs_delta <= PARITY_MAX_ABS_MAX
+        and rounded_matches >= min(PARITY_MIN_ROUNDED_MATCHES, total)
+    )
+    return {
+        "status": "PASS" if passed else "FAIL",
+        "passed": passed,
+        "matched": matched,
+        "total": total,
+        "mae": mae,
+        "max_abs_delta": max_abs_delta,
+        "rounded_1dp_matches": rounded_matches,
+        "thresholds": thresholds,
+    }
+
+
 def export_predictions(
     predicted: pd.DataFrame,
     gameweek: int,
@@ -95,22 +227,25 @@ def export_predictions(
     event: dict[str, Any],
     current_mapping_count: int,
 ) -> None:
-    full = predicted[
-        [
-            "element",
-            "fpl_code",
-            "player_name",
-            "team_name",
-            "position",
-            "gameweek",
-            "fixture",
-            "kickoff_time",
-            "xpts",
-            "expected_minutes",
-            "p60",
-            "p_any",
-        ]
-    ].copy()
+    required_export = [
+        "element",
+        "fpl_code",
+        "player_name",
+        "team_name",
+        "position",
+        "gameweek",
+        "fixture",
+        "kickoff_time",
+        "xpts",
+        "expected_minutes",
+        "p60",
+        "p_any",
+    ]
+    missing_export = [column for column in required_export if column not in predicted.columns]
+    if missing_export:
+        raise RuntimeError(f"prediction frame misses export columns: {missing_export}")
+
+    full = predicted[required_export].copy()
     full = full.sort_values(["xpts", "player_name"], ascending=[False, True])
     aggregated = (
         full.groupby(
@@ -135,8 +270,9 @@ def export_predictions(
         if reference is not None
         else {"available": False, "rows": []}
     )
+    parity_gate = evaluate_reference(comparison)
     acceptance = {
-        "schema": "dastan-smartplay-free-acceptance-v2",
+        "schema": "dastan-smartplay-free-acceptance-v3",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "season": season,
         "gameweek": gameweek,
@@ -151,6 +287,7 @@ def export_predictions(
             "smartplay_public_mapping": "9b5bec6ae12541be24decd980e119af90617a868",
         },
         "smartplay_reference": comparison,
+        "parity_gate": parity_gate,
         "outputs": {"fixtures": str(full_path), "solver": str(solver_path)},
     }
     acceptance_path.write_text(
@@ -161,6 +298,8 @@ def export_predictions(
     if comparison.get("available"):
         print("--- SmartPlay manual spot-check ---", flush=True)
         print(json.dumps(comparison, indent=2, ensure_ascii=False), flush=True)
+        print("--- Pre-declared parity gate ---", flush=True)
+        print(json.dumps(parity_gate, indent=2, ensure_ascii=False), flush=True)
     print(f"Wrote {solver_path} and {acceptance_path}", flush=True)
 
 
@@ -281,6 +420,7 @@ def main() -> int:
         raise RuntimeError(f"target frame misses Dastan features: {missing[:10]}")
     dastan_data.assert_deadline_anchored(target)
     predicted = predictor.Dastan(dastan_repo / "models").predict_frame(target, with_parts=True)
+    predicted = attach_export_metadata(predicted, build_export_lookup(bootstrap))
 
     print("7/7 Solver-format export + manual SmartPlay parity spot-check", flush=True)
     export_predictions(
