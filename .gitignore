@@ -5,6 +5,7 @@ __pycache__/
 .ruff_cache/
 .venv/
 venv/
+.vendor/
 dist/
 build/
 *.egg-info/
@@ -12,3 +13,5 @@ build/
 .tmp/
 *.sqlite3
 .DS_Store
+experiments/dastan_smartplay_free/output/
+experiments/dastan_smartplay_free/solver-output/
