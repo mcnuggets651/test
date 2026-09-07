@@ -145,9 +145,9 @@ command construction, SHA-256 binding and freshness/future-time rejection.
 
 The GitHub acceptance workflow then performs a genuine public GW4 reconstruction and
 SmartPlay projection-contract validation. Its one-day artifact contains only public
-materials: the projection CSV, acceptance JSON, exact pinned SmartPlay Solver source
-and a public HiGHS wheel for offline reproducibility. **No owner state is uploaded by
-this branch.**
+materials: the projection CSV, acceptance JSON, exact pinned SmartPlay Solver source,
+a CPython 3.13-compatible HiGHS wheel, and the exact Official FPL bootstrap/fixtures
+used for the offline solve. **No owner state is uploaded by this branch.**
 
 ## Cost boundary
 
