@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 PRIVATE_REPO_SLUG = "mcnuggets651/fpl"
-OPERATIONAL_SCHEMA = "dastan-smartplay-operational-v1"
+OPERATIONAL_SCHEMA = "dastan-smartplay-operational-v2"
 STRATEGY_SCHEMA = "dastan-smartplay-free-strategy-v2"
 QUERY_FILES = (
     "tools/apex_strategy_query.py",
@@ -248,6 +248,12 @@ def validate_strategy_manifest(path: Path, identity: dict[str, Any]) -> dict[str
     return payload
 
 
+def generate_ai_sidecar(snapshot: Path, output_dir: Path) -> dict[str, Any]:
+    import ai_context
+
+    return ai_context.write_bundle(output_dir, snapshot)
+
+
 def public_repo_root(root: Path) -> Path | None:
     result = subprocess.run(
         ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
@@ -260,7 +266,7 @@ def public_repo_root(root: Path) -> Path | None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Operational £0 owner solve: private authority-aware state -> live Dastan -> SmartPlay Solver"
+        description="Operational £0 owner solve: private authority-aware state -> live Dastan -> SmartPlay Solver -> read-only AI context"
     )
     parser.add_argument("--private-repo", type=Path, help="local checkout of mcnuggets651/fpl")
     parser.add_argument("--output-dir", type=Path)
@@ -320,6 +326,21 @@ def main(argv: list[str] | None = None) -> int:
                 raise RuntimeError("strategy.py completed without strategy_manifest.json")
             validate_strategy_manifest(strategy_manifest_path, identity)
 
+            try:
+                ai_metadata = generate_ai_sidecar(snapshot, output_dir)
+            except Exception as exc:
+                ai_metadata = {
+                    "status": "failed",
+                    "error_type": type(exc).__name__,
+                    "message": str(exc)[:500],
+                    "core_model_result_valid": True,
+                }
+                print(
+                    "WARNING: core Dastan/SmartPlay solve succeeded, but AI decision context generation failed: "
+                    f"{type(exc).__name__}: {str(exc)[:300]}",
+                    file=sys.stderr,
+                )
+
             operational_manifest = {
                 "schema": OPERATIONAL_SCHEMA,
                 "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -335,19 +356,27 @@ def main(argv: list[str] | None = None) -> int:
                     "snapshot_sha256": identity["snapshot_sha256"],
                 },
                 "strategy_manifest_sha256": sha256_file(strategy_manifest_path),
+                "ai_decision_context": ai_metadata,
                 "operational_contract": {
                     "horizon": 1,
                     "owner_state": "authority-aware latest immutable PRIVATE_MANAGER",
                     "private_snapshot_retained": False,
+                    "ai_layer": "read-only post-solve sidecar",
+                    "ai_failure_invalidates_core_model": False,
                     "cost": "zero_paid_services",
                 },
             }
-            (output_dir / "operational_manifest.json").write_text(
+            operational_manifest_path = output_dir / "operational_manifest.json"
+            operational_manifest_path.write_text(
                 json.dumps(operational_manifest, indent=2, sort_keys=True) + "\n",
                 encoding="utf-8",
             )
             print(f"Operational solve complete: {output_dir}")
             print(f"Recommendation: {output_dir / 'solution' / 'summary.md'}")
+            if ai_metadata.get("status") == "ready":
+                print(f"AI decision context: {output_dir / str(ai_metadata['context_file'])}")
+                print(f"AI decision brief: {output_dir / str(ai_metadata['brief_file'])}")
+                print("Chat use: attach ai_decision_context.json and ask for a current-context interpretation.")
     return 0
 
 
