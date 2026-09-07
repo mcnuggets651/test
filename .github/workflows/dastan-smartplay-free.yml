@@ -33,14 +33,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pure adapter and strategy unit tests
-        run: python -m unittest -v test_live_gw.py test_strategy.py
+      - name: Pure adapter, strategy and operational unit tests
+        run: python -m unittest -v test_live_gw.py test_strategy.py test_operational.py
 
       - name: Install pinned free stack and refreshed public mappings
         run: bash bootstrap_v2.sh
 
-      - name: Export, parity and acceptance regression tests
-        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py test_strategy.py
+      - name: Export, parity, acceptance and operational regression tests
+        run: .venv/bin/python -m unittest -v test_live_gw_v2.py test_check_acceptance.py test_strategy.py test_operational.py
 
       - name: Prepare public offline solver runtime
         run: |
