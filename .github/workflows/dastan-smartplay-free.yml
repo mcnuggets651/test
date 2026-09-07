@@ -44,10 +44,31 @@ jobs:
 
       - name: Prepare public offline solver runtime
         run: |
-          mkdir -p output/wheels
-          .venv/bin/python -m pip download --only-binary=:all: --no-deps highspy==1.11.0 -d output/wheels
+          mkdir -p output/wheels output/public-inputs
+          .venv/bin/python -m pip download \
+            --only-binary=:all: --no-deps \
+            --platform manylinux2014_x86_64 \
+            --python-version 3.13 \
+            --implementation cp \
+            --abi cp313 \
+            highspy==1.11.0 -d output/wheels
           tar --exclude=.git -czf output/smartplay-solver-src.tgz -C .vendor/smartplayfpl-solver .
           printf '%s\n' '7ec56e944982020f8709db5d00b0b78821fb1f38' > output/smartplay-solver-src.sha
+          curl --fail --silent --show-error --location \
+            https://fantasy.premierleague.com/api/bootstrap-static/ \
+            --output output/public-inputs/bootstrap-static.json
+          curl --fail --silent --show-error --location \
+            https://fantasy.premierleague.com/api/fixtures/ \
+            --output output/public-inputs/fixtures.json
+          .venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ("bootstrap-static.json", "fixtures.json"):
+              path = Path("output/public-inputs") / name
+              with path.open(encoding="utf-8") as handle:
+                  json.load(handle)
+              print(f"validated public FPL JSON: {path}")
+          PY
 
       - name: Generate genuine GW4 open-Dastan projections
         run: |
@@ -60,7 +81,7 @@ jobs:
             --reference smartplay_gw4_spotcheck.csv
 
       - name: Validate SmartPlay Solver projection contract
-        run: .venv/bin/smartplay-solver validate-projections output/dastan_gw4_solver.csv --gameweek 4 --horizon 1
+        run: .venv/bin/smartplay-solver validate-projections output/dastan_gw4_solver.csv --gameweek 4 --horizon 1 --bootstrap output/public-inputs/bootstrap-static.json
 
       - name: Validate open stack and hosted-parity diagnostic
         run: .venv/bin/python check_acceptance.py output/dastan_gw4_acceptance.json --parity-mode auto
@@ -76,6 +97,8 @@ jobs:
             experiments/dastan_smartplay_free/output/wheels/*.whl
             experiments/dastan_smartplay_free/output/smartplay-solver-src.tgz
             experiments/dastan_smartplay_free/output/smartplay-solver-src.sha
+            experiments/dastan_smartplay_free/output/public-inputs/bootstrap-static.json
+            experiments/dastan_smartplay_free/output/public-inputs/fixtures.json
           if-no-files-found: error
           retention-days: 1
 
