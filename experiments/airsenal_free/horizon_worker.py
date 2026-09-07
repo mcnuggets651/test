@@ -96,6 +96,7 @@ def main(argv: list[str] | None = None) -> int:
 
     import airsenal
     from airsenal.framework.player import CandidatePlayer
+    from airsenal.framework.multiprocessing_utils import set_multiprocessing_start_method
     from airsenal.framework.prediction_utils import get_recent_minutes_for_player
     from airsenal.framework.schema import session
     from airsenal.framework.season import CURRENT_SEASON
@@ -103,6 +104,11 @@ def main(argv: list[str] | None = None) -> int:
     from airsenal.framework.utils import fastcopy, get_player, get_player_from_api_id, list_players
     from airsenal.scripts import fill_transfersuggestion_table as opt
     from airsenal.scripts.fill_predictedscore_table import make_predictedscore_table
+
+    # AIrsenal requires fork on POSIX/macOS for its optimizer workers.
+    # Its CLI/pipeline entrypoints call this helper before run_optimization;
+    # this direct integration must preserve that upstream initialization.
+    set_multiprocessing_start_method()
 
     owner = load_object(args.owner_state)
     if owner.get("schema") != "airsenal-chat-owner-state-v1":

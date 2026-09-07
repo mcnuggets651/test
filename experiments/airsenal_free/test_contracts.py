@@ -73,6 +73,16 @@ class ContractTests(unittest.TestCase):
         self.assertIn('Path(sys.executable).parent / name', text)
         self.assertNotIn('Path(sys.executable).resolve().parent / name', text)
 
+    def test_horizon_worker_initialises_upstream_multiprocessing_before_optimizer(self):
+        text = (ROOT / "horizon_worker.py").read_text(encoding="utf-8")
+        self.assertIn(
+            "from airsenal.framework.multiprocessing_utils import set_multiprocessing_start_method",
+            text,
+        )
+        init_index = text.index("set_multiprocessing_start_method()")
+        optimize_index = text.index("opt.run_optimization(")
+        self.assertLess(init_index, optimize_index)
+
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")
