@@ -1,0 +1,103 @@
+name: AIrsenal Chat Free Acceptance
+
+on:
+  push:
+    branches:
+      - prototype/airsenal-chat
+    paths:
+      - "experiments/airsenal_free/**"
+      - ".github/workflows/airsenal-chat-free.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "experiments/airsenal_free/**"
+      - ".github/workflows/airsenal-chat-free.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: airsenal-chat-free-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  synthetic-contracts:
+    name: Synthetic privacy and transport contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Shell syntax
+        run: bash -n experiments/airsenal_free/bootstrap.sh experiments/airsenal_free/run.sh
+      - name: Compile integration
+        run: python -m compileall -q experiments/airsenal_free
+      - name: Run synthetic tests before installing AIrsenal
+        run: python -m unittest discover -s experiments/airsenal_free -p 'test_*.py' -v
+
+  pinned-upstream-linux:
+    name: Pinned AIrsenal stack / Linux
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Pre-install synthetic tests
+        run: python -m unittest discover -s experiments/airsenal_free -p 'test_*.py' -v
+      - name: Bootstrap exact upstream stack outside worktree
+        env:
+          AIRSENAL_CHAT_HOME: ${{ runner.temp }}/airsenal-chat
+        run: bash experiments/airsenal_free/bootstrap.sh
+      - name: Verify exact upstream import
+        env:
+          AIRSENAL_CHAT_HOME: ${{ runner.temp }}/airsenal-chat
+        run: |
+          "$AIRSENAL_CHAT_HOME/venv/bin/python" - <<'PY'
+          import airsenal, platform, sys
+          assert airsenal.__version__ == "1.17.1"
+          assert sys.version.split()[0] == "3.12.14"
+          print(platform.platform(), platform.machine(), airsenal.__version__)
+          PY
+      - name: Post-install synthetic tests
+        env:
+          AIRSENAL_CHAT_HOME: ${{ runner.temp }}/airsenal-chat
+        run: "$AIRSENAL_CHAT_HOME/venv/bin/python" -m unittest discover -s experiments/airsenal_free -p 'test_*.py' -v
+
+  pinned-upstream-macos-arm64:
+    name: Pinned AIrsenal stack / macOS M1 arm64
+    runs-on: macos-14
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Require Apple Silicon
+        run: test "$(uname -m)" = "arm64"
+      - name: Pre-install synthetic tests
+        run: python -m unittest discover -s experiments/airsenal_free -p 'test_*.py' -v
+      - name: Bootstrap exact upstream stack outside worktree
+        env:
+          AIRSENAL_CHAT_HOME: ${{ runner.temp }}/airsenal-chat
+        run: bash experiments/airsenal_free/bootstrap.sh
+      - name: Verify exact upstream import on Apple Silicon
+        env:
+          AIRSENAL_CHAT_HOME: ${{ runner.temp }}/airsenal-chat
+        run: |
+          "$AIRSENAL_CHAT_HOME/venv/bin/python" - <<'PY'
+          import airsenal, platform, sys
+          assert platform.machine() == "arm64"
+          assert airsenal.__version__ == "1.17.1"
+          assert sys.version.split()[0] == "3.12.14"
+          print(platform.platform(), platform.machine(), airsenal.__version__)
+          PY
+      - name: Post-install synthetic tests
+        env:
+          AIRSENAL_CHAT_HOME: ${{ runner.temp }}/airsenal-chat
+        run: "$AIRSENAL_CHAT_HOME/venv/bin/python" -m unittest discover -s experiments/airsenal_free -p 'test_*.py' -v
