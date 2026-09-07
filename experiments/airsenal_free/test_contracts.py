@@ -46,6 +46,11 @@ class ContractTests(unittest.TestCase):
         self.assertIn("brew install python@3.12 >/dev/null 2>&1", text)
         self.assertIn('candidate="$(brew --prefix python@3.12 2>/dev/null)/bin/python3.12"', text)
 
+    def test_shell_entrypoints_are_executable(self):
+        for name in ("run.sh", "bootstrap.sh"):
+            mode = (ROOT / name).stat().st_mode
+            self.assertTrue(mode & 0o111, f"{name} must retain a Git executable bit")
+
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")
