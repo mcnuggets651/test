@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import tempfile
+import types
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -128,6 +129,68 @@ class OperationalTests(unittest.TestCase):
             operational.query_latest_private_snapshot({"path": repo}, "token", output)
             self.assertTrue(output.exists())
             self.assertEqual(output.stat().st_mode & 0o777, 0o600)
+
+    def test_main_orchestrates_private_query_to_bound_strategy_manifest(self) -> None:
+        snapshot_payload = {
+            "run": {
+                "attestation_scope": "PRIVATE_MANAGER",
+                "immutable": True,
+                "target_gameweek": 4,
+                "run_id": "run-1",
+                "release_tag": "tag-1",
+                "published_at": "2026-09-07T00:00:00Z",
+            },
+            "team_state": {"entry_id": 63984, "state_complete_for_transfers": True},
+        }
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            private_repo = base / "fpl"
+            private_repo.mkdir()
+            output = base / "state"
+
+            def fake_query(_repo_info: dict, _token: str, snapshot: Path) -> None:
+                snapshot.write_text(json.dumps(snapshot_payload), encoding="utf-8")
+                os.chmod(snapshot, 0o600)
+
+            def fake_run(command, *args, **kwargs):
+                if len(command) > 1 and str(command[1]).endswith("strategy.py"):
+                    output_dir = Path(command[command.index("--output-dir") + 1])
+                    snapshot = Path(command[command.index("--apex-strategy-snapshot") + 1])
+                    output_dir.mkdir(parents=True, exist_ok=True)
+                    (output_dir / "solution").mkdir(exist_ok=True)
+                    (output_dir / "solution" / "summary.md").write_text("ok\n", encoding="utf-8")
+                    manifest = {
+                        "schema": operational.STRATEGY_SCHEMA,
+                        "entry_id": 63984,
+                        "gameweek": 4,
+                        "team_state": {"source_sha256": operational.sha256_file(snapshot)},
+                    }
+                    (output_dir / "strategy_manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+                    return types.SimpleNamespace(returncode=0)
+                raise AssertionError(f"unexpected subprocess call: {command}")
+
+            repo_info = {
+                "path": private_repo,
+                "head": "a" * 40,
+                "query_files": {relative: "b" * 64 for relative in operational.QUERY_FILES},
+            }
+            with mock.patch("operational.public_repo_root", return_value=None), mock.patch(
+                "operational.resolve_private_repo", return_value=private_repo
+            ), mock.patch("operational.validate_private_repo", return_value=repo_info), mock.patch(
+                "operational.resolve_github_token", return_value="token"
+            ), mock.patch("operational.query_latest_private_snapshot", side_effect=fake_query), mock.patch(
+                "operational.subprocess.run", side_effect=fake_run
+            ):
+                self.assertEqual(
+                    operational.main(["--private-repo", str(private_repo), "--output-dir", str(output)]),
+                    0,
+                )
+
+            op_manifest = json.loads((output / "operational_manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(op_manifest["schema"], operational.OPERATIONAL_SCHEMA)
+            self.assertEqual(op_manifest["entry_id"], 63984)
+            self.assertFalse(op_manifest["operational_contract"]["private_snapshot_retained"])
+            self.assertFalse((output / "strategy_snapshot.json").exists())
 
 
 if __name__ == "__main__":
