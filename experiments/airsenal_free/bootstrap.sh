@@ -82,7 +82,7 @@ fi
 git -C "$UPSTREAM" fetch --quiet --force origin "$UPSTREAM_SHA"
 git -C "$UPSTREAM" checkout --quiet --detach "$UPSTREAM_SHA"
 git -C "$UPSTREAM" reset --quiet --hard "$UPSTREAM_SHA"
-git -C "$UPSTREAM" clean -quiet -fdx
+git -C "$UPSTREAM" clean --quiet -fdx
 
 ACTUAL_SHA="$(git -C "$UPSTREAM" rev-parse HEAD)"
 [[ "$ACTUAL_SHA" == "$UPSTREAM_SHA" ]] || { echo "ERROR: upstream SHA mismatch" >&2; exit 2; }
