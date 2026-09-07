@@ -162,7 +162,15 @@ def validate_private_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, Any],
                 "position": first(row, "position", "position_name", "element_type"),
                 "purchase_price_tenths": purchase,
                 "selling_price_tenths": selling,
-                "current_price_tenths": maybe_int(first(row, "now_cost_tenths", "current_price_tenths", "now_cost")),
+                "current_price_tenths": maybe_int(
+                    first(
+                        row,
+                        "current_price_tenths_at_snapshot",
+                        "now_cost_tenths",
+                        "current_price_tenths",
+                        "now_cost",
+                    )
+                ),
             }
         )
 
@@ -210,12 +218,15 @@ def validate_strategy_inputs(state_dir: Path, snapshot_path: Path, manifest: dic
     if missing:
         raise ValueError(f"AI context source files are missing: {missing}")
 
+    inputs = manifest.get("inputs") or {}
+    solution = manifest.get("solution") or {}
     expected = {
-        "acceptance": (manifest.get("inputs") or {}).get("projection_acceptance_sha256"),
-        "solver_csv": (manifest.get("inputs") or {}).get("projection_csv_sha256"),
-        "summary": (manifest.get("solution") or {}).get("summary_sha256"),
-        "picks_csv": (manifest.get("solution") or {}).get("picks_sha256"),
-        "solution_json": (manifest.get("solution") or {}).get("json_sha256"),
+        "acceptance": inputs.get("projection_acceptance_sha256"),
+        "solver_csv": inputs.get("projection_csv_sha256"),
+        "fixtures_csv": inputs.get("projection_fixtures_sha256"),
+        "summary": solution.get("summary_sha256"),
+        "picks_csv": solution.get("picks_sha256"),
+        "solution_json": solution.get("json_sha256"),
     }
     for name, expected_hash in expected.items():
         if not isinstance(expected_hash, str) or sha256_file(paths[name]) != expected_hash:
@@ -489,10 +500,10 @@ def render_brief(bundle: dict[str, Any]) -> str:
     transfers_in = decision["transfers"]["in"]
     transfers_out = decision["transfers"]["out"]
     if transfers_in or transfers_out:
-        for index in range(max(len(transfers_in), len(transfers_out))):
-            out_name = transfers_out[index].get("name") if index < len(transfers_out) else "—"
-            in_name = transfers_in[index].get("name") if index < len(transfers_in) else "—"
-            lines.append(f"- {out_name} -> {in_name}")
+        for row in transfers_out:
+            lines.append(f"- Sell: {row.get('name')}")
+        for row in transfers_in:
+            lines.append(f"- Buy: {row.get('name')}")
     else:
         lines.append("- Roll / no transfer")
 
