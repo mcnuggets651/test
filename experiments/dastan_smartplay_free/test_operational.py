@@ -130,7 +130,13 @@ class OperationalTests(unittest.TestCase):
             self.assertTrue(output.exists())
             self.assertEqual(output.stat().st_mode & 0o777, 0o600)
 
-    def run_fake_operational(self, base: Path, ai_side_effect=None) -> tuple[int, Path]:
+    def run_fake_operational(
+        self,
+        base: Path,
+        ai_side_effect=None,
+        chat_side_effect=None,
+        extra_args: list[str] | None = None,
+    ) -> tuple[int, Path]:
         snapshot_payload = {
             "run": {
                 "attestation_scope": "PRIVATE_MANAGER",
@@ -182,10 +188,26 @@ class OperationalTests(unittest.TestCase):
             "checksum_file": "ai_decision_context.sha256",
             "privacy": "PRIVATE_MANAGER_LOCAL_ONLY",
         }
+        chat_metadata = {
+            "schema": "dastan-chat-bridge-latest-v1",
+            "status": "ready",
+            "repository": "mcnuggets651/fpl",
+            "branch": "dastan-results",
+            "pointer_path": "dastan/latest/entry-63984.json",
+            "run_commit_sha": "e" * 40,
+            "pointer_commit_sha": "f" * 40,
+            "context_path": "dastan/runs/entry-63984/gw4/run/ai_decision_context.json",
+            "context_sha256": "c" * 64,
+        }
         ai_patch = (
             mock.patch("operational.generate_ai_sidecar", side_effect=ai_side_effect)
             if ai_side_effect is not None
             else mock.patch("operational.generate_ai_sidecar", return_value=ai_metadata)
+        )
+        chat_patch = (
+            mock.patch("operational.publish_chat_sidecar", side_effect=chat_side_effect)
+            if chat_side_effect is not None
+            else mock.patch("operational.publish_chat_sidecar", return_value=chat_metadata)
         )
         with mock.patch("operational.public_repo_root", return_value=None), mock.patch(
             "operational.resolve_private_repo", return_value=private_repo
@@ -193,11 +215,13 @@ class OperationalTests(unittest.TestCase):
             "operational.resolve_github_token", return_value="token"
         ), mock.patch("operational.query_latest_private_snapshot", side_effect=fake_query), mock.patch(
             "operational.subprocess.run", side_effect=fake_run
-        ), ai_patch:
-            result = operational.main(["--private-repo", str(private_repo), "--output-dir", str(output)])
+        ), ai_patch, chat_patch:
+            args = ["--private-repo", str(private_repo), "--output-dir", str(output)]
+            args.extend(extra_args or [])
+            result = operational.main(args)
         return result, output
 
-    def test_main_orchestrates_private_query_to_ai_bound_operational_manifest(self) -> None:
+    def test_main_orchestrates_private_query_to_ai_and_chat_bound_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             result, output = self.run_fake_operational(Path(temp))
             self.assertEqual(result, 0)
@@ -206,18 +230,42 @@ class OperationalTests(unittest.TestCase):
             self.assertEqual(op_manifest["entry_id"], 63984)
             self.assertEqual(op_manifest["ai_decision_context"]["status"], "ready")
             self.assertEqual(op_manifest["ai_decision_context"]["context_sha256"], "c" * 64)
+            self.assertEqual(op_manifest["chat_bridge"]["status"], "ready")
+            self.assertEqual(op_manifest["chat_bridge"]["run_commit_sha"], "e" * 40)
             self.assertFalse(op_manifest["operational_contract"]["private_snapshot_retained"])
             self.assertFalse(op_manifest["operational_contract"]["ai_failure_invalidates_core_model"])
+            self.assertFalse(op_manifest["operational_contract"]["chat_publish_failure_invalidates_core_model"])
             self.assertFalse((output / "strategy_snapshot.json").exists())
 
-    def test_ai_sidecar_failure_never_invalidates_core_model(self) -> None:
+    def test_ai_sidecar_failure_never_invalidates_core_model_or_attempts_publish(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             result, output = self.run_fake_operational(Path(temp), ai_side_effect=ValueError("sidecar broken"))
             self.assertEqual(result, 0)
             op_manifest = json.loads((output / "operational_manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(op_manifest["ai_decision_context"]["status"], "failed")
             self.assertTrue(op_manifest["ai_decision_context"]["core_model_result_valid"])
+            self.assertEqual(op_manifest["chat_bridge"]["status"], "skipped")
             self.assertEqual((output / "solution" / "summary.md").read_text(encoding="utf-8"), "ok\n")
+
+    def test_chat_publish_failure_never_invalidates_core_model(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            result, output = self.run_fake_operational(
+                Path(temp), chat_side_effect=RuntimeError("push rejected")
+            )
+            self.assertEqual(result, 0)
+            op_manifest = json.loads((output / "operational_manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(op_manifest["ai_decision_context"]["status"], "ready")
+            self.assertEqual(op_manifest["chat_bridge"]["status"], "failed")
+            self.assertTrue(op_manifest["chat_bridge"]["core_model_result_valid"])
+            self.assertEqual((output / "solution" / "summary.md").read_text(encoding="utf-8"), "ok\n")
+
+    def test_no_chat_publish_is_explicit_escape_hatch(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            result, output = self.run_fake_operational(Path(temp), extra_args=["--no-chat-publish"])
+            self.assertEqual(result, 0)
+            op_manifest = json.loads((output / "operational_manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(op_manifest["chat_bridge"]["status"], "disabled")
+            self.assertEqual(op_manifest["chat_bridge"]["reason"], "--no-chat-publish")
 
 
 if __name__ == "__main__":
