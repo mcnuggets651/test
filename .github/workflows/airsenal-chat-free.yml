@@ -40,6 +40,12 @@ jobs:
         run: python -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
       - name: Bootstrap exact AIrsenal stack
         run: AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh
+      - name: Prove exact cache reuse
+        run: |
+          set -euo pipefail
+          output="$(AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh)"
+          printf '%s\n' "$output"
+          grep -F "AIrsenal cached runtime verified; no dependency rebuild required." <<<"$output"
       - name: Verify pinned runtime
         run: |
           AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat"
@@ -66,6 +72,12 @@ jobs:
         run: python3 -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
       - name: Bootstrap exact AIrsenal stack
         run: AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh
+      - name: Prove exact cache reuse
+        run: |
+          set -euo pipefail
+          output="$(AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh)"
+          printf '%s\n' "$output"
+          grep -F "AIrsenal cached runtime verified; no dependency rebuild required." <<<"$output"
       - name: Verify pinned Apple Silicon runtime
         run: |
           AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat"

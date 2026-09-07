@@ -5,6 +5,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -17,6 +18,7 @@ RESULTS_BRANCH = "airsenal-results"
 CONTEXT_SCHEMA = "airsenal-chat-decision-context-v1"
 POINTER_SCHEMA = "airsenal-chat-bridge-latest-v1"
 RUN_SCHEMA = "airsenal-chat-bridge-run-v1"
+HEALTH_SCHEMA = "airsenal-chat-health-v1"
 REQUIRED_LOCAL_FILES = (
     "decision_context.json",
     "decision_context.sha256",
@@ -119,7 +121,13 @@ def validate_bundle(run_dir: Path) -> dict[str, Any]:
         expected = (hashes.get("files") or {}).get(name)
         if expected != sha256_file(run_dir / name):
             raise PublishError(f"context integrity mismatch for {name}")
-    return {"run_dir": run_dir, "context": context, "entry_id": entry_id, "gameweek": gameweek, "context_sha256": context_sha}
+    return {
+        "run_dir": run_dir,
+        "context": context,
+        "entry_id": entry_id,
+        "gameweek": gameweek,
+        "context_sha256": context_sha,
+    }
 
 
 def branch_exists(repo: Path, branch: str) -> bool:
@@ -144,6 +152,34 @@ def _stamp(value: str) -> str:
     return parsed.strftime("%Y%m%dT%H%M%SZ")
 
 
+def _health_payload(*, context: dict[str, Any], entry_id: int, gw: int, branch: str, run_id: str, run_commit: str, context_sha256: str, updated_at: str) -> dict[str, Any]:
+    provenance = context.get("provenance") or {}
+    source = "github-actions-self-hosted" if os.environ.get("GITHUB_ACTIONS") == "true" else "direct-local"
+    payload: dict[str, Any] = {
+        "schema": HEALTH_SCHEMA,
+        "status": "ready",
+        "repository": PRIVATE_REPO_SLUG,
+        "branch": branch,
+        "entry_id": entry_id,
+        "target_gameweek": gw,
+        "last_success_at": updated_at,
+        "run_id": run_id,
+        "run_commit_sha": run_commit,
+        "context_sha256": context_sha256,
+        "public_experiment_sha": provenance.get("experiment_code_sha"),
+        "upstream_airsenal_sha": provenance.get("airsenal_upstream_sha"),
+        "horizons": [3, 5],
+        "execution_surface": source,
+        "public_upload_forbidden": True,
+    }
+    if source == "github-actions-self-hosted":
+        payload["github_actions"] = {
+            "run_id": os.environ.get("GITHUB_RUN_ID"),
+            "run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+        }
+    return payload
+
+
 def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, require_github_origin: bool = True) -> dict[str, Any]:
     private_repo, before_status = validate_private_repo(private_repo, require_github_origin=require_github_origin)
     bundle = validate_bundle(run_dir)
@@ -156,6 +192,7 @@ def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, 
     gw = int(bundle["gameweek"])
     run_root = Path("airsenal") / "runs" / f"entry-{entry_id}" / f"gw{gw}" / run_id
     pointer_rel = Path("airsenal") / "latest" / f"entry-{entry_id}.json"
+    health_rel = Path("airsenal") / "health" / f"entry-{entry_id}.json"
     context_rel = run_root / "decision_context.json"
     run_manifest_rel = run_root / "bridge_run_manifest.json"
 
@@ -176,17 +213,23 @@ def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, 
                 dst = target / rel
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(source / rel, dst)
+            published_at = dt.datetime.now(dt.timezone.utc).isoformat()
             bridge_manifest = {
                 "schema": RUN_SCHEMA,
                 "status": "ready",
                 "entry_id": entry_id,
                 "target_gameweek": gw,
-                "published_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+                "published_at": published_at,
                 "context_sha256": bundle["context_sha256"],
                 "source_experiment_sha": (context.get("provenance") or {}).get("experiment_code_sha"),
                 "upstream_airsenal_sha": (context.get("provenance") or {}).get("airsenal_upstream_sha"),
                 "private_authority": context.get("private_authority"),
-                "privacy": {"repository": PRIVATE_REPO_SLUG, "branch": branch, "classification": "PRIVATE_MANAGER_CHAT_BRIDGE", "public_upload_forbidden": True},
+                "privacy": {
+                    "repository": PRIVATE_REPO_SLUG,
+                    "branch": branch,
+                    "classification": "PRIVATE_MANAGER_CHAT_BRIDGE",
+                    "public_upload_forbidden": True,
+                },
             }
             write_json(worktree / run_manifest_rel, bridge_manifest)
             git(worktree, "add", str(run_root))
@@ -197,6 +240,7 @@ def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, 
             if remote_after_run != run_commit:
                 raise PublishError("remote branch did not advance to immutable run commit")
 
+            updated_at = dt.datetime.now(dt.timezone.utc).isoformat()
             pointer = {
                 "schema": POINTER_SCHEMA,
                 "status": "ready",
@@ -204,7 +248,7 @@ def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, 
                 "branch": branch,
                 "entry_id": entry_id,
                 "target_gameweek": gw,
-                "updated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+                "updated_at": updated_at,
                 "run_id": run_id,
                 "run_commit_sha": run_commit,
                 "context_path": str(context_rel),
@@ -215,15 +259,27 @@ def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, 
                 "h3_result_path": str(run_root / "h3/result.json"),
                 "h5_result_path": str(run_root / "h5/result.json"),
                 "context_generated_at": generated_at,
+                "health_path": str(health_rel),
             }
+            health = _health_payload(
+                context=context,
+                entry_id=entry_id,
+                gw=gw,
+                branch=branch,
+                run_id=run_id,
+                run_commit=run_commit,
+                context_sha256=bundle["context_sha256"],
+                updated_at=updated_at,
+            )
             write_json(worktree / pointer_rel, pointer)
-            git(worktree, "add", str(pointer_rel))
-            git(worktree, "commit", "-m", f"Point AIrsenal latest to entry {entry_id} GW{gw} {run_id}")
+            write_json(worktree / health_rel, health)
+            git(worktree, "add", str(pointer_rel), str(health_rel))
+            git(worktree, "commit", "-m", f"Point AIrsenal latest and health to entry {entry_id} GW{gw} {run_id}")
             pointer_commit = git_text(worktree, "rev-parse", "HEAD")
             git(worktree, "push", "--porcelain", "origin", f"HEAD:refs/heads/{branch}")
             remote_head = git(private_repo, "ls-remote", "--heads", "origin", f"refs/heads/{branch}").stdout.split()[0]
             if remote_head != pointer_commit:
-                raise PublishError("remote branch did not advance to latest-pointer commit")
+                raise PublishError("remote branch did not advance to latest-pointer/health commit")
         finally:
             git(private_repo, "worktree", "remove", "--force", str(worktree), check=False)
             git(private_repo, "worktree", "prune", check=False)
@@ -241,6 +297,7 @@ def publish(*, run_dir: Path, private_repo: Path, branch: str = RESULTS_BRANCH, 
         "run_commit_sha": run_commit,
         "pointer_commit_sha": pointer_commit,
         "pointer_path": str(pointer_rel),
+        "health_path": str(health_rel),
         "context_path": str(context_rel),
         "context_sha256": bundle["context_sha256"],
     }
