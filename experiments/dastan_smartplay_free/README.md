@@ -144,9 +144,10 @@ FT/bank extraction, duplicate rejection, public-state acknowledgement, private s
 command construction, SHA-256 binding and freshness/future-time rejection.
 
 The GitHub acceptance workflow then performs a genuine public GW4 reconstruction and
-SmartPlay projection-contract validation. It uploads only the **public projection and
-acceptance files** as a short-lived CI artifact; no owner state is ever uploaded from
-this branch.
+SmartPlay projection-contract validation. Its one-day artifact contains only public
+materials: the projection CSV, acceptance JSON, exact pinned SmartPlay Solver source
+and a public HiGHS wheel for offline reproducibility. **No owner state is uploaded by
+this branch.**
 
 ## Cost boundary
 
