@@ -208,9 +208,14 @@ def solver_team_from_apex_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, 
         raise ValueError("Apex strategy snapshot is not marked immutable")
     if team_state.get("state_complete_for_transfers") is not True:
         raise ValueError("Apex TeamState is not complete for transfers")
+    if team_state.get("active_chip") not in (None, "", False):
+        raise ValueError("Apex TeamState has an active chip; this no-chip GW+1 runner refuses to ignore it")
 
     entry_id = _as_int(team_state.get("entry_id"), "team_state.entry_id")
     published_gw = _as_int(team_state.get("published_gw"), "team_state.published_gw")
+    target_gameweek = _as_int(run_meta.get("target_gameweek"), "run.target_gameweek")
+    if target_gameweek <= published_gw:
+        raise ValueError("Apex strategy snapshot target gameweek must be after its published gameweek")
     bank_tenths = _as_int(team_state.get("bank_tenths"), "team_state.bank_tenths")
     free_transfers = _as_int(team_state.get("free_transfers"), "team_state.free_transfers")
     squad = team_state.get("squad")
@@ -253,6 +258,7 @@ def solver_team_from_apex_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, 
                 "entry_id": entry_id,
                 "source": "apex_private_strategy_snapshot",
                 "published_gw": published_gw,
+                "target_gameweek": target_gameweek,
                 "apex_run_id": run_meta.get("run_id"),
                 "apex_release_tag": run_meta.get("release_tag"),
                 "apex_published_at": run_meta.get("published_at"),
@@ -263,6 +269,7 @@ def solver_team_from_apex_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, 
         "mode": "apex_private_strategy_snapshot",
         "entry_id": entry_id,
         "published_gw": published_gw,
+        "target_gameweek": target_gameweek,
         "bank_tenths": bank_tenths,
         "free_transfers": free_transfers,
         "apex_run_id": run_meta.get("run_id"),
@@ -270,6 +277,16 @@ def solver_team_from_apex_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, 
         "apex_published_at": run_meta.get("published_at"),
     }
     return team, provenance
+
+
+def validate_team_state_gameweek(provenance: dict[str, Any], gameweek: int) -> None:
+    if provenance.get("mode") != "apex_private_strategy_snapshot":
+        return
+    target = _as_int(provenance.get("target_gameweek"), "private snapshot target_gameweek")
+    if target != gameweek:
+        raise ValueError(
+            f"private Apex snapshot targets GW{target}, but Official FPL is_next is GW{gameweek}; refresh the private snapshot"
+        )
 
 
 def load_json_object(path: Path, label: str) -> dict[str, Any]:
@@ -420,6 +437,11 @@ def main(argv: list[str] | None = None) -> int:
 
     bootstrap = fpl_bootstrap()
     gameweek = next_gameweek(bootstrap)
+    try:
+        validate_team_state_gameweek(state_provenance, gameweek)
+    except ValueError as exc:
+        raise RuntimeError(str(exc)) from exc
+
     default_state_root = Path.home() / ".local" / "share" / "dastan-smartplay-free" / f"entry-{entry_id}" / f"gw{gameweek}"
     state_root = (args.output_dir or default_state_root).expanduser().resolve()
     repo_root = git_toplevel(root)
