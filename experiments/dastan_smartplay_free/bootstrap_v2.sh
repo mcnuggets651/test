@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 bash "$ROOT/bootstrap.sh"
 
 VENDOR="${DSS_VENDOR:-$ROOT/.vendor}"
+VENV="${DSS_VENV:-$ROOT/.venv}"
 SMARTPLAY_SHA="9b5bec6ae12541be24decd980e119af90617a868"
 SMARTPLAY="$VENDOR/smartplayfpl-public"
 
@@ -21,8 +22,9 @@ fi
 
 # Hard acceptance guard: these were the two clubs that blocked Dastan's Aug-10
 # active-season mapping release. Do not silently proceed unless the refreshed public
-# source now has concrete Understat IDs for both.
-python - "$SMARTPLAY/data/mappings/clubs_golden_record.csv" <<'PY'
+# source now has concrete Understat IDs for both. Use the same pinned virtualenv
+# interpreter as bootstrap.sh so macOS systems that expose only `python3` work too.
+"$VENV/bin/python" - "$SMARTPLAY/data/mappings/clubs_golden_record.csv" <<'PY'
 import csv, sys
 path = sys.argv[1]
 rows = {r['club_name']: r for r in csv.DictReader(open(path, encoding='utf-8'))}
