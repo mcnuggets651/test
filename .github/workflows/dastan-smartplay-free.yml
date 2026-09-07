@@ -12,6 +12,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: dastan-smartplay-free-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   gw4-acceptance:
     runs-on: ubuntu-latest
@@ -28,11 +32,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pure adapter tests
-        run: python test_live_gw.py
+      - name: Pure adapter unit tests
+        run: python -m unittest -v test_live_gw.py
 
       - name: Install pinned free stack and refreshed public mappings
         run: bash bootstrap_v2.sh
+
+      - name: V2 export and parity regression tests
+        run: .venv/bin/python -m unittest -v test_live_gw_v2.py
 
       - name: Generate genuine GW4 Dastan projections
         run: |
@@ -45,8 +52,10 @@ jobs:
             --reference smartplay_gw4_spotcheck.csv
 
       - name: Validate SmartPlay Solver projection contract
-        if: success()
         run: .venv/bin/smartplay-solver validate-projections output/dastan_gw4_solver.csv --gameweek 4 --horizon 1
+
+      - name: Enforce live SmartPlay parity gate
+        run: .venv/bin/python check_acceptance.py output/dastan_gw4_acceptance.json --require-parity
 
       - name: Print acceptance evidence
         if: always()
