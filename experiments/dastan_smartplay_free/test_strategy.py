@@ -70,7 +70,7 @@ class StrategyStateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "15 unique"):
             strategy.validate_solver_team(team)
 
-    def test_private_solve_command_has_no_public_state_overrides(self) -> None:
+    def test_private_solve_command_has_no_public_state_overrides_and_uses_gw1_floor(self) -> None:
         command = strategy.build_solve_command(
             solver="smartplay-solver",
             solver_csv=Path("projection.csv"),
@@ -89,6 +89,9 @@ class StrategyStateTests(unittest.TestCase):
         self.assertNotIn("--free-transfers", command)
         self.assertNotIn("--bank", command)
         self.assertIn("--no-hits", command)
+        floor_index = command.index("--min-expected-minutes")
+        self.assertEqual(command[floor_index + 1], "1")
+        self.assertEqual(strategy.GW1_MIN_EXPECTED_MINUTES, 1)
 
     def test_public_mode_requires_explicit_current_state_ack(self) -> None:
         args = argparse.Namespace(
