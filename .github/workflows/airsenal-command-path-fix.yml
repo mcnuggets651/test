@@ -1,0 +1,49 @@
+name: Temporary AIrsenal command path fix
+
+on:
+  push:
+    branches: [prototype/airsenal-chat]
+    paths: [".github/workflows/airsenal-command-path-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: prototype/airsenal-chat
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Patch venv command lookup and regression contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('experiments/airsenal_free/operational.py')
+          t=p.read_text(encoding='utf-8')
+          old='''def command_path(name: str) -> Path:\n    candidate = Path(sys.executable).resolve().parent / name\n    if candidate.is_file():\n        return candidate\n    found = shutil.which(name)\n    if found:\n        return Path(found).resolve()\n    raise OperationalError(f"UPSTREAM_PIN_INVALID: required installed command not found: {name}")\n'''
+          new='''def command_path(name: str) -> Path:\n    # sys.executable may be a symlink on macOS. Resolving it escapes the\n    # active venv into the Homebrew framework bin and hides console scripts\n    # installed in the venv. sys.prefix is the authoritative active env root.\n    candidates = (\n        Path(sys.prefix) / "bin" / name,\n        Path(sys.executable).parent / name,\n    )\n    for candidate in candidates:\n        if candidate.is_file():\n            return candidate\n    found = shutil.which(name)\n    if found:\n        return Path(found).resolve()\n    raise OperationalError(f"UPSTREAM_PIN_INVALID: required installed command not found: {name}")\n'''
+          if old not in t:
+              raise SystemExit('command_path block not found')
+          p.write_text(t.replace(old,new),encoding='utf-8')
+
+          p=Path('experiments/airsenal_free/test_contracts.py')
+          t=p.read_text(encoding='utf-8')
+          anchor='''    def test_no_fpl_write_commands_in_runtime(self):\n'''
+          test='''    def test_command_path_stays_inside_active_virtualenv(self):\n        text = (ROOT / "operational.py").read_text(encoding="utf-8")\n        self.assertIn('Path(sys.prefix) / "bin" / name', text)\n        self.assertIn('Path(sys.executable).parent / name', text)\n        self.assertNotIn('Path(sys.executable).resolve().parent / name', text)\n\n'''
+          if 'test_command_path_stays_inside_active_virtualenv' not in t:
+              if anchor not in t:
+                  raise SystemExit('test anchor not found')
+              t=t.replace(anchor,test+anchor)
+          p.write_text(t,encoding='utf-8')
+          PY
+          python3 -m unittest experiments.airsenal_free.test_contracts
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/airsenal_free/operational.py experiments/airsenal_free/test_contracts.py
+          git commit -m 'Fix AIrsenal venv command lookup on macOS'
+          git push origin HEAD:prototype/airsenal-chat
