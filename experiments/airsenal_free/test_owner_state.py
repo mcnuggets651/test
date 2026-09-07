@@ -28,7 +28,7 @@ def bootstrap(gw: int = 4):
     return {"events": [{"id": gw, "is_next": True}], "elements": elements}
 
 
-def snapshot(gw: int = 4):
+def snapshot(gw: int = 4, published_gw: int | None = None):
     official = bootstrap(gw)
     positions = {1: "GK", 2: "DEF", 3: "MID", 4: "FWD"}
     rows = []
@@ -58,7 +58,7 @@ def snapshot(gw: int = 4):
         },
         "team_state": {
             "state_complete_for_transfers": True,
-            "published_gw": gw,
+            "published_gw": gw if published_gw is None else published_gw,
             "entry_id": 63984,
             "bank_tenths": 7,
             "free_transfers": 2,
@@ -77,6 +77,7 @@ class OwnerStateTests(unittest.TestCase):
         self.assertEqual(result["entry_id"], 63984)
         self.assertEqual(result["bank_tenths"], 7)
         self.assertEqual(result["free_transfers"], 2)
+        self.assertEqual(result["published_gameweek_lag"], 0)
         self.assertEqual(len(result["squad"]), 15)
         self.assertTrue(
             all(
@@ -84,6 +85,27 @@ class OwnerStateTests(unittest.TestCase):
                 for p in result["squad"]
             )
         )
+        self.assertEqual(result["private_authority"]["official_rebased_element_count"], 0)
+
+    def test_previous_published_gameweek_is_valid_for_live_next_target(self):
+        result = owner_state.validate_and_whitelist(
+            json.dumps(snapshot(gw=4, published_gw=3)).encode(), bootstrap(4)
+        )
+        self.assertEqual(result["published_gameweek"], 3)
+        self.assertEqual(result["target_gameweek"], 4)
+        self.assertEqual(result["published_gameweek_lag"], 1)
+
+    def test_team_state_more_than_one_gameweek_old_is_rejected(self):
+        with self.assertRaises(owner_state.OwnerStateError):
+            owner_state.validate_and_whitelist(
+                json.dumps(snapshot(gw=4, published_gw=2)).encode(), bootstrap(4)
+            )
+
+    def test_future_published_gameweek_is_rejected(self):
+        with self.assertRaises(owner_state.OwnerStateError):
+            owner_state.validate_and_whitelist(
+                json.dumps(snapshot(gw=4, published_gw=5)).encode(), bootstrap(4)
+            )
 
     def test_secret_fields_are_not_propagated(self):
         result = owner_state.validate_and_whitelist(
@@ -118,13 +140,47 @@ class OwnerStateTests(unittest.TestCase):
         with self.assertRaises(owner_state.OwnerStateError):
             owner_state.validate_and_whitelist(json.dumps(state).encode(), bootstrap())
 
-    def test_official_price_drift_rejected(self):
-        official = bootstrap()
-        official["elements"][0]["now_cost"] += 1
+    def test_malformed_snapshot_selling_price_rejected(self):
+        state = snapshot()
+        state["team_state"]["squad"][0]["selling_price_tenths"] += 1
         with self.assertRaises(owner_state.OwnerStateError):
-            owner_state.validate_and_whitelist(
-                json.dumps(snapshot()).encode(), official
-            )
+            owner_state.validate_and_whitelist(json.dumps(state).encode(), bootstrap())
+
+    def test_official_price_rise_rebases_current_and_selling_price(self):
+        official = bootstrap()
+        official["elements"][0]["now_cost"] += 2
+        result = owner_state.validate_and_whitelist(
+            json.dumps(snapshot()).encode(), official
+        )
+        player = next(p for p in result["squad"] if p["element_id"] == 1)
+        self.assertEqual(player["snapshot_current_price_tenths"], 51)
+        self.assertEqual(player["current_price_tenths"], 53)
+        self.assertEqual(player["purchase_price_tenths"], 51)
+        self.assertEqual(player["snapshot_selling_price_tenths"], 51)
+        self.assertEqual(player["selling_price_tenths"], 52)
+        self.assertTrue(player["official_rebased"])
+        self.assertEqual(result["private_authority"]["official_price_rebased_element_count"], 1)
+
+    def test_official_price_drop_rebases_selling_price_in_full(self):
+        official = bootstrap()
+        official["elements"][0]["now_cost"] -= 1
+        result = owner_state.validate_and_whitelist(
+            json.dumps(snapshot()).encode(), official
+        )
+        player = next(p for p in result["squad"] if p["element_id"] == 1)
+        self.assertEqual(player["current_price_tenths"], 50)
+        self.assertEqual(player["selling_price_tenths"], 50)
+
+    def test_live_official_status_replaces_snapshot_status(self):
+        official = bootstrap()
+        official["elements"][0]["status"] = "d"
+        result = owner_state.validate_and_whitelist(
+            json.dumps(snapshot()).encode(), official
+        )
+        player = next(p for p in result["squad"] if p["element_id"] == 1)
+        self.assertEqual(player["status"], "d")
+        self.assertTrue(player["official_rebased"])
+        self.assertEqual(result["private_authority"]["official_status_rebased_element_count"], 1)
 
 
 if __name__ == "__main__":
