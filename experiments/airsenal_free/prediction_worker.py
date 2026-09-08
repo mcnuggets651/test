@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import hashlib
 import json
 import os
@@ -34,8 +35,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
 
+    from airsenal.framework.player import CandidatePlayer
+    from airsenal.framework.prediction_utils import get_recent_minutes_for_player
     from airsenal.framework.schema import session
     from airsenal.framework.season import CURRENT_SEASON
+    from airsenal.framework.utils import list_players
     from airsenal.scripts.fill_predictedscore_table import make_predictedscore_table
 
     owner = load_object(args.owner_state)
@@ -62,8 +66,50 @@ def main(argv: list[str] | None = None) -> int:
         dbsession=session,
     )
     post_prediction_db_sha256 = sha256_file(db_path)
+
+    recent_count = max(args.horizon, 3)
+    players: list[dict[str, Any]] = []
+    for player in list_players(season=CURRENT_SEASON, gameweek=target_gw, dbsession=session):
+        if player.fpl_api_id is None:
+            continue
+        candidate = CandidatePlayer(player, CURRENT_SEASON, target_gw, dbsession=session)
+        candidate.calc_predicted_points(prediction_tag)
+        gw_points = {
+            str(gw): float(candidate.predicted_points.get(prediction_tag, {}).get(gw, 0.0))
+            for gw in gameweeks
+        }
+        try:
+            recent_minutes = [
+                int(x)
+                for x in get_recent_minutes_for_player(
+                    player,
+                    num_match_to_use=recent_count,
+                    season=CURRENT_SEASON,
+                    last_gw=target_gw - 1,
+                    dbsession=session,
+                )
+            ]
+        except Exception:
+            recent_minutes = []
+        players.append(
+            {
+                "element_id": int(player.fpl_api_id),
+                "airsenal_player_id": int(player.player_id),
+                "name": player.name,
+                "position": player.position(CURRENT_SEASON),
+                "team": player.team(CURRENT_SEASON, target_gw),
+                "expected_points": gw_points,
+                "recent_minutes_basis": recent_minutes,
+                "explicit_expected_minutes": None,
+            }
+        )
+    players.sort(key=lambda row: row["element_id"])
+    if not players:
+        raise ValueError("AIrsenal prediction stage produced no mapped FPL players")
+
     payload = {
         "schema": SCHEMA,
+        "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "horizon": args.horizon,
         "gameweeks": gameweeks,
         "entry_id": int(owner["entry_id"]),
@@ -71,6 +117,17 @@ def main(argv: list[str] | None = None) -> int:
         "prediction_tag": prediction_tag,
         "pre_prediction_db_sha256": pre_prediction_db_sha256,
         "post_prediction_db_sha256": post_prediction_db_sha256,
+        "model": {
+            "team_model": "ExtendedDixonColesMatchPredictor",
+            "player_model": "ConjugatePlayerModel",
+            "include_bonus": True,
+            "include_cards": True,
+            "include_saves": True,
+            "include_defensive_contributions": True,
+            "recent_minutes_sample_size": recent_count,
+            "explicit_expected_minutes_exposed": False,
+        },
+        "players": players,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
