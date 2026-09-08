@@ -380,6 +380,37 @@ def run_horizon(
         raise OperationalError(f"HORIZON_FAILED: H{horizon} DB copy hash mismatch")
     home = hdir / "home"
     home.mkdir()
+    env = safe_runtime_env(home, db_copy, int(owner["entry_id"]))
+
+    prediction_path = hdir / "prediction_stage.json"
+    prediction_command = [
+        sys.executable,
+        str(script_dir / "prediction_worker.py"),
+        "--owner-state",
+        str(owner_path),
+        "--horizon",
+        str(horizon),
+        "--output",
+        str(prediction_path),
+    ]
+    run_logged(
+        prediction_command,
+        cwd=script_dir,
+        env=env,
+        log_path=hdir / "prediction.log",
+        label=f"HORIZON_FAILED: H{horizon} AIrsenal prediction stage",
+    )
+    prediction = load_object(prediction_path, f"H{horizon} prediction stage")
+    expected_gws = list(range(int(owner["target_gameweek"]), int(owner["target_gameweek"]) + horizon))
+    if prediction.get("schema") != "airsenal-chat-prediction-stage-v1":
+        raise OperationalError(f"HORIZON_FAILED: H{horizon} prediction-stage schema mismatch")
+    if int(prediction.get("horizon") or 0) != horizon or prediction.get("gameweeks") != expected_gws:
+        raise OperationalError(f"HORIZON_FAILED: H{horizon} prediction-stage scope mismatch")
+    if prediction.get("pre_prediction_db_sha256") != base_db_sha256:
+        raise OperationalError(f"HORIZON_FAILED: H{horizon} prediction did not start from frozen base DB")
+    if prediction.get("post_prediction_db_sha256") != sha256_file(db_copy):
+        raise OperationalError(f"HORIZON_FAILED: H{horizon} prediction DB hash mismatch")
+
     result_path = hdir / "result.json"
     command = [
         sys.executable,
@@ -388,18 +419,19 @@ def run_horizon(
         str(owner_path),
         "--horizon",
         str(horizon),
+        "--prediction-manifest",
+        str(prediction_path),
         "--output",
         str(result_path),
     ]
     if scenario_path is not None:
         command += ["--scenario", str(scenario_path)]
-    env = safe_runtime_env(home, db_copy, int(owner["entry_id"]))
     run_logged(
         command,
         cwd=script_dir,
         env=env,
         log_path=hdir / "worker.log",
-        label=f"HORIZON_FAILED: H{horizon} AIrsenal prediction/optimisation",
+        label=f"HORIZON_FAILED: H{horizon} AIrsenal optimization stage",
     )
     return validate_horizon_result(
         result_path,

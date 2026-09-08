@@ -201,3 +201,8 @@ Every context records the owner release/run provenance, raw snapshot SHA-256, of
 ## Public CI and privacy
 
 `.github/workflows/airsenal-chat-free.yml` runs only synthetic/public tests. It deliberately injects fake secret-looking fields and asserts they are excluded. The upstream smoke job clones the exact SHA and imports the real pinned AIrsenal stack. A public `macos-14` job verifies the same bootstrap/import path on GitHub's standard public M1/arm64 runner; standard runners for public repositories are free. No owner snapshot, private repository checkout or genuine decision context is uploaded to Actions.
+
+
+## macOS JAX/optimizer process isolation
+
+Each H3/H5 horizon now runs AIrsenal prediction generation and transfer optimization in separate fresh Python processes against the same isolated DB copy. This deliberately lets the prediction/JAX process terminate before AIrsenal creates its fork-based optimizer workers, avoiding the upstream-documented JAX + `os.fork()` deadlock class without reducing horizons, optimizer iterations, worker count, transfer search limits, or model components. The prediction-stage tag and pre/post DB hashes are verified before optimization begins.

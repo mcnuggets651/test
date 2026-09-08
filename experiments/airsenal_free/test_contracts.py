@@ -83,6 +83,22 @@ class ContractTests(unittest.TestCase):
         optimize_index = text.index("opt.run_optimization(")
         self.assertLess(init_index, optimize_index)
 
+    def test_prediction_and_optimizer_are_process_isolated_without_quality_reduction(self):
+        worker = (ROOT / "horizon_worker.py").read_text(encoding="utf-8")
+        operational_text = (ROOT / "operational.py").read_text(encoding="utf-8")
+        predictor = (ROOT / "prediction_worker.py").read_text(encoding="utf-8")
+        self.assertIn("make_predictedscore_table", predictor)
+        self.assertNotIn("make_predictedscore_table", worker)
+        self.assertIn("--prediction-manifest", worker)
+        prediction_call = operational_text.index('str(script_dir / "prediction_worker.py")')
+        optimizer_call = operational_text.index('str(script_dir / "horizon_worker.py")')
+        self.assertLess(prediction_call, optimizer_call)
+        optimize_index = worker.index("opt.run_optimization(")
+        candidate_import_index = worker.index("from airsenal.framework.player import CandidatePlayer")
+        self.assertLess(optimize_index, candidate_import_index)
+        self.assertIn('"num_iterations": int(raw.get("num_iterations", 100))', worker)
+        self.assertIn('"num_thread": int(raw.get("num_thread", 4))', worker)
+
     def test_no_fpl_write_commands_in_runtime(self):
         joined = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")

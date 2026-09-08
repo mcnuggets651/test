@@ -37,3 +37,8 @@ The health record contains only non-secret operational fields: status, entry/GW,
 The private repository owns the service installer/watchdog because the runner is a private infrastructure concern, not an AIrsenal model concern. The governed private tooling installs a custom macOS LaunchAgent that invokes GitHub's required `runsvc.sh` entry point with `RunAtLoad=true` and `KeepAlive=true`, verifies its plist, and offers `status`, `kickstart`, and `doctor` operations.
 
 No hosted-runner fallback is permitted. If the Mac is unavailable, private work queues/fails closed rather than incurring paid compute or moving owner data public.
+
+
+## macOS JAX/optimizer process isolation
+
+Each H3/H5 horizon now runs AIrsenal prediction generation and transfer optimization in separate fresh Python processes against the same isolated DB copy. This deliberately lets the prediction/JAX process terminate before AIrsenal creates its fork-based optimizer workers, avoiding the upstream-documented JAX + `os.fork()` deadlock class without reducing horizons, optimizer iterations, worker count, transfer search limits, or model components. The prediction-stage tag and pre/post DB hashes are verified before optimization begins.

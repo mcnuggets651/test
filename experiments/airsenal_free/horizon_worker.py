@@ -91,19 +91,17 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--owner-state", type=Path, required=True)
     parser.add_argument("--scenario", type=Path)
     parser.add_argument("--horizon", type=int, choices=(3, 5), required=True)
+    parser.add_argument("--prediction-manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
 
     import airsenal
-    from airsenal.framework.player import CandidatePlayer
     from airsenal.framework.multiprocessing_utils import set_multiprocessing_start_method
-    from airsenal.framework.prediction_utils import get_recent_minutes_for_player
     from airsenal.framework.schema import session
     from airsenal.framework.season import CURRENT_SEASON
     from airsenal.framework.squad import Squad
     from airsenal.framework.utils import fastcopy, get_player, get_player_from_api_id, list_players
     from airsenal.scripts import fill_transfersuggestion_table as opt
-    from airsenal.scripts.fill_predictedscore_table import make_predictedscore_table
 
     # AIrsenal requires fork on POSIX/macOS for its optimizer workers.
     # Its CLI/pipeline entrypoints call this helper before run_optimization;
@@ -122,18 +120,24 @@ def main(argv: list[str] | None = None) -> int:
 
     random.seed(42)
     db_path = Path(__import__("os").environ["AIRSENAL_DB_FILE"]).expanduser().resolve()
-    pre_prediction_db_sha256 = sha256_file(db_path)
-    prediction_tag = make_predictedscore_table(
-        gw_range=gameweeks,
-        season=CURRENT_SEASON,
-        include_bonus=True,
-        include_cards=True,
-        include_saves=True,
-        include_def_con=True,
-        tag_prefix=f"airsenal-chat-h{args.horizon}-",
-        dbsession=session,
-    )
-    post_prediction_db_sha256 = sha256_file(db_path)
+    prediction_manifest = load_object(args.prediction_manifest)
+    if prediction_manifest.get("schema") != "airsenal-chat-prediction-stage-v1":
+        raise ValueError("unexpected prediction-stage schema")
+    if int(prediction_manifest.get("horizon") or 0) != args.horizon:
+        raise ValueError("prediction-stage horizon mismatch")
+    if prediction_manifest.get("gameweeks") != gameweeks:
+        raise ValueError("prediction-stage gameweek range mismatch")
+    if int(prediction_manifest.get("entry_id") or 0) != int(owner["entry_id"]):
+        raise ValueError("prediction-stage owner scope mismatch")
+    if int(prediction_manifest.get("target_gameweek") or 0) != target_gw:
+        raise ValueError("prediction-stage target Gameweek mismatch")
+    prediction_tag = str(prediction_manifest.get("prediction_tag") or "")
+    if not prediction_tag:
+        raise ValueError("prediction-stage tag missing")
+    pre_prediction_db_sha256 = str(prediction_manifest.get("pre_prediction_db_sha256") or "")
+    post_prediction_db_sha256 = str(prediction_manifest.get("post_prediction_db_sha256") or "")
+    if sha256_file(db_path) != post_prediction_db_sha256:
+        raise ValueError("prediction-stage DB hash mismatch before optimization")
 
     def build_starting_squad() -> Squad:
         squad = Squad(season=CURRENT_SEASON)
@@ -197,6 +201,10 @@ def main(argv: list[str] | None = None) -> int:
         )
     if best_strategy is None:
         raise ValueError("AIrsenal returned no multi-week strategy")
+
+    # Import prediction/JAX-facing helpers only after optimizer workers have joined.
+    from airsenal.framework.player import CandidatePlayer
+    from airsenal.framework.prediction_utils import get_recent_minutes_for_player
 
     def decorate_internal(pid: int) -> dict[str, Any]:
         player = get_player(int(pid), dbsession=session)
