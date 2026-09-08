@@ -1,0 +1,66 @@
+name: Temporary AIrsenal documentation consistency updater
+
+on:
+  push:
+    branches: [prototype/airsenal-chat]
+    paths: [".github/workflows/airsenal-docs-refresh.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: prototype/airsenal-chat
+          fetch-depth: 0
+      - name: Remove stale pre-producer references
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          readme = Path('experiments/airsenal_free/README.md')
+          text = readme.read_text(encoding='utf-8')
+          text = text.replace(
+              '- `team_state.published_gw` equals that target Gameweek;',
+              '- `team_state.published_gw` is the target Gameweek or at most one Gameweek behind; when one-GW provenance lag is used, current club/position/price/status are rebased from live Official FPL before optimisation;',
+          )
+          text = text.replace(
+              'Publication is two commits:\n\n1. append the unique immutable run directory and push fast-forward;\n2. update the latest pointer to the exact immutable run commit and push fast-forward.',
+              'Legacy combined publication remains two commits:\n\n1. append the unique immutable combined run directory and push fast-forward;\n2. update the legacy latest pointer and health record to the exact immutable run commit and push fast-forward.\n\nThe staged morning producer publishes forecast, H3 and H5 independently before the combined context. New consumers read `airsenal/latest/entry-63984/manifest.json` first; see `PRODUCER_ARCHITECTURE.md`. The legacy `airsenal/latest/entry-63984.json` pointer is retained for backward compatibility once the combined result is ready.'
+          )
+          text = text.replace(
+              'A fresh connected ChatGPT session should read `AIRSENAL_CHAT_BRIDGE.md` in the private repository, fetch `airsenal/latest/entry-63984.json` from `airsenal-results`, then fetch the exact context path at the pointer\'s immutable `run_commit_sha` and validate its SHA/integrity before interpretation.',
+              'A fresh connected ChatGPT session should read `AIRSENAL_CHAT_BRIDGE.md` in the private repository and fetch `airsenal/latest/entry-63984/manifest.json` first. It may then follow any required ready forecast/H3/H5 stage pointer to the exact immutable `run_commit_sha`; when `combined.status == ready`, it may also verify and consume the backward-compatible `airsenal/latest/entry-63984.json` decision context. Ordinary conversation does not start model computation.'
+          )
+          marker = '## Precompute-first conversational architecture'
+          if marker not in text:
+              insert = '''\n\n## Precompute-first conversational architecture\n\nThe preferred product path is the scheduled producer, not `run.sh` inside a conversation. `produce.sh` bootstraps the exact runtime and runs `daily_producer.py`, which publishes forecast evidence first, then H3, then H5, then the backward-compatible combined context. The private repository schedules that producer on the self-hosted Mac. ChatGPT reads and verifies the already-produced evidence. See `PRODUCER_ARCHITECTURE.md` for freshness, partial-availability and compatibility rules.\n\nManual producer command for operations/testing:\n\n```bash\ncd ~/test\nbash ./experiments/airsenal_free/produce.sh --private-repo ~/fpl --scenario ./experiments/airsenal_free/interactive_nohit_h3h5.json\n```\n'''
+              text = text.replace('\n## What is validated before optimisation\n', insert + '\n## What is validated before optimisation\n', 1)
+          readme.write_text(text, encoding='utf-8')
+
+          ops = Path('experiments/airsenal_free/OPERATIONS.md')
+          text = ops.read_text(encoding='utf-8')
+          text = text.replace('## Everyday command', '## Direct/manual reference command')
+          text = text.replace(
+              'Successful publication remains exactly two fast-forward commits:',
+              'Legacy combined publication remains exactly two fast-forward commits:'
+          )
+          marker = '## Scheduled producer'
+          if marker not in text:
+              addition = '''\n\n## Scheduled producer\n\nOrdinary ChatGPT use is read-only and should not invoke `run.sh`. The private repository schedules the staged producer on the self-hosted Mac. The public producer launcher is:\n\n```bash\ncd ~/test\nbash ./experiments/airsenal_free/produce.sh --private-repo ~/fpl --scenario ./experiments/airsenal_free/interactive_nohit_h3h5.json\n```\n\nThe producer publishes `forecast`, then `h3`, then `h5`, and finally the existing combined decision context. The current manifest is `airsenal/latest/entry-63984/manifest.json`; the legacy combined pointer remains `airsenal/latest/entry-63984.json`. Earlier ready stages remain usable if a later stage fails, subject to the freshness contract in `PRODUCER_ARCHITECTURE.md`.\n'''
+              text = text.replace('\n## Exact runtime cache\n', addition + '\n## Exact runtime cache\n', 1)
+          ops.write_text(text, encoding='utf-8')
+          PY
+          grep -R "team_state.published_gw.*equals that target" experiments/airsenal_free && exit 1 || true
+          python3 -m compileall -q experiments/airsenal_free
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/airsenal_free/README.md experiments/airsenal_free/OPERATIONS.md
+          git commit -m 'Document precompute-first AIrsenal architecture'
+          git push origin HEAD:prototype/airsenal-chat
