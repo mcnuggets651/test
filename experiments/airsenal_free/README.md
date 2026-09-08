@@ -15,7 +15,7 @@ This directory is an **isolated, non-serving, read-only decision experiment**. I
 - Runtime data: outside all Git worktrees under `${AIRSENAL_CHAT_HOME:-~/.local/share/airsenal-chat}`.
 - No FPL write commands are invoked. `airsenal_make_transfers` and `airsenal_set_lineup` are explicitly outside this experiment.
 
-## One-command use
+## Direct/reference one-command use
 
 After checking out this branch and after the governed private `airsenal-results` transport has been accepted:
 
@@ -24,7 +24,7 @@ cd ~/test
 ./experiments/airsenal_free/run.sh --private-repo ~/fpl
 ```
 
-The command bootstraps the pinned upstream runtime if needed, validates the private repository/query boundary, obtains a fresh immutable `PRIVATE_MANAGER` snapshot, validates it against live Official FPL `bootstrap-static` and `fixtures`, updates an isolated AIrsenal database, freezes that database, runs independent 3-GW and 5-GW prediction/optimisation workers, writes a private decision bundle locally, and attempts the two-commit private Git publication protocol.
+The command bootstraps the pinned upstream runtime if needed, validates the private repository/query boundary, obtains a fresh immutable `PRIVATE_MANAGER` snapshot, validates it against live Official FPL `bootstrap-static` and `fixtures`, updates an isolated AIrsenal database, freezes that database, runs independent 3-GW and 5-GW prediction/optimisation workers, writes a private decision bundle locally, and attempts the backward-compatible combined private Git publication protocol.
 
 To keep a scientifically valid result local:
 
@@ -33,7 +33,6 @@ To keep a scientifically valid result local:
 ```
 
 No password, refresh token, FPL cookie, or raw auth payload is read or persisted by this experiment. GitHub authentication is taken from `GITHUB_TOKEN` or `gh auth token`, matching the Dastan bridge pattern.
-
 
 ## Precompute-first conversational architecture
 
@@ -59,10 +58,12 @@ The owner adapter fails closed unless all of the following hold:
 - exactly 15 unique players with 2 GK, 5 DEF, 5 MID and 3 FWD;
 - at most three players per club;
 - bank is a non-negative integer and free transfers are in the FPL range 1–5;
-- every owned player has purchase and selling prices;
-- Official FPL identity, club, position, current price and status still agree with the private snapshot;
+- every owned player has purchase and snapshot selling prices, and snapshot selling value is internally consistent with snapshot purchase/current price;
+- every owned element still exists in live Official FPL;
+- live Official FPL is authoritative for current player identity metadata, club, position, current price and status; differences from the accepted immutable snapshot are explicitly rebased rather than treated as corruption;
+- current selling value is recomputed from immutable purchase price plus live Official current price under the FPL sell-on rule;
 - the isolated AIrsenal database maps every FPL element ID exactly once;
-- AIrsenal's own sale-price calculation for the starting squad matches every exact private selling price.
+- AIrsenal's own sale-price calculation for the live-rebased starting squad matches every recomputed exact current selling price.
 
 The raw private query file is temporary. Only an explicit allowlist is copied to `owner_state.json`; extra/private/secret-looking fields are discarded rather than recursively copied.
 
@@ -82,7 +83,7 @@ Both horizons therefore share the exact same owner state and pre-prediction data
 
 The worker calls upstream `make_predictedscore_table()` and upstream `run_optimization()` rather than replacing their model or optimiser. The only optimiser integration seam is a temporary in-process substitution of `get_starting_squad()` and `get_entry_start_gameweek()` so AIrsenal receives the already-attested private owner squad instead of logging into FPL. Exact private free transfers are passed through `num_free_transfers`.
 
-Default experiment settings deliberately expose rather than hide upstream choices:
+Default/reference experiment settings deliberately expose rather than hide upstream choices:
 
 - extended Dixon-Coles team model;
 - conjugate player model;
@@ -92,6 +93,8 @@ Default experiment settings deliberately expose rather than hide upstream choice
 - transfer hits cost 4 points per transfer beyond available free transfers;
 - maximum saved free transfers is five;
 - no chip is assumed available merely because the owner may still hold it.
+
+The scheduled conversational profile is explicitly governed separately (`interactive_nohit_h3h5.json`): it retains independent H3/H5, exact 0/1/2-transfer search and 100 optimizer iterations, uses 8 optimizer workers, and excludes hit routes. It must not be represented as equivalent to the slower exhaustive/reference hit search.
 
 If `active_chip` says a supported chip is already active for the target Gameweek, the worker can represent that target-GW chip. It does not infer the owner's unused chip inventory because the narrow owner query does not expose a complete chip inventory.
 
@@ -117,7 +120,7 @@ New or low-history players depend on AIrsenal's database/player-model fallback a
 
 ### Prices and transfers
 
-AIrsenal uses current database prices for candidates and its own FPL sale-price calculation for owned players. The experiment requires that calculation to reconcile to the exact private selling prices at the starting Gameweek. AIrsenal does not predict future price rises/falls as part of football expected points. Future transfer plans are planning evidence, not commitments: upstream itself assumes re-optimisation later.
+AIrsenal uses current database prices for candidates and its own FPL sale-price calculation for owned players. The experiment requires that calculation to reconcile to the exact current selling prices derived from immutable purchase prices and live Official current prices at the starting Gameweek. AIrsenal does not predict future price rises/falls as part of football expected points. Future transfer plans are planning evidence, not commitments: upstream itself assumes re-optimisation later.
 
 ### Captaincy / bench
 
@@ -159,43 +162,11 @@ The decision context has four explicit interpretation layers:
 
 ## Scenario support
 
-`--scenario <json-file>` accepts only constraints that map directly to pinned upstream optimiser controls:
-
-```json
-{
-  "max_total_hit": 4,
-  "allow_unused_transfers": true,
-  "max_opt_transfers": 2,
-  "chip_gameweeks": {"triple_captain": 4}
-}
-```
-
-Named-player constraints such as “keep Bruno”, “force Rogers”, “buy Isak” or “do not sell Gvardiol” are **not claimed as supported** by this wrapper because the pinned public optimiser API does not expose a stable named-player keep/force contract. The correct behaviour is to report that limitation, not fake a counterfactual xP edge. A future implementation may add such scenarios only if mapped to a genuine upstream-supported constraint seam and tested separately.
+`--scenario <json-file>` accepts only constraints that map directly to pinned upstream optimiser controls. Named-player constraints such as “keep Bruno”, “force Rogers”, “buy Isak” or “do not sell Gvardiol” are **not claimed as supported** by this wrapper because the pinned public optimiser API does not expose a stable named-player keep/force contract. The correct behaviour is to report that limitation, not fake a counterfactual xP edge.
 
 ## Private ChatGPT bridge
 
-Governed private publication targets:
-
-```text
-mcnuggets651/fpl @ airsenal-results
-airsenal/runs/entry-63984/gw<GW>/<run-id>/...
-airsenal/latest/entry-63984.json
-```
-
-Legacy combined publication remains two commits:
-
-1. append the unique immutable combined run directory and push fast-forward;
-2. update the legacy latest pointer and health record to the exact immutable run commit and push fast-forward.
-
-The staged morning producer publishes forecast, H3 and H5 independently before the combined context. New consumers read `airsenal/latest/entry-63984/manifest.json` first; see `PRODUCER_ARCHITECTURE.md`. The legacy `airsenal/latest/entry-63984.json` pointer is retained for backward compatibility once the combined result is ready.
-
-The publisher refuses an existing immutable run path, never force-pushes, uses a temporary detached worktree, verifies the remote head after each push, and compares the owner's normal private working-tree status before/after. A publication failure is recorded separately and does not invalidate a completed quantitative solve.
-
-A fresh connected ChatGPT session should read `AIRSENAL_CHAT_BRIDGE.md` in the private repository and fetch `airsenal/latest/entry-63984/manifest.json` first. It may then follow any required ready forecast/H3/H5 stage pointer to the exact immutable `run_commit_sha`; when `combined.status == ready`, it may also verify and consume the backward-compatible `airsenal/latest/entry-63984.json` decision context. Ordinary conversation does not start model computation.
-
-The owner-facing phrase is:
-
-> **Check my latest AIrsenal strategy.**
+The staged producer and ChatGPT retrieval contract is documented in `PRODUCER_ARCHITECTURE.md`. New consumers read the staged manifest first; the existing combined pointer remains backward-compatible when both horizons are ready.
 
 ## Failure classes
 
@@ -204,6 +175,7 @@ The owner-facing phrase is:
 - `UPSTREAM_PIN_INVALID` — runtime is not the exact pinned AIrsenal commit/license/lock identity.
 - `DATA_BOOTSTRAP_FAILED` — isolated AIrsenal database could not be set up/updated.
 - `PRICE_RECONCILIATION_FAILED` — AIrsenal's current sale-price mechanics disagree with exact owner state.
+- `FORECAST_FAILED` — staged player forecast evidence could not be produced or validated.
 - `HORIZON_FAILED` — AIrsenal cannot produce a valid 3-GW or 5-GW prediction/optimisation surface; no fabricated fallback.
 - `CONTEXT_FAILED` — computation completed but decision-context integrity could not be established.
 - `CHAT_PUBLISH_FAILED` — local computation/context remain valid; private transport failed.
@@ -216,7 +188,6 @@ Every context records the owner release/run provenance, raw snapshot SHA-256, of
 
 `.github/workflows/airsenal-chat-free.yml` runs only synthetic/public tests. It deliberately injects fake secret-looking fields and asserts they are excluded. The upstream smoke job clones the exact SHA and imports the real pinned AIrsenal stack. A public `macos-14` job verifies the same bootstrap/import path on GitHub's standard public M1/arm64 runner; standard runners for public repositories are free. No owner snapshot, private repository checkout or genuine decision context is uploaded to Actions.
 
-
 ## macOS JAX/optimizer process isolation
 
-Each H3/H5 horizon now runs AIrsenal prediction generation and transfer optimization in separate fresh Python processes against the same isolated DB copy. This deliberately lets the prediction/JAX process terminate before AIrsenal creates its fork-based optimizer workers, avoiding the upstream-documented JAX + `os.fork()` deadlock class without reducing horizons, optimizer iterations, worker count, transfer search limits, or model components. The prediction-stage tag and pre/post DB hashes are verified before optimization begins.
+Each H3/H5 horizon runs AIrsenal prediction generation and transfer optimization in separate fresh Python processes against the same isolated DB copy. This lets the prediction/JAX process terminate before AIrsenal creates its fork-based optimizer workers, avoiding the upstream-documented JAX + `os.fork()` deadlock class. The prediction-stage tag and pre/post DB hashes are verified before optimization begins.
