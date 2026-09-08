@@ -1,0 +1,22 @@
+{
+  "schema": "airsenal-chat-pins-v1",
+  "upstream_repository": "alan-turing-institute/AIrsenal",
+  "upstream_sha": "453e4797e85232854004a753deda6bcdc81062b5",
+  "upstream_project_version": "1.17.1",
+  "upstream_license": "MIT",
+  "upstream_license_blob_sha": "d09452034a502c3546a51ada28ed3650606b3500",
+  "upstream_uv_lock_blob_sha": "5268f2c25bc0314c346d45d3b426843d6d3cb52f",
+  "python_version": "3.12.14",
+  "python_minor": "3.12",
+  "uv_version": "0.8.15",
+  "horizons": [3, 5],
+  "private_repository": "mcnuggets651/fpl",
+  "private_results_branch": "airsenal-results",
+  "private_entry_id": 63984,
+  "private_query_files": [
+    "tools/apex_strategy_query.py",
+    "tools/apex_private_query.py",
+    "tools/apex_private_query_entry.py"
+  ],
+  "local_home": "~/.local/share/airsenal-chat"
+}

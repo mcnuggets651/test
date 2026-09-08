@@ -1,0 +1,94 @@
+name: AIrsenal Chat Free Acceptance
+
+on:
+  push:
+    branches: [prototype/airsenal-chat]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-contracts:
+    name: Synthetic privacy and transport contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Shell syntax
+        run: bash -n experiments/airsenal_free/bootstrap.sh experiments/airsenal_free/run.sh
+      - name: Compile integration
+        run: python -m compileall -q experiments/airsenal_free
+      - name: Run synthetic tests
+        run: python -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
+
+  pinned-upstream-linux:
+    name: Pinned upstream Linux acceptance
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Pre-install contract tests
+        run: python -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
+      - name: Bootstrap exact AIrsenal stack
+        run: AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh
+      - name: Prove exact cache reuse
+        run: |
+          set -euo pipefail
+          output="$(AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh)"
+          printf '%s\n' "$output"
+          grep -F "AIrsenal cached runtime verified; no dependency rebuild required." <<<"$output"
+      - name: Verify pinned runtime
+        run: |
+          AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat"
+          "$AIRSENAL_CHAT_HOME/venv/bin/python" - <<'PY'
+          import airsenal, platform, sys
+          assert airsenal.__version__ == "1.17.1"
+          assert sys.version.split()[0] == "3.12.14"
+          print(platform.platform(), platform.machine(), airsenal.__version__)
+          PY
+      - name: Post-install contract tests
+        run: |
+          AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat"
+          "$AIRSENAL_CHAT_HOME/venv/bin/python" -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
+
+  pinned-upstream-macos-arm64:
+    name: Pinned upstream macOS M1 arm64 acceptance
+    runs-on: macos-14
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require Apple Silicon runner
+        run: test "$(uname -m)" = "arm64"
+      - name: Pre-install contract tests
+        run: python3 -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v
+      - name: Bootstrap exact AIrsenal stack
+        run: AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh
+      - name: Prove exact cache reuse
+        run: |
+          set -euo pipefail
+          output="$(AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat" bash experiments/airsenal_free/bootstrap.sh)"
+          printf '%s\n' "$output"
+          grep -F "AIrsenal cached runtime verified; no dependency rebuild required." <<<"$output"
+      - name: Verify pinned Apple Silicon runtime
+        run: |
+          AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat"
+          "$AIRSENAL_CHAT_HOME/venv/bin/python" - <<'PY'
+          import airsenal, platform, sys
+          assert platform.machine() == "arm64"
+          assert airsenal.__version__ == "1.17.1"
+          assert sys.version.split()[0] == "3.12.14"
+          print(platform.platform(), platform.machine(), airsenal.__version__)
+          PY
+      - name: Post-install contract tests
+        run: |
+          AIRSENAL_CHAT_HOME="$RUNNER_TEMP/airsenal-chat"
+          "$AIRSENAL_CHAT_HOME/venv/bin/python" -m unittest discover -s experiments/airsenal_free -p "test_*.py" -v

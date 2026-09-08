@@ -1,0 +1,134 @@
+from __future__ import annotations
+
+import json
+import unittest
+from pathlib import Path
+
+import horizon_worker
+import operational
+
+ROOT = Path(__file__).resolve().parent
+
+
+class ContractTests(unittest.TestCase):
+    def test_pins_are_exact_and_isolated(self):
+        pins = json.loads((ROOT / "pins.json").read_text(encoding="utf-8"))
+        self.assertEqual(
+            pins["upstream_repository"],
+            "alan-turing-institute/AIrsenal",
+        )
+        self.assertRegex(pins["upstream_sha"], r"^[0-9a-f]{40}$")
+        self.assertEqual(
+            pins["upstream_sha"],
+            "453e4797e85232854004a753deda6bcdc81062b5",
+        )
+        self.assertEqual(pins["upstream_license"], "MIT")
+        self.assertEqual(pins["horizons"], [3, 5])
+        self.assertEqual(pins["private_results_branch"], "airsenal-results")
+        self.assertNotEqual(pins["private_results_branch"], "dastan-results")
+        self.assertEqual(pins["private_entry_id"], 63984)
+        self.assertEqual(pins["python_version"], "3.12.14")
+
+    def test_bootstrap_never_floats_upstream_or_uses_global_airsenal_home(self):
+        text = (ROOT / "bootstrap.sh").read_text(encoding="utf-8")
+        self.assertIn('checkout --quiet --detach "$UPSTREAM_SHA"', text)
+        self.assertIn('sync --python "$EXACT_PYTHON" --project "$UPSTREAM" --frozen --no-dev', text)
+        self.assertIn('UV_PROJECT_ENVIRONMENT="$VENV"', text)
+        self.assertIn(".local/share/airsenal-chat", text)
+        self.assertIn("exact CPython $PYTHON_VERSION is unavailable; refusing to loosen runtime pin", text)
+        self.assertNotIn("checkout main", text)
+        self.assertNotIn("uv python install", text)
+
+    def test_homebrew_resolver_stdout_is_path_only(self):
+        text = (ROOT / "bootstrap.sh").read_text(encoding="utf-8")
+        self.assertIn("brew update --quiet >/dev/null 2>&1", text)
+        self.assertIn("brew upgrade python@3.12 >/dev/null 2>&1 || true", text)
+        self.assertIn("brew install python@3.12 >/dev/null 2>&1", text)
+        self.assertIn('candidate="$(brew --prefix python@3.12 2>/dev/null)/bin/python3.12"', text)
+
+    def test_shell_entrypoints_are_executable(self):
+        for name in ("run.sh", "bootstrap.sh"):
+            mode = (ROOT / name).stat().st_mode
+            self.assertTrue(mode & 0o111, f"{name} must retain a Git executable bit")
+
+    def test_run_launcher_emits_only_stable_phase_failure_classes(self):
+        text = (ROOT / "run.sh").read_text(encoding="utf-8")
+        self.assertIn("AIRSENAL_SAFE_FAILURE_CLASS=%s", text)
+        for marker in (
+            "ARGUMENT_VALIDATION_FAILED",
+            "DOCTOR_PRE_FAILED",
+            "BOOTSTRAP_FAILED",
+            "DOCTOR_POST_FAILED",
+            "OPERATIONAL_FAILED",
+        ):
+            self.assertIn(marker, text)
+        self.assertIn("run_guarded", text)
+        self.assertNotIn("cat doctor-pre.json", text)
+        self.assertNotIn("cat doctor-post.json", text)
+        self.assertNotIn("cat $RUN_LOG", text)
+
+    def test_command_path_stays_inside_active_virtualenv(self):
+        text = (ROOT / "operational.py").read_text(encoding="utf-8")
+        self.assertIn('Path(sys.prefix) / "bin" / name', text)
+        self.assertIn('Path(sys.executable).parent / name', text)
+        self.assertNotIn('Path(sys.executable).resolve().parent / name', text)
+
+    def test_horizon_worker_initialises_upstream_multiprocessing_before_optimizer(self):
+        text = (ROOT / "horizon_worker.py").read_text(encoding="utf-8")
+        self.assertIn(
+            "from airsenal.framework.multiprocessing_utils import set_multiprocessing_start_method",
+            text,
+        )
+        init_index = text.index("set_multiprocessing_start_method()")
+        optimize_index = text.index("opt.run_optimization(")
+        self.assertLess(init_index, optimize_index)
+
+    def test_prediction_and_optimizer_are_process_isolated_without_quality_reduction(self):
+        worker = (ROOT / "horizon_worker.py").read_text(encoding="utf-8")
+        operational_text = (ROOT / "operational.py").read_text(encoding="utf-8")
+        predictor = (ROOT / "prediction_worker.py").read_text(encoding="utf-8")
+        self.assertIn("make_predictedscore_table", predictor)
+        self.assertNotIn("make_predictedscore_table", worker)
+        self.assertIn("--prediction-manifest", worker)
+        prediction_call = operational_text.index('str(script_dir / "prediction_worker.py")')
+        optimizer_call = operational_text.index('str(script_dir / "horizon_worker.py")')
+        self.assertLess(prediction_call, optimizer_call)
+        optimize_index = worker.index("opt.run_optimization(")
+        candidate_import_index = worker.index("from airsenal.framework.player import CandidatePlayer")
+        self.assertLess(optimize_index, candidate_import_index)
+        self.assertIn('"num_iterations": int(raw.get("num_iterations", 100))', worker)
+        self.assertIn('"num_thread": int(raw.get("num_thread", 4))', worker)
+
+    def test_no_fpl_write_commands_in_runtime(self):
+        joined = "\n".join(
+            (ROOT / name).read_text(encoding="utf-8")
+            for name in (
+                "operational.py",
+                "horizon_worker.py",
+                "run.sh",
+                "bootstrap.sh",
+            )
+        )
+        self.assertNotIn("airsenal_make_transfers", joined)
+        self.assertNotIn("airsenal_set_lineup", joined)
+
+    def test_scenario_support_is_upstream_bounded(self):
+        valid = horizon_worker.validate_scenario(
+            {
+                "max_total_hit": 4,
+                "allow_unused_transfers": True,
+                "max_opt_transfers": 2,
+            },
+            4,
+            None,
+        )
+        self.assertEqual(valid["max_total_hit"], 4)
+        with self.assertRaises(ValueError):
+            horizon_worker.validate_scenario({"keep_player": "Bruno"}, 4, None)
+
+    def test_horizons_are_exactly_three_and_five(self):
+        self.assertEqual(operational.HORIZONS, (3, 5))
+
+
+if __name__ == "__main__":
+    unittest.main()
