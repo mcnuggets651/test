@@ -2,7 +2,7 @@
 
 This experiment remains isolated on `mcnuggets651/test:prototype/airsenal-chat` and never writes FPL account state.
 
-## Everyday command
+## Direct/manual reference command
 
 ```bash
 cd ~/test
@@ -17,6 +17,18 @@ The command now performs a fast preflight, verifies or rebuilds the exact pinned
 
 Doctor reports are stored mode `0600` under `~/.local/share/airsenal-chat/doctor-pre.json` and `doctor-post.json`. They are local operational diagnostics and are not uploaded as public artifacts.
 
+
+## Scheduled producer
+
+Ordinary ChatGPT use is read-only and should not invoke `run.sh`. The private repository schedules the staged producer on the self-hosted Mac. The public producer launcher is:
+
+```bash
+cd ~/test
+bash ./experiments/airsenal_free/produce.sh --private-repo ~/fpl --scenario ./experiments/airsenal_free/interactive_nohit_h3h5.json
+```
+
+The producer publishes `forecast`, then `h3`, then `h5`, and finally the existing combined decision context. The current manifest is `airsenal/latest/entry-63984/manifest.json`; the legacy combined pointer remains `airsenal/latest/entry-63984.json`. Earlier ready stages remain usable if a later stage fails, subject to the freshness contract in `PRODUCER_ARCHITECTURE.md`.
+
 ## Exact runtime cache
 
 The runtime remains pinned by `pins.json`. Bootstrap writes `runtime.json` schema `airsenal-chat-runtime-v2` containing the upstream SHA, license/lock identities, exact Python/uv versions, the pins-file SHA-256, and a digest of installed package names/versions. A repeat run skips dependency reconstruction only when all of those identities, the clean upstream checkout, Python version, AIrsenal version, and installed-distribution digest still match. Any drift causes a deterministic rebuild.
@@ -25,7 +37,7 @@ This is a performance optimization only. It does not float packages, relax the l
 
 ## Private health surface
 
-Successful publication remains exactly two fast-forward commits:
+Legacy combined publication remains exactly two fast-forward commits:
 
 1. immutable `airsenal/runs/entry-63984/gw<GW>/<run-id>/...`;
 2. a mutable commit that advances both `airsenal/latest/entry-63984.json` and `airsenal/health/entry-63984.json` to that immutable run.

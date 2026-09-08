@@ -34,6 +34,18 @@ To keep a scientifically valid result local:
 
 No password, refresh token, FPL cookie, or raw auth payload is read or persisted by this experiment. GitHub authentication is taken from `GITHUB_TOKEN` or `gh auth token`, matching the Dastan bridge pattern.
 
+
+## Precompute-first conversational architecture
+
+The preferred product path is the scheduled producer, not `run.sh` inside a conversation. `produce.sh` bootstraps the exact runtime and runs `daily_producer.py`, which publishes forecast evidence first, then H3, then H5, then the backward-compatible combined context. The private repository schedules that producer on the self-hosted Mac. ChatGPT reads and verifies the already-produced evidence. See `PRODUCER_ARCHITECTURE.md` for freshness, partial-availability and compatibility rules.
+
+Manual producer command for operations/testing:
+
+```bash
+cd ~/test
+bash ./experiments/airsenal_free/produce.sh --private-repo ~/fpl --scenario ./experiments/airsenal_free/interactive_nohit_h3h5.json
+```
+
 ## What is validated before optimisation
 
 The owner adapter fails closed unless all of the following hold:
@@ -42,7 +54,7 @@ The owner adapter fails closed unless all of the following hold:
 - private release is immutable;
 - entry ID is exactly `63984`;
 - private target Gameweek equals the live Official FPL event marked `is_next`;
-- `team_state.published_gw` equals that target Gameweek;
+- `team_state.published_gw` is the target Gameweek or at most one Gameweek behind; when one-GW provenance lag is used, current club/position/price/status are rebased from live Official FPL before optimisation;
 - `state_complete_for_transfers == true`;
 - exactly 15 unique players with 2 GK, 5 DEF, 5 MID and 3 FWD;
 - at most three players per club;
@@ -170,14 +182,16 @@ airsenal/runs/entry-63984/gw<GW>/<run-id>/...
 airsenal/latest/entry-63984.json
 ```
 
-Publication is two commits:
+Legacy combined publication remains two commits:
 
-1. append the unique immutable run directory and push fast-forward;
-2. update the latest pointer to the exact immutable run commit and push fast-forward.
+1. append the unique immutable combined run directory and push fast-forward;
+2. update the legacy latest pointer and health record to the exact immutable run commit and push fast-forward.
+
+The staged morning producer publishes forecast, H3 and H5 independently before the combined context. New consumers read `airsenal/latest/entry-63984/manifest.json` first; see `PRODUCER_ARCHITECTURE.md`. The legacy `airsenal/latest/entry-63984.json` pointer is retained for backward compatibility once the combined result is ready.
 
 The publisher refuses an existing immutable run path, never force-pushes, uses a temporary detached worktree, verifies the remote head after each push, and compares the owner's normal private working-tree status before/after. A publication failure is recorded separately and does not invalidate a completed quantitative solve.
 
-A fresh connected ChatGPT session should read `AIRSENAL_CHAT_BRIDGE.md` in the private repository, fetch `airsenal/latest/entry-63984.json` from `airsenal-results`, then fetch the exact context path at the pointer's immutable `run_commit_sha` and validate its SHA/integrity before interpretation.
+A fresh connected ChatGPT session should read `AIRSENAL_CHAT_BRIDGE.md` in the private repository and fetch `airsenal/latest/entry-63984/manifest.json` first. It may then follow any required ready forecast/H3/H5 stage pointer to the exact immutable `run_commit_sha`; when `combined.status == ready`, it may also verify and consume the backward-compatible `airsenal/latest/entry-63984.json` decision context. Ordinary conversation does not start model computation.
 
 The owner-facing phrase is:
 
