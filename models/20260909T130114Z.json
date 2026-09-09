@@ -1,0 +1,51 @@
+{
+  "created_at_utc": "2026-09-09T13:01:22.505466+00:00",
+  "fall": {
+    "calibration_a": 1.0,
+    "calibration_b": 0.0,
+    "coef": [],
+    "intercept": 0.0,
+    "kind": "cold_start",
+    "mean": [],
+    "metrics": null,
+    "n_positive": 0,
+    "n_train": 0,
+    "scale": []
+  },
+  "feature_version": 1,
+  "label_version": 2,
+  "model_id": "2099be2078f06607aee6b7cbd110d184cce98c2f40ed08b150822f602bbe1ed4",
+  "production_influence": "NONE",
+  "prospective_qualified": false,
+  "rise": {
+    "calibration_a": 1.0,
+    "calibration_b": 0.0,
+    "coef": [],
+    "intercept": 0.0,
+    "kind": "cold_start",
+    "mean": [],
+    "metrics": null,
+    "n_positive": 0,
+    "n_train": 0,
+    "scale": []
+  },
+  "schema_version": 1,
+  "serving_authorized": false,
+  "training_summary": {
+    "fall": {
+      "n": 28359,
+      "positives": 905,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "label_version": 2,
+    "n_examples": 28359,
+    "prospective_qualification": "NOT_EVALUATED_FOR_INTEGRATION",
+    "purge_hours": 27,
+    "rise": {
+      "n": 28359,
+      "positives": 114,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "status": "COLD_START_PARTIAL"
+  }
+}
