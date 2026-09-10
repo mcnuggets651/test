@@ -80,24 +80,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Produce current read-only evidence
-        run: python experiments/onside_free/onside_fpl.py --out "$RUNNER_TEMP/onside.json"
+      - name: Produce current read-only player evidence
+        run: python experiments/onside_free/onside_live.py --top 5 --out "$RUNNER_TEMP/onside.json"
       - name: Inspect live evidence contract
         run: |
           python - "$RUNNER_TEMP/onside.json" <<'PY'
           import json, pathlib, sys
           data = json.loads(pathlib.Path(sys.argv[1]).read_text())
-          assert data["schema"] == "onside-fpl-evidence-v1"
+          assert data["schema"] == "onside-fpl-live-player-evidence-v1"
           assert data["status"] == "ready"
-          assert data["coverage"]["source_rows"] >= 200
-          assert data["coverage"]["match_ratio"] >= 0.85
-          assert data["players"]
+          assert len(data["players"]) == 5
+          for player in data["players"]:
+              assert player["target_gameweek"] == data["target_gameweek"]
+              assert 0 <= player["onside_start_probability_pct"] <= 100
+              assert player["onside_next_6_gw_xp"] >= player["onside_xp"]
+              assert player["source_url"].startswith("https://onsidearena.com/player/")
           print({
               "gw": data["target_gameweek"],
-              "engine": data["onside_engine_version"],
-              "capture": data["onside_capture_utc"],
-              "rows": data["coverage"]["source_rows"],
-              "matched": data["coverage"]["matched_current_fpl_rows"],
-              "top": data["players"][:5],
+              "players": [
+                  {
+                      "element": p["element"],
+                      "name": p["name"],
+                      "gw_xp": p["onside_xp"],
+                      "six_gw_xp": p["onside_next_6_gw_xp"],
+                      "start_pct": p["onside_start_probability_pct"],
+                      "engine": p["onside_engine"],
+                  }
+                  for p in data["players"]
+              ],
           })
           PY
