@@ -1,0 +1,103 @@
+name: Onside FPL Provider Acceptance
+
+on:
+  push:
+    branches: [prototype/onside-chat]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    name: Onside provider contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile adapter
+        run: python -m compileall -q experiments/onside_free
+      - name: Run synthetic fail-closed tests
+        run: python -m unittest discover -s experiments/onside_free -p "test_*.py" -v
+      - name: Validate provider pins
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          pins = json.loads(Path("experiments/onside_free/pins.json").read_text())
+          mcp = pins["onside"]["mcp"]
+          assert mcp["package"] == "onside-football-mcp"
+          assert mcp["version"] == "0.2.0"
+          assert mcp["commit_sha"] == "cf48d1d3374768de5cb6f7716d7e76f06b16e0b6"
+          assert mcp["fpl_tool_exposed"] is False
+          assert len(mcp["verified_tools"]) == 8
+          PY
+
+  upstream-mcp-boundary:
+    name: Verify pinned MCP capability boundary
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Fetch exact upstream server implementation
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/wr275/onside-football-mcp/cf48d1d3374768de5cb6f7716d7e76f06b16e0b6/src/server.ts \
+            --output "$RUNNER_TEMP/server.ts"
+      - name: Prove expected tools and no FPL MCP tool
+        run: |
+          python - "$RUNNER_TEMP/server.ts" <<'PY'
+          import pathlib, re, sys
+          text = pathlib.Path(sys.argv[1]).read_text()
+          expected = {
+              "get_wc_match_prediction",
+              "get_wc_champion_odds",
+              "get_wc_team_info",
+              "get_wc_fixtures",
+              "get_wc_fantasy_picks",
+              "get_wc_upset_watch",
+              "get_wc_live_scores",
+              "compare_wc_teams",
+          }
+          names = set(re.findall(r"name:\s*'([^']+)'", text))
+          missing = expected - names
+          assert not missing, f"missing pinned MCP tools: {sorted(missing)}"
+          assert not any("fpl" in name.lower() for name in names), names
+          print("verified MCP tools:", sorted(expected))
+          PY
+
+  live-provider-read:
+    name: Live Onside + Official FPL read
+    needs: contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Produce current read-only evidence
+        run: python experiments/onside_free/onside_fpl.py --out "$RUNNER_TEMP/onside.json"
+      - name: Inspect live evidence contract
+        run: |
+          python - "$RUNNER_TEMP/onside.json" <<'PY'
+          import json, pathlib, sys
+          data = json.loads(pathlib.Path(sys.argv[1]).read_text())
+          assert data["schema"] == "onside-fpl-evidence-v1"
+          assert data["status"] == "ready"
+          assert data["coverage"]["source_rows"] >= 200
+          assert data["coverage"]["match_ratio"] >= 0.85
+          assert data["players"]
+          print({
+              "gw": data["target_gameweek"],
+              "engine": data["onside_engine_version"],
+              "capture": data["onside_capture_utc"],
+              "rows": data["coverage"]["source_rows"],
+              "matched": data["coverage"]["matched_current_fpl_rows"],
+              "top": data["players"][:5],
+          })
+          PY

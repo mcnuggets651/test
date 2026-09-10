@@ -1,0 +1,24 @@
+{
+  "schema": "onside-provider-pins-v1",
+  "onside": {
+    "projection_url": "https://onsidearena.com/fpl/predicted-points",
+    "graded_dataset_url": "https://onsidearena.com/data/graded-predictions.csv",
+    "mcp": {
+      "package": "onside-football-mcp",
+      "version": "0.2.0",
+      "repository": "wr275/onside-football-mcp",
+      "commit_sha": "cf48d1d3374768de5cb6f7716d7e76f06b16e0b6",
+      "fpl_tool_exposed": false,
+      "verified_tools": [
+        "get_wc_match_prediction",
+        "get_wc_champion_odds",
+        "get_wc_team_info",
+        "get_wc_fixtures",
+        "get_wc_fantasy_picks",
+        "get_wc_upset_watch",
+        "get_wc_live_scores",
+        "compare_wc_teams"
+      ]
+    }
+  }
+}
