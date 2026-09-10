@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
-import html
 import json
 import re
 import unicodedata
@@ -188,11 +187,11 @@ def _parse_utc_fragment(fragment: str, deadline: dt.datetime) -> dt.datetime:
             candidates.append(dt.datetime(year, month, day, hour, minute, tzinfo=dt.timezone.utc))
         except ValueError:
             continue
-    before = [x for x in candidates if x <= deadline]
-    if before:
-        return min(before, key=lambda x: deadline - x)
     if not candidates:
         raise ProviderError("could not materialise Onside frozen timestamp")
+    # The page omits the year. Choose the calendar occurrence nearest the governed
+    # Official FPL deadline, then validate pre-deadline ordering separately. This
+    # avoids turning a same-season post-deadline timestamp into a stale prior-year one.
     return min(candidates, key=lambda x: abs(deadline - x))
 
 
@@ -300,7 +299,7 @@ def match_rows(rows: list[ProjectionRow], bootstrap: dict[str, Any]) -> tuple[li
 
 def fetch_bytes(url: str, timeout: int = 20) -> bytes:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/json;q=0.9,*/*;q=0.8"})
-    with urlopen(request, timeout=timeout) as response:  # noqa: S310 - fixed allow-listed HTTPS URLs
+    with urlopen(request, timeout=timeout) as response:
         return response.read()
 
 
