@@ -1,0 +1,97 @@
+{
+  "evaluated_forecasts": 73,
+  "fall": {
+    "average_precision": 0.05877805082406419,
+    "brier": 0.03032764890557923,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.019042340233517835,
+        "n": 30533,
+        "observed_rate": 0.029148789833950153
+      },
+      {
+        "high": 0.2,
+        "low": 0.1,
+        "mean_probability": 0.13967876419970632,
+        "n": 681,
+        "observed_rate": 0.05286343612334802
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.23999263179104474,
+        "n": 201,
+        "observed_rate": 0.04975124378109453
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.34569302715789474,
+        "n": 95,
+        "observed_rate": 0.021052631578947368
+      },
+      {
+        "high": 0.5,
+        "low": 0.4,
+        "mean_probability": 0.4458004410596027,
+        "n": 151,
+        "observed_rate": 0.1456953642384106
+      }
+    ],
+    "log_loss": 0.13585097573701965,
+    "n": 31661,
+    "positives": 960,
+    "prevalence": 0.030321215375382963
+  },
+  "integration_authorized": false,
+  "label_version": 2,
+  "paired_rows": 31661,
+  "rise": {
+    "average_precision": 0.036516971423704074,
+    "brier": 0.006901445717849966,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.014500089883375257,
+        "n": 30611,
+        "observed_rate": 0.0031687955310182613
+      },
+      {
+        "high": 0.2,
+        "low": 0.1,
+        "mean_probability": 0.14398552427570094,
+        "n": 428,
+        "observed_rate": 0.03271028037383177
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.2431722361835749,
+        "n": 207,
+        "observed_rate": 0.07729468599033816
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.3444306455434783,
+        "n": 92,
+        "observed_rate": 0.11956521739130435
+      },
+      {
+        "high": 0.5,
+        "low": 0.4,
+        "mean_probability": 0.4466732020743035,
+        "n": 323,
+        "observed_rate": 0.018575851393188854
+      }
+    ],
+    "log_loss": 0.0375913753561876,
+    "n": 31661,
+    "positives": 144,
+    "prevalence": 0.004548182306307444
+  },
+  "status": "EVALUATED"
+}
