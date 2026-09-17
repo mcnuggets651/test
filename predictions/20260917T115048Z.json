@@ -1,0 +1,5945 @@
+{
+  "code_sha": "e3489c3b49ba130485da4fedbabeab1575b8dfb2",
+  "feature_version": 1,
+  "generated_at_utc": "2026-09-17T11:50:50.083740+00:00",
+  "horizon_hours": 24,
+  "model_id": "f81c40333df460c6138b380a77e963a53c5fb3666af14b7ba8fe6ebcab81219a",
+  "production_influence": "NONE",
+  "rows": [
+    {
+      "confidence": "MEDIUM",
+      "element_id": 1,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00013721,
+      "p_rise_24h": 0.07992446,
+      "web_name": "Raya"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 2,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01135306,
+      "p_rise_24h": 0.00249146,
+      "web_name": "Arrizabalaga"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 3,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0105837,
+      "p_rise_24h": 0.00288345,
+      "web_name": "Meslier"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 4,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 80,
+      "p_fall_24h": 0.02201676,
+      "p_rise_24h": 0.04516312,
+      "web_name": "Gabriel"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 5,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.0,
+      "p_rise_24h": 0.08160246,
+      "web_name": "J.Timber"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 6,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00758059,
+      "p_rise_24h": 8.556e-05,
+      "web_name": "Saliba"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 7,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.07363962,
+      "p_rise_24h": 0.0032636,
+      "web_name": "Lewis-Skelly"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 8,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.00178727,
+      "p_rise_24h": 0.66245258,
+      "web_name": "Calafiori"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 9,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.01136173,
+      "p_rise_24h": 0.00039352,
+      "web_name": "Hincapie"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 10,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.08131242,
+      "p_rise_24h": 6.452e-05,
+      "web_name": "White"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 11,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.0006647,
+      "p_rise_24h": 1.19e-05,
+      "web_name": "Mosquera"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 12,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 95,
+      "p_fall_24h": 0.01496724,
+      "p_rise_24h": 0.08516869,
+      "web_name": "Saka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 13,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 74,
+      "p_fall_24h": 0.02164429,
+      "p_rise_24h": 0.00995778,
+      "web_name": "Rice"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 14,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.02462059,
+      "p_rise_24h": 0.00068229,
+      "web_name": "Eze"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 15,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 67,
+      "p_fall_24h": 0.00654588,
+      "p_rise_24h": 0.23975153,
+      "web_name": "\u00d8degaard"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 16,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 62,
+      "p_fall_24h": 8.07e-05,
+      "p_rise_24h": 0.00126675,
+      "web_name": "Madueke"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 17,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.01687221,
+      "p_rise_24h": 0.00056497,
+      "web_name": "Merino"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 18,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.01088815,
+      "p_rise_24h": 2.246e-05,
+      "web_name": "Martinelli"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 19,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.00019004,
+      "p_rise_24h": 0.00311883,
+      "web_name": "Zubimendi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 20,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.00200092,
+      "p_rise_24h": 0.00110805,
+      "web_name": "Dowman"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 22,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00573048,
+      "p_rise_24h": 0.00017415,
+      "web_name": "Nwaneri"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 23,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01678707,
+      "p_rise_24h": 0.00047736,
+      "web_name": "F\u00e1bio Vieira"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 24,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.0163374,
+      "p_rise_24h": 0.00050302,
+      "web_name": "Nelson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 25,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 72,
+      "p_fall_24h": 0.01170652,
+      "p_rise_24h": 0.00059989,
+      "web_name": "Gy\u00f6keres"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 26,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 76,
+      "p_fall_24h": 0.70076147,
+      "p_rise_24h": 0.01572017,
+      "web_name": "Havertz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 27,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.0109189,
+      "p_rise_24h": 0.0001269,
+      "web_name": "G.Jesus"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 31,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00010601,
+      "p_rise_24h": 0.03043382,
+      "web_name": "Konsa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 452,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 67,
+      "p_fall_24h": 7.61e-06,
+      "p_rise_24h": 0.00328877,
+      "web_name": "Bruno G."
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 557,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 64,
+      "p_fall_24h": 0.02032841,
+      "p_rise_24h": 0.00261539,
+      "web_name": "Tzolis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 29,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00867438,
+      "p_rise_24h": 0.00032513,
+      "web_name": "M.Bizot"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 30,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00868542,
+      "p_rise_24h": 0.00024974,
+      "web_name": "Digne"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 32,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00018472,
+      "p_rise_24h": 0.00136169,
+      "web_name": "Cash"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 33,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01403034,
+      "p_rise_24h": 0.0043291,
+      "web_name": "Mings"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 34,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.04691805,
+      "p_rise_24h": 0.0001473,
+      "web_name": "Pau"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 35,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03205236,
+      "p_rise_24h": 0.00619213,
+      "web_name": "Bogarde"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 36,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.1000581,
+      "p_rise_24h": 1.477e-05,
+      "web_name": "Maatsen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 37,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00751394,
+      "p_rise_24h": 0.00534331,
+      "web_name": "Lindel\u00f6f"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 38,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01243722,
+      "p_rise_24h": 0.00485678,
+      "web_name": "A.Garc\u00eda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 39,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01081486,
+      "p_rise_24h": 0.00010353,
+      "web_name": "Nedeljkovic"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 41,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.04502711,
+      "p_rise_24h": 0.00103313,
+      "web_name": "Buend\u00eda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 44,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01616406,
+      "p_rise_24h": 4.308e-05,
+      "web_name": "Bailey"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 45,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00748356,
+      "p_rise_24h": 0.00348668,
+      "web_name": "McGinn"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 46,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02341969,
+      "p_rise_24h": 0.00538803,
+      "web_name": "Barkley"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 47,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01758647,
+      "p_rise_24h": 0.00187549,
+      "web_name": "Kamara"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 48,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 5.428e-05,
+      "p_rise_24h": 0.00072392,
+      "web_name": "Onana"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 49,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01100437,
+      "p_rise_24h": 0.00047037,
+      "web_name": "Iling Jr"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 50,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03851862,
+      "p_rise_24h": 0.00413875,
+      "web_name": "Burrowes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 51,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00736856,
+      "p_rise_24h": 0.00567076,
+      "web_name": "George Hemmings"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 52,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00234605,
+      "p_rise_24h": 0.01391116,
+      "web_name": "Alysson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 53,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00053508,
+      "p_rise_24h": 0.002551,
+      "web_name": "Manzambi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 54,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.0052606,
+      "p_rise_24h": 0.00122499,
+      "web_name": "Gomes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 55,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 78,
+      "p_fall_24h": 0.01096414,
+      "p_rise_24h": 9.094e-05,
+      "web_name": "Watkins"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 56,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00172771,
+      "p_rise_24h": 0.00689612,
+      "web_name": "Abraham"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 160,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.00046197,
+      "p_rise_24h": 0.00160806,
+      "web_name": "Garnacho"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 166,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.04302037,
+      "p_rise_24h": 0.00437318,
+      "web_name": "N.Jackson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 582,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00015501,
+      "p_rise_24h": 0.00029792,
+      "web_name": "Madjo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 596,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02089738,
+      "p_rise_24h": 0.00419304,
+      "web_name": "Ruggeri"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 597,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00835749,
+      "p_rise_24h": 0.00652538,
+      "web_name": "Suzuki"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 606,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00504171,
+      "p_rise_24h": 0.00565991,
+      "web_name": "Rowe"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 607,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02077231,
+      "p_rise_24h": 0.00010353,
+      "web_name": "Lynch"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 611,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00043753,
+      "p_rise_24h": 0.00910514,
+      "web_name": "Wan-Bissaka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 618,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00070807,
+      "p_rise_24h": 7.505e-05,
+      "web_name": "Goretzka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 630,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01273197,
+      "p_rise_24h": 0.0064987,
+      "web_name": "Harwood-Bellis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 631,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00144677,
+      "p_rise_24h": 0.01256346,
+      "web_name": "Mbaye"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 57,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01888994,
+      "p_rise_24h": 0.00535691,
+      "web_name": "Petrovi\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 58,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00402316,
+      "p_rise_24h": 0.00796991,
+      "web_name": "Forster"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 59,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00672992,
+      "p_rise_24h": 0.0001192,
+      "web_name": "Dennis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 60,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.06272962,
+      "p_rise_24h": 0.0046628,
+      "web_name": "Hill"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 61,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.05834154,
+      "p_rise_24h": 0.00647467,
+      "web_name": "Truffert"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 62,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03628202,
+      "p_rise_24h": 0.00451642,
+      "web_name": "Diakit\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 63,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 3.85e-05,
+      "p_rise_24h": 0.00082978,
+      "web_name": "Milosavljevi\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 64,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02277602,
+      "p_rise_24h": 0.0022568,
+      "web_name": "Smith"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 65,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00168924,
+      "p_rise_24h": 0.00011952,
+      "web_name": "J.Araujo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 66,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00325246,
+      "p_rise_24h": 0.00270377,
+      "web_name": "Soler"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 67,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 64,
+      "p_fall_24h": 0.09989217,
+      "p_rise_24h": 0.00129051,
+      "web_name": "Rayan"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 68,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 61,
+      "p_fall_24h": 0.00017665,
+      "p_rise_24h": 0.0367147,
+      "web_name": "Tavernier"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 69,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 61,
+      "p_fall_24h": 0.02683341,
+      "p_rise_24h": 0.02589772,
+      "web_name": "Scott"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 70,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.01166284,
+      "p_rise_24h": 0.01182736,
+      "web_name": "Kluivert"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 71,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0798086,
+      "p_rise_24h": 0.002554,
+      "web_name": "Cook"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 72,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01582529,
+      "p_rise_24h": 0.00260268,
+      "web_name": "Gannon-Doak"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 73,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00694488,
+      "p_rise_24h": 0.0025796,
+      "web_name": "Adams"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 74,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01729542,
+      "p_rise_24h": 0.00317624,
+      "web_name": "Brooks"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 75,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00466806,
+      "p_rise_24h": 0.00305361,
+      "web_name": "Christie"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 76,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0002341,
+      "p_rise_24h": 0.02234574,
+      "web_name": "T\u00f3th.A"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 77,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0041582,
+      "p_rise_24h": 0.00012689,
+      "web_name": "Adli"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 78,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 74,
+      "p_fall_24h": 0.03227417,
+      "p_rise_24h": 0.00016329,
+      "web_name": "Kroupi.Jr"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 79,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00759426,
+      "p_rise_24h": 0.01635545,
+      "web_name": "Evanilson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 80,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01174457,
+      "p_rise_24h": 0.0007573,
+      "web_name": "Enes \u00dcnal"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 81,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.01314004,
+      "p_rise_24h": 0.00538329,
+      "web_name": "Rodr\u00edguez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 566,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04171669,
+      "p_rise_24h": 0.00393674,
+      "web_name": "Silva"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 573,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00016521,
+      "p_rise_24h": 0.01269281,
+      "web_name": "Sanchez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 608,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00197171,
+      "p_rise_24h": 0.00667715,
+      "web_name": "Jebbison"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 615,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00998809,
+      "p_rise_24h": 0.00432647,
+      "web_name": "Di Gregorio"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 82,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02381524,
+      "p_rise_24h": 0.00577395,
+      "web_name": "Kelleher"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 83,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02316403,
+      "p_rise_24h": 0.00459176,
+      "web_name": "Valdimarsson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 84,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00063403,
+      "p_rise_24h": 4.15e-05,
+      "web_name": "Collins"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 85,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00472716,
+      "p_rise_24h": 8.293e-05,
+      "web_name": "Van den Berg"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 86,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.12973482,
+      "p_rise_24h": 0.00239953,
+      "web_name": "Lewis-Potter"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 87,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03506039,
+      "p_rise_24h": 0.00333959,
+      "web_name": "Ajer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 88,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 46,
+      "p_fall_24h": 0.07309743,
+      "p_rise_24h": 0.00802013,
+      "web_name": "Kayode"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 89,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00016173,
+      "p_rise_24h": 0.01115759,
+      "web_name": "Henry"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 90,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02437757,
+      "p_rise_24h": 0.00636146,
+      "web_name": "Hickey"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 92,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02968802,
+      "p_rise_24h": 0.00768991,
+      "web_name": "Ji-soo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 93,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03174218,
+      "p_rise_24h": 0.00518598,
+      "web_name": "Schuster"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 94,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 61,
+      "p_fall_24h": 2.508e-05,
+      "p_rise_24h": 0.0568948,
+      "web_name": "Schade"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 95,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.0010514,
+      "p_rise_24h": 0.0015213,
+      "web_name": "O.Dango"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 96,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.1246815,
+      "p_rise_24h": 0.00299299,
+      "web_name": "Damsgaard"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 97,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01531658,
+      "p_rise_24h": 4.53e-05,
+      "web_name": "Jensen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 98,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00237583,
+      "p_rise_24h": 0.0086273,
+      "web_name": "Janelt"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 99,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01037645,
+      "p_rise_24h": 0.00047196,
+      "web_name": "Milambo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 100,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01381085,
+      "p_rise_24h": 0.00390851,
+      "web_name": "Carvalho"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 102,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 48,
+      "p_fall_24h": 0.00011042,
+      "p_rise_24h": 0.00393732,
+      "web_name": "Yarmoliuk"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 103,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00490043,
+      "p_rise_24h": 0.00011466,
+      "web_name": "Dasilva"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 105,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00068174,
+      "p_rise_24h": 0.00647254,
+      "web_name": "Anthony"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 106,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 79,
+      "p_fall_24h": 0.10137668,
+      "p_rise_24h": 0.00355798,
+      "web_name": "Thiago"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 107,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00315921,
+      "p_rise_24h": 0.00016911,
+      "web_name": "Furo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 108,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.06522504,
+      "p_rise_24h": 0.00459163,
+      "web_name": "Wilson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 565,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 57,
+      "p_fall_24h": 0.26696023,
+      "p_rise_24h": 0.03663173,
+      "web_name": "M.Sangar\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 620,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00953775,
+      "p_rise_24h": 0.00304225,
+      "web_name": "Diouf"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 657,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 9.08e-06,
+      "p_rise_24h": 0.02224022,
+      "web_name": "Nunes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 109,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00117592,
+      "p_rise_24h": 0.015514,
+      "web_name": "Verbruggen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 111,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00572331,
+      "p_rise_24h": 0.00717714,
+      "web_name": "Steele"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 113,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00465976,
+      "p_rise_24h": 0.00093131,
+      "web_name": "F.Kad\u0131o\u011flu"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 114,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02063191,
+      "p_rise_24h": 0.0059186,
+      "web_name": "Boscagli"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 115,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.26410116,
+      "p_rise_24h": 0.22511327,
+      "web_name": "De Cuyper"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 116,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00074394,
+      "p_rise_24h": 0.01156699,
+      "web_name": "Dunk"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 117,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01798081,
+      "p_rise_24h": 0.00759546,
+      "web_name": "Coppola"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 118,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0230778,
+      "p_rise_24h": 7.01e-05,
+      "web_name": "Igor"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 119,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02114377,
+      "p_rise_24h": 0.0064648,
+      "web_name": "Costinha"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 120,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.018431,
+      "p_rise_24h": 0.0060151,
+      "web_name": "Svoboda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 121,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00816569,
+      "p_rise_24h": 0.00014636,
+      "web_name": "Mitoma"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 122,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.0127002,
+      "p_rise_24h": 9.648e-05,
+      "web_name": "Minteh"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 123,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00156101,
+      "p_rise_24h": 3.272e-05,
+      "web_name": "Hinshelwood"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 124,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 57,
+      "p_fall_24h": 0.00950596,
+      "p_rise_24h": 0.08294851,
+      "web_name": "Gro\u00df"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 125,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01765785,
+      "p_rise_24h": 0.00058434,
+      "web_name": "Georginio"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 126,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00024785,
+      "p_rise_24h": 0.01167899,
+      "web_name": "O'Riley"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 127,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04966212,
+      "p_rise_24h": 0.00419026,
+      "web_name": "Gomez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 128,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01079974,
+      "p_rise_24h": 0.00047813,
+      "web_name": "Buonanotte"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 129,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00330487,
+      "p_rise_24h": 0.00159158,
+      "web_name": "Ayari"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 130,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00050652,
+      "p_rise_24h": 3.301e-05,
+      "web_name": "Wieffer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 132,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01340631,
+      "p_rise_24h": 0.00019441,
+      "web_name": "Howell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 133,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01079971,
+      "p_rise_24h": 0.00048373,
+      "web_name": "Watson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 134,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03515428,
+      "p_rise_24h": 0.00509052,
+      "web_name": "Oriola"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 135,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01612707,
+      "p_rise_24h": 2.055e-05,
+      "web_name": "Yohanna"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 137,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 3.945e-05,
+      "p_rise_24h": 0.00185871,
+      "web_name": "Tzimas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 138,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 1.6e-07,
+      "p_rise_24h": 0.07339113,
+      "web_name": "Kostoulas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 139,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00402543,
+      "p_rise_24h": 0.00046515,
+      "web_name": "Ferguson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 328,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0001209,
+      "p_rise_24h": 0.00421681,
+      "web_name": "Struijk"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 504,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00886564,
+      "p_rise_24h": 0.00748035,
+      "web_name": "Vuskovic"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 594,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.04303181,
+      "p_rise_24h": 0.00401561,
+      "web_name": "David"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 600,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03860197,
+      "p_rise_24h": 0.0091228,
+      "web_name": "Osman"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 605,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 4.636e-05,
+      "p_rise_24h": 0.01767747,
+      "web_name": "Yalcouy\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 614,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01117528,
+      "p_rise_24h": 0.00391837,
+      "web_name": "Hadjam"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 624,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01072625,
+      "p_rise_24h": 0.00048303,
+      "web_name": "Cozier-Duberry"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 639,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01251279,
+      "p_rise_24h": 0.01393081,
+      "web_name": "Andr\u00e9s"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 652,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.02465947,
+      "p_rise_24h": 0.00139973,
+      "web_name": "Azeez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 658,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00017005,
+      "p_rise_24h": 0.01856393,
+      "web_name": "Ibrahim"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 28,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01699403,
+      "p_rise_24h": 0.00526316,
+      "web_name": "Martinez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 40,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 77,
+      "p_fall_24h": 0.05218352,
+      "p_rise_24h": 0.21146529,
+      "web_name": "Rogers"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 101,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00555225,
+      "p_rise_24h": 8.175e-05,
+      "web_name": "Henderson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 136,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00102312,
+      "p_rise_24h": 0.00282536,
+      "web_name": "Welbeck"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 140,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00756119,
+      "p_rise_24h": 2.755e-05,
+      "web_name": "S\u00e1nchez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 141,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00728413,
+      "p_rise_24h": 0.00036726,
+      "web_name": "J\u00f6rgensen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 142,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01428183,
+      "p_rise_24h": 0.00179584,
+      "web_name": "James"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 143,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.02177193,
+      "p_rise_24h": 0.00024801,
+      "web_name": "Chalobah"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 144,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04190143,
+      "p_rise_24h": 0.0037137,
+      "web_name": "Gusto"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 145,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00248371,
+      "p_rise_24h": 0.00215094,
+      "web_name": "Fofana"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 146,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0077163,
+      "p_rise_24h": 0.00029661,
+      "web_name": "B.Badiashile"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 148,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.04699116,
+      "p_rise_24h": 0.00149019,
+      "web_name": "Hato"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 149,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.03187908,
+      "p_rise_24h": 0.00087695,
+      "web_name": "Colwill"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 150,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01195026,
+      "p_rise_24h": 0.00016765,
+      "web_name": "M.Sarr"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 151,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.04052707,
+      "p_rise_24h": 0.00278192,
+      "web_name": "Acheampong"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 152,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.00012779,
+      "p_rise_24h": 3.123e-05,
+      "web_name": "Palestra"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 154,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 97,
+      "p_fall_24h": 0.08856557,
+      "p_rise_24h": 0.24966905,
+      "web_name": "Palmer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 156,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.0423785,
+      "p_rise_24h": 0.00728196,
+      "web_name": "Neto"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 157,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.00026037,
+      "p_rise_24h": 0.00458022,
+      "web_name": "Est\u00eav\u00e3o"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 158,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.02740201,
+      "p_rise_24h": 0.00331607,
+      "web_name": "Gittens"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 159,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.00012932,
+      "p_rise_24h": 3.728e-05,
+      "web_name": "Caicedo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 161,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01311779,
+      "p_rise_24h": 0.00265581,
+      "web_name": "Lavia"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 163,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03065802,
+      "p_rise_24h": 6.264e-05,
+      "web_name": "D.Essugo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 164,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 6.297e-05,
+      "p_rise_24h": 0.0022659,
+      "web_name": "Quenda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 165,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 78,
+      "p_fall_24h": 0.01711795,
+      "p_rise_24h": 0.17836506,
+      "web_name": "Jo\u00e3o Pedro"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 168,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02688111,
+      "p_rise_24h": 0.00013319,
+      "web_name": "Marc Guiu"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 169,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00133548,
+      "p_rise_24h": 0.01313332,
+      "web_name": "Mheuka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 170,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04331187,
+      "p_rise_24h": 4.926e-05,
+      "web_name": "Emegha"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 200,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.09569123,
+      "p_rise_24h": 0.00423408,
+      "web_name": "Lacroix"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 560,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00247586,
+      "p_rise_24h": 0.00255123,
+      "web_name": "Penders"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 561,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00848311,
+      "p_rise_24h": 0.00373909,
+      "web_name": "Anselmino"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 568,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00032285,
+      "p_rise_24h": 0.01046596,
+      "web_name": "Barco"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 583,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01595657,
+      "p_rise_24h": 0.00224054,
+      "web_name": "Chavarria"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 91,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0227063,
+      "p_rise_24h": 0.00609328,
+      "web_name": "Pinnock"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 104,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01237105,
+      "p_rise_24h": 0.00063195,
+      "web_name": "Onyeka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 110,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.04584473,
+      "p_rise_24h": 0.00256411,
+      "web_name": "Rushworth"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 171,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00574601,
+      "p_rise_24h": 0.00013605,
+      "web_name": "Dovin"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 172,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00012523,
+      "p_rise_24h": 0.01372754,
+      "web_name": "Wilson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 173,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00698195,
+      "p_rise_24h": 0.0065422,
+      "web_name": "Thomas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 174,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01051286,
+      "p_rise_24h": 0.00010619,
+      "web_name": "Kitching"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 175,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01114867,
+      "p_rise_24h": 0.00514461,
+      "web_name": "van Ewijk"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 176,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.02554862,
+      "p_rise_24h": 0.00510643,
+      "web_name": "Dasilva"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 177,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00416005,
+      "p_rise_24h": 0.0001679,
+      "web_name": "Kesler-Hayden"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 178,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01415154,
+      "p_rise_24h": 0.00542563,
+      "web_name": "Bidwell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 179,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01838442,
+      "p_rise_24h": 0.00540411,
+      "web_name": "Latibeaudiere"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 180,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00649827,
+      "p_rise_24h": 0.00011837,
+      "web_name": "Woolfenden"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 181,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00642208,
+      "p_rise_24h": 0.00020648,
+      "web_name": "Brau"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 182,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00572515,
+      "p_rise_24h": 0.00024751,
+      "web_name": "Amenda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 183,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03190209,
+      "p_rise_24h": 0.00178666,
+      "web_name": "Rudoni"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 184,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00028448,
+      "p_rise_24h": 0.00552239,
+      "web_name": "Grimes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 185,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.02875747,
+      "p_rise_24h": 0.00213763,
+      "web_name": "Sakamoto"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 186,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01681243,
+      "p_rise_24h": 0.00132179,
+      "web_name": "Mason-Clark"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 187,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0054749,
+      "p_rise_24h": 0.00010077,
+      "web_name": "Eccles"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 188,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.0474342,
+      "p_rise_24h": 0.00215378,
+      "web_name": "Torp"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 189,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.05440259,
+      "p_rise_24h": 0.00376135,
+      "web_name": "Shepherd"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 190,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.04618734,
+      "p_rise_24h": 0.00227888,
+      "web_name": "Tchaouna"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 191,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02761019,
+      "p_rise_24h": 7.695e-05,
+      "web_name": "Borges Rodrigues"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 192,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0256409,
+      "p_rise_24h": 8.317e-05,
+      "web_name": "Andrews"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 193,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00646776,
+      "p_rise_24h": 0.00011843,
+      "web_name": "Wright"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 194,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01024871,
+      "p_rise_24h": 0.00827729,
+      "web_name": "Thomas-Asante"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 195,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04452212,
+      "p_rise_24h": 0.00553637,
+      "web_name": "Simms"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 196,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00796669,
+      "p_rise_24h": 0.00067524,
+      "web_name": "Markelo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 197,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00728596,
+      "p_rise_24h": 0.00042319,
+      "web_name": "Bassette"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 492,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.1103539,
+      "p_rise_24h": 2.686e-05,
+      "web_name": "Awoniyi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 575,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.03093284,
+      "p_rise_24h": 0.00168019,
+      "web_name": "Yirenkyi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 584,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.04015149,
+      "p_rise_24h": 0.00244391,
+      "web_name": "Hamer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 599,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0040047,
+      "p_rise_24h": 0.01030397,
+      "web_name": "Cherif"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 623,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00033578,
+      "p_rise_24h": 0.01157397,
+      "web_name": "Bentley"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 655,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.04563254,
+      "p_rise_24h": 0.01499107,
+      "web_name": "Gboho"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 656,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 2e-08,
+      "p_rise_24h": 0.02491528,
+      "web_name": "Mfuni"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 42,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.05053443,
+      "p_rise_24h": 0.00416496,
+      "web_name": "Guessand"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 153,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.13037716,
+      "p_rise_24h": 4.81e-06,
+      "web_name": "Disasi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 198,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.09084012,
+      "p_rise_24h": 9.62e-06,
+      "web_name": "Henderson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 199,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00278217,
+      "p_rise_24h": 0.00713548,
+      "web_name": "Benitez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 202,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0618024,
+      "p_rise_24h": 0.00348041,
+      "web_name": "Richards"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 203,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.04753335,
+      "p_rise_24h": 0.00067697,
+      "web_name": "Canvot"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 204,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01521364,
+      "p_rise_24h": 0.00562916,
+      "web_name": "Mitchell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 205,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0093779,
+      "p_rise_24h": 0.00022447,
+      "web_name": "Sosa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 206,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00278516,
+      "p_rise_24h": 7.64e-05,
+      "web_name": "Chadi Riad"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 207,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.01065306,
+      "p_rise_24h": 0.00181576,
+      "web_name": "Mingueza"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 208,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 62,
+      "p_fall_24h": 0.00010359,
+      "p_rise_24h": 5.739e-05,
+      "web_name": "Sarr"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 210,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.04408648,
+      "p_rise_24h": 0.00211292,
+      "web_name": "Wharton"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 211,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.23148437,
+      "p_rise_24h": 0.00115742,
+      "web_name": "Yeremy"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 212,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 8.233e-05,
+      "p_rise_24h": 0.01289729,
+      "web_name": "Hughes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 213,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.02107334,
+      "p_rise_24h": 0.002555,
+      "web_name": "Lerma"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 214,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 1.184e-05,
+      "p_rise_24h": 0.0199691,
+      "web_name": "Kamada"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 215,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0123363,
+      "p_rise_24h": 0.00040123,
+      "web_name": "Devenny"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 216,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01861041,
+      "p_rise_24h": 0.00022434,
+      "web_name": "Esse"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 217,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00915967,
+      "p_rise_24h": 5.221e-05,
+      "web_name": "M.Fran\u00e7a"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 218,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01717921,
+      "p_rise_24h": 0.00122651,
+      "web_name": "Doucour\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 219,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00404289,
+      "p_rise_24h": 0.00015302,
+      "web_name": "J.Rak-Sakyi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 220,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00635814,
+      "p_rise_24h": 0.00038195,
+      "web_name": "Cardines"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 221,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03331529,
+      "p_rise_24h": 0.00523373,
+      "web_name": "Drakes-Thomas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 222,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00163474,
+      "p_rise_24h": 0.0175486,
+      "web_name": "Strand Larsen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 223,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 9.271e-05,
+      "p_rise_24h": 0.0001987,
+      "web_name": "Mateta"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 224,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.23926314,
+      "p_rise_24h": 6.177e-05,
+      "web_name": "Nketiah"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 225,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00685211,
+      "p_rise_24h": 0.000835,
+      "web_name": "Uche"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 241,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.046454,
+      "p_rise_24h": 0.00158071,
+      "web_name": "McNeil"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 555,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01157776,
+      "p_rise_24h": 0.00665491,
+      "web_name": "Matthews"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 577,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00020934,
+      "p_rise_24h": 0.00969384,
+      "web_name": "Tomiyasu"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 588,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00195324,
+      "p_rise_24h": 0.00578885,
+      "web_name": "Khalaili"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 595,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04721137,
+      "p_rise_24h": 0.0095048,
+      "web_name": "Gozo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 633,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00186522,
+      "p_rise_24h": 0.0115071,
+      "web_name": "Ahanor"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 643,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02596383,
+      "p_rise_24h": 0.00247783,
+      "web_name": "Chilwell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 644,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00024177,
+      "p_rise_24h": 0.01267135,
+      "web_name": "Timber"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 647,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.06115915,
+      "p_rise_24h": 0.01176663,
+      "web_name": "Osorio"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 21,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00733205,
+      "p_rise_24h": 5.126e-05,
+      "web_name": "N\u00f8rgaard"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 209,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00140393,
+      "p_rise_24h": 0.00404573,
+      "web_name": "Johnson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 226,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.0047559,
+      "p_rise_24h": 0.01521394,
+      "web_name": "Pickford"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 227,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00589414,
+      "p_rise_24h": 0.00674983,
+      "web_name": "Travers"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 228,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01433604,
+      "p_rise_24h": 0.00614687,
+      "web_name": "King"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 229,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 61,
+      "p_fall_24h": 0.05316048,
+      "p_rise_24h": 0.02067255,
+      "web_name": "Tarkowski"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 230,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00088117,
+      "p_rise_24h": 0.01911789,
+      "web_name": "Branthwaite"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 231,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 48,
+      "p_fall_24h": 0.00011112,
+      "p_rise_24h": 0.00273488,
+      "web_name": "Keane"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 232,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01181267,
+      "p_rise_24h": 0.00228743,
+      "web_name": "O'Brien"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 233,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 1.1e-07,
+      "p_rise_24h": 0.06047993,
+      "web_name": "Mykolenko"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 234,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01033695,
+      "p_rise_24h": 0.00020576,
+      "web_name": "Patterson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 235,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01361293,
+      "p_rise_24h": 7.383e-05,
+      "web_name": "Aznou"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 236,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.00049534,
+      "p_rise_24h": 0.02761251,
+      "web_name": "Dewsbury-Hall"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 238,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.00157261,
+      "p_rise_24h": 0.00571057,
+      "web_name": "Grealish"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 239,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 3.39e-06,
+      "p_rise_24h": 0.01526831,
+      "web_name": "Garner"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 242,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 1.49e-06,
+      "p_rise_24h": 0.03912742,
+      "web_name": "George"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 243,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01314804,
+      "p_rise_24h": 0.0022848,
+      "web_name": "Alcaraz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 244,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00111033,
+      "p_rise_24h": 0.00057318,
+      "web_name": "Armstrong"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 245,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01511217,
+      "p_rise_24h": 0.00340726,
+      "web_name": "Dibling"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 246,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 9.792e-05,
+      "p_rise_24h": 0.00056215,
+      "web_name": "R\u00f6hl"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 247,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.03294787,
+      "p_rise_24h": 0.00329523,
+      "web_name": "Hackney"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 248,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.03413373,
+      "p_rise_24h": 1.453e-05,
+      "web_name": "Beto"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 249,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 56,
+      "p_fall_24h": 0.00104401,
+      "p_rise_24h": 0.07278115,
+      "web_name": "Barry"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 649,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 1.5e-07,
+      "p_rise_24h": 0.05008084,
+      "web_name": "Maitland-Niles"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 654,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00386767,
+      "p_rise_24h": 0.00223296,
+      "web_name": "Graham"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 250,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00212128,
+      "p_rise_24h": 0.010014,
+      "web_name": "Leno"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 251,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00987887,
+      "p_rise_24h": 0.00674499,
+      "web_name": "Lecomte"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 252,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00637615,
+      "p_rise_24h": 0.00013143,
+      "web_name": "McNally"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 253,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00189256,
+      "p_rise_24h": 0.00168004,
+      "web_name": "Andersen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 254,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01003741,
+      "p_rise_24h": 0.00696397,
+      "web_name": "Robinson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 255,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03381873,
+      "p_rise_24h": 0.00563181,
+      "web_name": "J.Cuenca"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 256,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.01202445,
+      "p_rise_24h": 0.00198807,
+      "web_name": "Tete"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 257,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01414806,
+      "p_rise_24h": 0.00773626,
+      "web_name": "Bassey"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 258,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00176747,
+      "p_rise_24h": 0.00859934,
+      "web_name": "Castagne"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 261,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.02301276,
+      "p_rise_24h": 0.00207399,
+      "web_name": "Iwobi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 262,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.03515889,
+      "p_rise_24h": 0.00216551,
+      "web_name": "Smith Rowe"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 263,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 1.859e-05,
+      "p_rise_24h": 0.00580039,
+      "web_name": "Kevin"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 264,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.03008784,
+      "p_rise_24h": 0.00627217,
+      "web_name": "Bobb"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 265,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01063476,
+      "p_rise_24h": 0.00241213,
+      "web_name": "Berge"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 266,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 5.139e-05,
+      "p_rise_24h": 0.00097578,
+      "web_name": "Cairney"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 268,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 1.97e-06,
+      "p_rise_24h": 0.03314944,
+      "web_name": "King"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 269,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.01004546,
+      "p_rise_24h": 9.751e-05,
+      "web_name": "Sessegnon"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 270,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 1.604e-05,
+      "p_rise_24h": 0.01311118,
+      "web_name": "Reed"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 271,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00801665,
+      "p_rise_24h": 0.00345219,
+      "web_name": "Muniz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 272,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00917164,
+      "p_rise_24h": 0.01087417,
+      "web_name": "Kusi-Asare"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 569,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.0325702,
+      "p_rise_24h": 0.00735402,
+      "web_name": "Gonzalo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 570,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00014312,
+      "p_rise_24h": 0.01471308,
+      "web_name": "Palacios"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 580,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01714442,
+      "p_rise_24h": 0.00959729,
+      "web_name": "Charles"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 610,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01067735,
+      "p_rise_24h": 0.0001025,
+      "web_name": "De Fougerolles"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 626,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.05086027,
+      "p_rise_24h": 0.00255287,
+      "web_name": "Zepa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 635,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02722233,
+      "p_rise_24h": 0.01166853,
+      "web_name": "Larsson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 636,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0408594,
+      "p_rise_24h": 0.01180635,
+      "web_name": "\u00c1ngel"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 650,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 3.46e-06,
+      "p_rise_24h": 0.0220925,
+      "web_name": "Affengruber"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 240,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00549271,
+      "p_rise_24h": 0.0050937,
+      "web_name": "Iroegbunam"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 273,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00929698,
+      "p_rise_24h": 0.006248,
+      "web_name": "Phillips"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 274,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00562676,
+      "p_rise_24h": 0.00021142,
+      "web_name": "Butland"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 275,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00354041,
+      "p_rise_24h": 0.00028377,
+      "web_name": "Cartwright"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 276,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00406229,
+      "p_rise_24h": 0.00023691,
+      "web_name": "Lo-Tutala"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 277,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 41,
+      "p_fall_24h": 0.00146502,
+      "p_rise_24h": 0.03189506,
+      "web_name": "Egan"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 278,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 39,
+      "p_fall_24h": 0.0,
+      "p_rise_24h": 0.0017139,
+      "web_name": "Hughes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 279,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 42,
+      "p_fall_24h": 0.00062703,
+      "p_rise_24h": 0.05332686,
+      "web_name": "Ajayi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 280,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00040239,
+      "p_rise_24h": 0.00477528,
+      "web_name": "Coyle"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 281,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01172505,
+      "p_rise_24h": 9.033e-05,
+      "web_name": "Drameh"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 282,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 3.4e-07,
+      "p_rise_24h": 0.0353186,
+      "web_name": "Giles"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 283,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00516487,
+      "p_rise_24h": 0.00027877,
+      "web_name": "Jacob"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 284,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00247488,
+      "p_rise_24h": 0.00599934,
+      "web_name": "McCarthy"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 285,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00443318,
+      "p_rise_24h": 0.00245347,
+      "web_name": "McNair"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 286,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 51,
+      "p_fall_24h": 1e-08,
+      "p_rise_24h": 0.13753596,
+      "web_name": "Belloumi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 287,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04563177,
+      "p_rise_24h": 6.586e-05,
+      "web_name": "Millar"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 288,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03119642,
+      "p_rise_24h": 0.0035999,
+      "web_name": "Dowell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 289,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0060486,
+      "p_rise_24h": 0.00270412,
+      "web_name": "Crooks"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 290,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00359634,
+      "p_rise_24h": 0.00825455,
+      "web_name": "Slater"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 291,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.006265,
+      "p_rise_24h": 0.0003885,
+      "web_name": "Matazo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 292,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00645913,
+      "p_rise_24h": 0.0034082,
+      "web_name": "\u00d6m\u00fcr"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 293,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01102316,
+      "p_rise_24h": 0.00046917,
+      "web_name": "Kamara"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 294,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0020034,
+      "p_rise_24h": 0.0030365,
+      "web_name": "Zambrano"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 295,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00243284,
+      "p_rise_24h": 0.01583796,
+      "web_name": "McBurnie"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 296,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.07193394,
+      "p_rise_24h": 3.755e-05,
+      "web_name": "Akintola"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 297,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0076166,
+      "p_rise_24h": 0.00030548,
+      "web_name": "Gyabi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 298,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01277171,
+      "p_rise_24h": 0.00019875,
+      "web_name": "Destan"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 299,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00839835,
+      "p_rise_24h": 0.00035063,
+      "web_name": "Burstow"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 340,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00925194,
+      "p_rise_24h": 0.00504617,
+      "web_name": "Gelhardt"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 556,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01897711,
+      "p_rise_24h": 0.00454226,
+      "web_name": "Targett"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 563,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01781952,
+      "p_rise_24h": 0.00020946,
+      "web_name": "Morita"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 572,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 46,
+      "p_fall_24h": 0.0011878,
+      "p_rise_24h": 0.04198076,
+      "web_name": "Tzolakis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 574,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01643855,
+      "p_rise_24h": 0.00259522,
+      "web_name": "Hjert\u00f8-Dahl"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 576,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02230739,
+      "p_rise_24h": 0.00750188,
+      "web_name": "Stroud"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 585,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00903556,
+      "p_rise_24h": 0.00638154,
+      "web_name": "Herrington"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 586,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 41,
+      "p_fall_24h": 0.02411074,
+      "p_rise_24h": 0.00035638,
+      "web_name": "Mendy"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 589,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03829589,
+      "p_rise_24h": 0.00868506,
+      "web_name": "Gourna-Douath"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 617,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01271321,
+      "p_rise_24h": 0.01106336,
+      "web_name": "Cho"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 632,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02729882,
+      "p_rise_24h": 6.274e-05,
+      "web_name": "Ansah"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 637,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 4.2e-07,
+      "p_rise_24h": 0.04208081,
+      "web_name": "Vaz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 638,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00106699,
+      "p_rise_24h": 0.00525185,
+      "web_name": "Norton-Cuffy"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 642,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.0004046,
+      "p_rise_24h": 0.01618244,
+      "web_name": "Thomas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 645,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02470858,
+      "p_rise_24h": 0.01177824,
+      "web_name": "Mouzakitis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 259,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00579455,
+      "p_rise_24h": 0.00796514,
+      "web_name": "Diop"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 267,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.05498754,
+      "p_rise_24h": 0.00484295,
+      "web_name": "Luki\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 300,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.006887,
+      "p_rise_24h": 0.00241368,
+      "web_name": "Walton"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 301,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00932303,
+      "p_rise_24h": 0.00651004,
+      "web_name": "Palmer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 302,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00809682,
+      "p_rise_24h": 0.00684171,
+      "web_name": "Button"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 303,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 39,
+      "p_fall_24h": 1e-08,
+      "p_rise_24h": 0.04852746,
+      "web_name": "Kipr\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 304,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01622397,
+      "p_rise_24h": 0.00584822,
+      "web_name": "O'Shea"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 305,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 1.732e-05,
+      "p_rise_24h": 0.023821,
+      "web_name": "Davis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 306,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.02234388,
+      "p_rise_24h": 0.00590132,
+      "web_name": "Greaves"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 307,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00982859,
+      "p_rise_24h": 0.00011802,
+      "web_name": "Johnson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 308,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.0278154,
+      "p_rise_24h": 0.00523541,
+      "web_name": "Furlong"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 309,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00042843,
+      "p_rise_24h": 0.00604807,
+      "web_name": "N\u00fa\u00f1ez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 310,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00686322,
+      "p_rise_24h": 0.00233659,
+      "web_name": "Matusiwa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 311,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01085518,
+      "p_rise_24h": 0.0004745,
+      "web_name": "Burns"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 312,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00823731,
+      "p_rise_24h": 0.00023686,
+      "web_name": "Taylor"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 313,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.03618504,
+      "p_rise_24h": 0.00181193,
+      "web_name": "Clarke"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 314,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00417707,
+      "p_rise_24h": 0.00014411,
+      "web_name": "Ogbene"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 315,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.09262608,
+      "p_rise_24h": 0.0051178,
+      "web_name": "Fatawu"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 316,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 1.9e-07,
+      "p_rise_24h": 0.05101153,
+      "web_name": "Emersonn"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 317,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0167434,
+      "p_rise_24h": 0.00026934,
+      "web_name": "Hirst"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 318,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01263953,
+      "p_rise_24h": 0.00202128,
+      "web_name": "Philogene"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 319,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01142525,
+      "p_rise_24h": 0.00044474,
+      "web_name": "Szmodics"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 320,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00209533,
+      "p_rise_24h": 0.00899441,
+      "web_name": "Akpom"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 321,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00107955,
+      "p_rise_24h": 0.01322916,
+      "web_name": "Walle Egeli"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 322,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.012909,
+      "p_rise_24h": 0.00036023,
+      "web_name": "Al-Hamadi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 323,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0486496,
+      "p_rise_24h": 0.0041362,
+      "web_name": "McAteer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 324,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.02192982,
+      "p_rise_24h": 0.00276598,
+      "web_name": "Mehmeti"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 554,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00668423,
+      "p_rise_24h": 0.00022633,
+      "web_name": "Van Oevelen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 562,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.0709137,
+      "p_rise_24h": 0.00099937,
+      "web_name": "Maeda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 564,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01453249,
+      "p_rise_24h": 0.0063996,
+      "web_name": "Scherpen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 571,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00916678,
+      "p_rise_24h": 0.0013337,
+      "web_name": "Florentino"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 591,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01423669,
+      "p_rise_24h": 0.00249263,
+      "web_name": "Enciso"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 592,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01585834,
+      "p_rise_24h": 0.00597227,
+      "web_name": "Ouattara"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 602,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01646741,
+      "p_rise_24h": 0.0001514,
+      "web_name": "Humphreys"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 619,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 1.617e-05,
+      "p_rise_24h": 0.02325616,
+      "web_name": "Palacios"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 640,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 1.541e-05,
+      "p_rise_24h": 0.04118555,
+      "web_name": "Flemming"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 260,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.0518611,
+      "p_rise_24h": 0.00034131,
+      "web_name": "Wilson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 326,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01027108,
+      "p_rise_24h": 0.00012565,
+      "web_name": "Perri"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 327,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04751164,
+      "p_rise_24h": 0.00315072,
+      "web_name": "Bijol"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 329,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.01258102,
+      "p_rise_24h": 1.301e-05,
+      "web_name": "Rodon"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 330,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 1e-08,
+      "p_rise_24h": 0.13664805,
+      "web_name": "Bogle"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 331,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00122215,
+      "p_rise_24h": 0.00506526,
+      "web_name": "Gudmundsson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 332,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01538251,
+      "p_rise_24h": 0.00636814,
+      "web_name": "Justin"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 333,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00646808,
+      "p_rise_24h": 0.00037234,
+      "web_name": "Bornauw"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 334,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00265582,
+      "p_rise_24h": 0.01344022,
+      "web_name": "Muharemovi\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 335,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.03603302,
+      "p_rise_24h": 0.00851139,
+      "web_name": "Stach"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 336,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 1.2e-07,
+      "p_rise_24h": 0.02265678,
+      "web_name": "Okafor"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 337,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.0480364,
+      "p_rise_24h": 0.0014704,
+      "web_name": "Aaronson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 338,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01494477,
+      "p_rise_24h": 0.00295678,
+      "web_name": "Ampadu"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 339,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01773631,
+      "p_rise_24h": 0.00162681,
+      "web_name": "Longstaff"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 341,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.0137334,
+      "p_rise_24h": 0.00034576,
+      "web_name": "Gnonto"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 342,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01070796,
+      "p_rise_24h": 0.00048426,
+      "web_name": "Harrison"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 343,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00014002,
+      "p_rise_24h": 0.01027418,
+      "web_name": "James"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 344,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01344184,
+      "p_rise_24h": 0.00063093,
+      "web_name": "Gruev"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 345,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 6.674e-05,
+      "p_rise_24h": 0.00623902,
+      "web_name": "Tanaka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 346,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00022406,
+      "p_rise_24h": 0.08306943,
+      "web_name": "Calvert-Lewin"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 347,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.0032299,
+      "p_rise_24h": 0.00415023,
+      "web_name": "Nmecha"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 348,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01370158,
+      "p_rise_24h": 0.00032951,
+      "web_name": "Piroe"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 349,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00204024,
+      "p_rise_24h": 0.00046752,
+      "web_name": "Mateo Joseph"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 385,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00863458,
+      "p_rise_24h": 0.00928025,
+      "web_name": "Trafford"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 598,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00267497,
+      "p_rise_24h": 0.00786497,
+      "web_name": "Elvedi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 603,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00333722,
+      "p_rise_24h": 0.00521167,
+      "web_name": "Lienou"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 604,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00668855,
+      "p_rise_24h": 0.00300823,
+      "web_name": "Cresswell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 625,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00061135,
+      "p_rise_24h": 0.00797284,
+      "web_name": "Cairns"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 629,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 5.916e-05,
+      "p_rise_24h": 0.01255391,
+      "web_name": "Zetterer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 641,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00827025,
+      "p_rise_24h": 0.01006686,
+      "web_name": "Bard"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 648,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01911728,
+      "p_rise_24h": 0.00773611,
+      "web_name": "Bahoya"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 350,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01424124,
+      "p_rise_24h": 0.01021582,
+      "web_name": "A.Becker"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 351,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01079419,
+      "p_rise_24h": 0.00127717,
+      "web_name": "Mamardashvili"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 352,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01183176,
+      "p_rise_24h": 0.00597291,
+      "web_name": "Woodman"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 353,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00406925,
+      "p_rise_24h": 0.0002447,
+      "web_name": "Pecsi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 354,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00145276,
+      "p_rise_24h": 0.00029469,
+      "web_name": "Jaros"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 355,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00863381,
+      "p_rise_24h": 0.00648939,
+      "web_name": "Davies"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 356,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.01616157,
+      "p_rise_24h": 0.02334863,
+      "web_name": "Virgil"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 357,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.04914674,
+      "p_rise_24h": 0.00087169,
+      "web_name": "Frimpong"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 358,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.04164265,
+      "p_rise_24h": 0.00116124,
+      "web_name": "Kerkez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 359,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 6.19e-05,
+      "p_rise_24h": 0.01093279,
+      "web_name": "Gomez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 360,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00845303,
+      "p_rise_24h": 0.00036685,
+      "web_name": "Bradley"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 361,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00900483,
+      "p_rise_24h": 0.00394744,
+      "web_name": "Lucky"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 362,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00013599,
+      "p_rise_24h": 0.00934693,
+      "web_name": "Jacquet"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 363,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00409056,
+      "p_rise_24h": 0.00018887,
+      "web_name": "Leoni"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 364,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01067685,
+      "p_rise_24h": 0.00273819,
+      "web_name": "Tsimikas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 365,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01033644,
+      "p_rise_24h": 0.00011336,
+      "web_name": "Ramsay"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 366,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 74,
+      "p_fall_24h": 0.1854467,
+      "p_rise_24h": 0.00144182,
+      "web_name": "Wirtz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 367,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 72,
+      "p_fall_24h": 0.03711191,
+      "p_rise_24h": 0.05582779,
+      "web_name": "Gakpo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 368,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 70,
+      "p_fall_24h": 0.00520748,
+      "p_rise_24h": 0.02905979,
+      "web_name": "Szoboszlai"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 369,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.02217277,
+      "p_rise_24h": 0.0004017,
+      "web_name": "Ngumoha"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 370,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01239342,
+      "p_rise_24h": 5.793e-05,
+      "web_name": "Chiesa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 371,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.05774303,
+      "p_rise_24h": 0.00125115,
+      "web_name": "Gravenberch"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 372,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00968625,
+      "p_rise_24h": 0.00202687,
+      "web_name": "Mac Allister"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 373,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01861541,
+      "p_rise_24h": 0.00042814,
+      "web_name": "C.Jones"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 374,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00658708,
+      "p_rise_24h": 0.00118832,
+      "web_name": "Endo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 375,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01654845,
+      "p_rise_24h": 0.0019567,
+      "web_name": "Nyoni"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 376,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01067147,
+      "p_rise_24h": 0.00048673,
+      "web_name": "Bajcetic"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 377,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.237359,
+      "p_rise_24h": 0.00194144,
+      "web_name": "Munoz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 378,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 2.378e-05,
+      "p_rise_24h": 0.01230438,
+      "web_name": "McConnell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 379,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 91,
+      "p_fall_24h": 0.082934,
+      "p_rise_24h": 0.16494705,
+      "web_name": "Isak"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 380,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 74,
+      "p_fall_24h": 0.01337486,
+      "p_rise_24h": 0.00021881,
+      "web_name": "Ekitik\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 381,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03554534,
+      "p_rise_24h": 0.00820179,
+      "web_name": "Koumas"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 382,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 1.68e-06,
+      "p_rise_24h": 0.01352343,
+      "web_name": "Danns"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 383,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01157719,
+      "p_rise_24h": 6.632e-05,
+      "web_name": "Elliott"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 579,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00110872,
+      "p_rise_24h": 0.00573278,
+      "web_name": "Araujo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 627,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 80,
+      "p_fall_24h": 0.10210024,
+      "p_rise_24h": 0.00560316,
+      "web_name": "Barcola"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 155,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 69,
+      "p_fall_24h": 0.00344551,
+      "p_rise_24h": 0.00747281,
+      "web_name": "Enzo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 237,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.02458011,
+      "p_rise_24h": 0.00131233,
+      "web_name": "Ndiaye"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 384,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00764209,
+      "p_rise_24h": 0.01267393,
+      "web_name": "Donnarumma"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 386,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02217303,
+      "p_rise_24h": 0.00675717,
+      "web_name": "Bettinelli"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 387,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 64,
+      "p_fall_24h": 0.01102774,
+      "p_rise_24h": 0.00144295,
+      "web_name": "O'Reilly"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 388,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00514423,
+      "p_rise_24h": 0.02648583,
+      "web_name": "Gu\u00e9hi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 389,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00396908,
+      "p_rise_24h": 0.00265672,
+      "web_name": "Matheus N."
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 390,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00721825,
+      "p_rise_24h": 0.01289668,
+      "web_name": "R\u00faben"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 391,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 57,
+      "p_fall_24h": 0.02348902,
+      "p_rise_24h": 0.08348588,
+      "web_name": "Gvardiol"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 392,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.00965575,
+      "p_rise_24h": 0.00051942,
+      "web_name": "A\u00eft-Nouri"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 393,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00038731,
+      "p_rise_24h": 0.00976921,
+      "web_name": "Khusanov"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 394,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00960759,
+      "p_rise_24h": 0.00041338,
+      "web_name": "Alleyne"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 395,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00752894,
+      "p_rise_24h": 0.00131316,
+      "web_name": "Lewis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 396,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02226645,
+      "p_rise_24h": 0.00677833,
+      "web_name": "Vitor Reis"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 397,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 84,
+      "p_fall_24h": 0.04565157,
+      "p_rise_24h": 0.00953668,
+      "web_name": "Semenyo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 398,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 70,
+      "p_fall_24h": 0.70220163,
+      "p_rise_24h": 2.91e-06,
+      "web_name": "Foden"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 399,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 78,
+      "p_fall_24h": 0.19217853,
+      "p_rise_24h": 0.40502586,
+      "web_name": "Cherki"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 400,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 74,
+      "p_fall_24h": 0.03441766,
+      "p_rise_24h": 0.0001502,
+      "web_name": "Doku"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 402,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.03207396,
+      "p_rise_24h": 0.00067707,
+      "web_name": "Rodrigo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 404,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.02919832,
+      "p_rise_24h": 0.00041398,
+      "web_name": "Reijnders"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 406,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.02751503,
+      "p_rise_24h": 0.00244859,
+      "web_name": "Kova\u010di\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 407,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00422033,
+      "p_rise_24h": 0.00014526,
+      "web_name": "Echeverri"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 408,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01107976,
+      "p_rise_24h": 0.00046022,
+      "web_name": "Phillips"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 409,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02515241,
+      "p_rise_24h": 8.609e-05,
+      "web_name": "Mukasa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 410,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00404289,
+      "p_rise_24h": 0.00015125,
+      "web_name": "Monga"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 411,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 155,
+      "p_fall_24h": 0.00595711,
+      "p_rise_24h": 0.90172752,
+      "web_name": "Haaland"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 481,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.00191349,
+      "p_rise_24h": 0.00097557,
+      "web_name": "Anderson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 587,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.02102284,
+      "p_rise_24h": 0.00835308,
+      "web_name": "Rulli"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 616,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01206703,
+      "p_rise_24h": 0.00358746,
+      "web_name": "Bouaddi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 621,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01703377,
+      "p_rise_24h": 0.00233691,
+      "web_name": "McAidoo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 622,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00364255,
+      "p_rise_24h": 0.0037215,
+      "web_name": "Braithwaite"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 628,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.04068767,
+      "p_rise_24h": 0.01334059,
+      "web_name": "Allan"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 653,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01020771,
+      "p_rise_24h": 0.00275933,
+      "web_name": "Samba"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 43,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 6.009e-05,
+      "p_rise_24h": 0.00213871,
+      "web_name": "Tielemans"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 131,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 4.114e-05,
+      "p_rise_24h": 0.00025591,
+      "web_name": "Baleba"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 162,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 48,
+      "p_fall_24h": 0.0001202,
+      "p_rise_24h": 0.00181293,
+      "web_name": "Andrey Santos"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 325,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00874295,
+      "p_rise_24h": 0.00276429,
+      "web_name": "Darlow"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 412,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 7.829e-05,
+      "p_rise_24h": 0.01285364,
+      "web_name": "Lammens"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 413,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00565026,
+      "p_rise_24h": 0.00028713,
+      "web_name": "Bayindir"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 414,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00215485,
+      "p_rise_24h": 0.00023462,
+      "web_name": "Heaton"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 415,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.00959316,
+      "p_rise_24h": 0.00082605,
+      "web_name": "Dorgu"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 416,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00805163,
+      "p_rise_24h": 0.00031684,
+      "web_name": "De Ligt"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 417,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01611817,
+      "p_rise_24h": 0.00191774,
+      "web_name": "Dalot"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 418,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0089699,
+      "p_rise_24h": 0.00206609,
+      "web_name": "Maguire"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 419,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00444798,
+      "p_rise_24h": 0.00424238,
+      "web_name": "Martinez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 420,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.02122503,
+      "p_rise_24h": 0.00183381,
+      "web_name": "Yoro"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 421,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.01440556,
+      "p_rise_24h": 0.00138392,
+      "web_name": "Heaven"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 422,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00922722,
+      "p_rise_24h": 0.00108726,
+      "web_name": "Mazraoui"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 423,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.01128156,
+      "p_rise_24h": 3.593e-05,
+      "web_name": "Shaw"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 424,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00850178,
+      "p_rise_24h": 0.00514638,
+      "web_name": "Amass"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 425,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00545644,
+      "p_rise_24h": 0.000263,
+      "web_name": "Fredricson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 426,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 120,
+      "p_fall_24h": 0.06524645,
+      "p_rise_24h": 0.20960637,
+      "web_name": "B.Fernandes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 427,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 79,
+      "p_fall_24h": 0.01041717,
+      "p_rise_24h": 0.01138613,
+      "web_name": "Mbeumo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 428,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 79,
+      "p_fall_24h": 0.11140138,
+      "p_rise_24h": 0.00448517,
+      "web_name": "Cunha"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 429,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 70,
+      "p_fall_24h": 0.03662688,
+      "p_rise_24h": 0.01040417,
+      "web_name": "Rashford"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 430,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.0036538,
+      "p_rise_24h": 0.0020834,
+      "web_name": "Mount"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 431,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 57,
+      "p_fall_24h": 3.546e-05,
+      "p_rise_24h": 3.888e-05,
+      "web_name": "Amad"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 432,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00087343,
+      "p_rise_24h": 0.01736051,
+      "web_name": "Mainoo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 433,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01023209,
+      "p_rise_24h": 0.00046554,
+      "web_name": "Ugarte"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 434,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01602805,
+      "p_rise_24h": 0.0040491,
+      "web_name": "J.Fletcher"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 435,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01122451,
+      "p_rise_24h": 0.00336243,
+      "web_name": "Lacey"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 436,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01331896,
+      "p_rise_24h": 0.0003705,
+      "web_name": "Collyer"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 437,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.03295826,
+      "p_rise_24h": 0.00548605,
+      "web_name": "Bendito Mantato"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 438,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 6.678e-05,
+      "p_rise_24h": 0.01295198,
+      "web_name": "Fletcher"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 439,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 70,
+      "p_fall_24h": 0.00811573,
+      "p_rise_24h": 0.00996897,
+      "web_name": "\u0160e\u0161ko"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 440,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01016543,
+      "p_rise_24h": 0.00313604,
+      "web_name": "Zirkzee"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 441,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00472977,
+      "p_rise_24h": 0.00015416,
+      "web_name": "Obi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 405,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.04249815,
+      "p_rise_24h": 9.385e-05,
+      "web_name": "N.Gonzalez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 442,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01132417,
+      "p_rise_24h": 0.00227531,
+      "web_name": "Pope"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 443,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01405228,
+      "p_rise_24h": 0.00720326,
+      "web_name": "Gillespie"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 444,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00980008,
+      "p_rise_24h": 0.00041575,
+      "web_name": "Jaouen"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 445,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00760921,
+      "p_rise_24h": 0.00698878,
+      "web_name": "Thiaw"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 446,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 6.865e-05,
+      "p_rise_24h": 0.00476529,
+      "web_name": "Sch\u00e4r"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 447,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01133754,
+      "p_rise_24h": 0.00712296,
+      "web_name": "Botman"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 448,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00716197,
+      "p_rise_24h": 4.473e-05,
+      "web_name": "Burn"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 449,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 52,
+      "p_fall_24h": 0.00824991,
+      "p_rise_24h": 0.10081771,
+      "web_name": "Hall"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 450,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 3.546e-05,
+      "p_rise_24h": 0.00231511,
+      "web_name": "Livramento"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 451,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00714364,
+      "p_rise_24h": 0.00017905,
+      "web_name": "A.Murphy"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 453,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 9.9e-06,
+      "p_rise_24h": 0.04490112,
+      "web_name": "Barnes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 454,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 62,
+      "p_fall_24h": 0.59307244,
+      "p_rise_24h": 2.557e-05,
+      "web_name": "Elanga"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 456,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0060746,
+      "p_rise_24h": 2.942e-05,
+      "web_name": "J.Ramsey"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 457,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00341352,
+      "p_rise_24h": 0.0024846,
+      "web_name": "J.Murphy"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 458,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00511628,
+      "p_rise_24h": 0.00015944,
+      "web_name": "Joelinton"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 459,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01026256,
+      "p_rise_24h": 0.00318676,
+      "web_name": "L.Miley"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 460,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01154176,
+      "p_rise_24h": 0.0046593,
+      "web_name": "Willock"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 461,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.00130718,
+      "p_rise_24h": 0.0010985,
+      "web_name": "Tour\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 462,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01758322,
+      "p_rise_24h": 0.00219835,
+      "web_name": "Steur"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 463,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.02372228,
+      "p_rise_24h": 4.291e-05,
+      "web_name": "Woltemade"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 464,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 62,
+      "p_fall_24h": 0.01021799,
+      "p_rise_24h": 0.19784341,
+      "web_name": "Wissa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 465,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.01809105,
+      "p_rise_24h": 5.967e-05,
+      "web_name": "Osula"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 466,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0139351,
+      "p_rise_24h": 0.00017441,
+      "web_name": "Neave"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 559,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01686732,
+      "p_rise_24h": 0.00208121,
+      "web_name": "Bamba"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 567,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00239923,
+      "p_rise_24h": 0.00767801,
+      "web_name": "Horn\u00ed\u010dek"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 593,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00986019,
+      "p_rise_24h": 0.00158507,
+      "web_name": "Dedi\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 609,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.03877386,
+      "p_rise_24h": 1.709e-05,
+      "web_name": "Shahar"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 634,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 60,
+      "p_fall_24h": 0.00046322,
+      "p_rise_24h": 0.01162637,
+      "web_name": "Fernandez-Pardo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 659,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 4.8e-07,
+      "p_rise_24h": 0.04359094,
+      "web_name": "Miley"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 167,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.0,
+      "p_rise_24h": 0.20965244,
+      "web_name": "Delap"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 201,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00217686,
+      "p_rise_24h": 0.00455397,
+      "web_name": "Mu\u00f1oz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 467,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00061128,
+      "p_rise_24h": 0.01338847,
+      "web_name": "Sels"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 468,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02035421,
+      "p_rise_24h": 0.00713341,
+      "web_name": "John"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 469,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00179942,
+      "p_rise_24h": 0.01631653,
+      "web_name": "N.Williams"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 470,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01665508,
+      "p_rise_24h": 0.00019248,
+      "web_name": "Morato"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 471,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.12374189,
+      "p_rise_24h": 2.05e-05,
+      "web_name": "Milenkovi\u0107"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 472,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00020144,
+      "p_rise_24h": 0.01142752,
+      "web_name": "Murillo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 473,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01093442,
+      "p_rise_24h": 0.00627588,
+      "web_name": "Aina"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 474,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.04986543,
+      "p_rise_24h": 7.87e-05,
+      "web_name": "Jair Cunha"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 475,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00634913,
+      "p_rise_24h": 0.00036576,
+      "web_name": "Savona"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 476,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.0128079,
+      "p_rise_24h": 0.0050845,
+      "web_name": "O.Richards"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 477,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00996612,
+      "p_rise_24h": 0.00011708,
+      "web_name": "Abbott"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 478,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00010383,
+      "p_rise_24h": 0.01266945,
+      "web_name": "Netz"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 479,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01152935,
+      "p_rise_24h": 9.687e-05,
+      "web_name": "Bindon"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 480,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 80,
+      "p_fall_24h": 0.000416,
+      "p_rise_24h": 0.019595,
+      "web_name": "Gibbs-White"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 482,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 2.873e-05,
+      "p_rise_24h": 0.00290674,
+      "web_name": "Hudson-Odoi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 483,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00040538,
+      "p_rise_24h": 0.01133159,
+      "web_name": "Ndoye"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 484,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01025842,
+      "p_rise_24h": 7.93e-05,
+      "web_name": "Hutchinson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 485,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01608974,
+      "p_rise_24h": 0.00050873,
+      "web_name": "Bakwa"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 486,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.00029535,
+      "p_rise_24h": 0.01189867,
+      "web_name": "McAtee"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 487,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0168095,
+      "p_rise_24h": 0.00279624,
+      "web_name": "Dominguez"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 488,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00894238,
+      "p_rise_24h": 0.00105265,
+      "web_name": "I.Sangar\u00e9"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 489,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02127408,
+      "p_rise_24h": 0.00204123,
+      "web_name": "Yates"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 490,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 9.578e-05,
+      "p_rise_24h": 0.00740475,
+      "web_name": "Wood"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 491,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 1.56e-06,
+      "p_rise_24h": 0.02351976,
+      "web_name": "Igor Jesus"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 493,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00974696,
+      "p_rise_24h": 0.00530847,
+      "web_name": "Kalimuendo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 558,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00035492,
+      "p_rise_24h": 0.01256405,
+      "web_name": "Schlager"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 581,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00620855,
+      "p_rise_24h": 0.00376163,
+      "web_name": "Diomande"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 590,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01370502,
+      "p_rise_24h": 0.00646038,
+      "web_name": "Benda"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 112,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00303985,
+      "p_rise_24h": 0.00426142,
+      "web_name": "Van Hecke"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 147,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00902582,
+      "p_rise_24h": 0.002715,
+      "web_name": "Tosin"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 401,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 70,
+      "p_fall_24h": 0.04377175,
+      "p_rise_24h": 0.00852747,
+      "web_name": "Marmoush"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 403,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.00884823,
+      "p_rise_24h": 0.00346636,
+      "web_name": "S\u00e1vio"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 455,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.03863732,
+      "p_rise_24h": 5.049e-05,
+      "web_name": "Tonali"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 494,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01726347,
+      "p_rise_24h": 6.192e-05,
+      "web_name": "Vicario"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 495,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00556898,
+      "p_rise_24h": 0.00682986,
+      "web_name": "Austin"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 496,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00144847,
+      "p_rise_24h": 0.01456947,
+      "web_name": "Kinsky"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 497,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.0015374,
+      "p_rise_24h": 0.01202143,
+      "web_name": "Dubravka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 498,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.00027925,
+      "p_rise_24h": 0.00276912,
+      "web_name": "Senesi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 499,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.07139298,
+      "p_rise_24h": 0.00011868,
+      "web_name": "Pedro Porro"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 500,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01439474,
+      "p_rise_24h": 0.00023361,
+      "web_name": "Romero"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 502,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00273932,
+      "p_rise_24h": 0.0028321,
+      "web_name": "Robertson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 503,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.00370018,
+      "p_rise_24h": 0.00549843,
+      "web_name": "Van de Ven"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 505,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01692883,
+      "p_rise_24h": 0.00010033,
+      "web_name": "Spence"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 506,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.00012643,
+      "p_rise_24h": 0.0030289,
+      "web_name": "Udogie"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 507,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00770305,
+      "p_rise_24h": 0.00030792,
+      "web_name": "Phillips"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 508,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.02300513,
+      "p_rise_24h": 0.00418353,
+      "web_name": "Davies"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 509,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00980726,
+      "p_rise_24h": 0.00637602,
+      "web_name": "Byfield"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 510,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00926384,
+      "p_rise_24h": 0.00567145,
+      "web_name": "Rowswell"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 511,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01048553,
+      "p_rise_24h": 0.00010981,
+      "web_name": "Souza"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 512,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.00380965,
+      "p_rise_24h": 0.00169143,
+      "web_name": "Kudus"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 513,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.00654706,
+      "p_rise_24h": 0.00020162,
+      "web_name": "Xavi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 514,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.03355544,
+      "p_rise_24h": 0.00023783,
+      "web_name": "Tel"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 515,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 63,
+      "p_fall_24h": 0.00721772,
+      "p_rise_24h": 0.00059052,
+      "web_name": "Maddison"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 516,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01827177,
+      "p_rise_24h": 0.01048554,
+      "web_name": "Bentancur"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 517,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01405803,
+      "p_rise_24h": 0.00055737,
+      "web_name": "Odobert"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 518,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01613215,
+      "p_rise_24h": 2.37e-05,
+      "web_name": "P.M.Sarr"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 519,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.03265786,
+      "p_rise_24h": 0.00192292,
+      "web_name": "Gallagher"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 520,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.02702825,
+      "p_rise_24h": 0.00207337,
+      "web_name": "Bergvall"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 521,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 65,
+      "p_fall_24h": 0.0247634,
+      "p_rise_24h": 0.00067056,
+      "web_name": "Kulusevski"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 522,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 9.061e-05,
+      "p_rise_24h": 0.01353501,
+      "web_name": "Gray"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 523,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.03930253,
+      "p_rise_24h": 8.62e-05,
+      "web_name": "Moore"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 524,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 8.17e-06,
+      "p_rise_24h": 0.00466145,
+      "web_name": "Olusesi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 525,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.01801505,
+      "p_rise_24h": 0.00071484,
+      "web_name": "Fernandes"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 526,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 7.933e-05,
+      "p_rise_24h": 0.00836855,
+      "web_name": "Solanke"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 527,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 59,
+      "p_fall_24h": 0.02580687,
+      "p_rise_24h": 3.892e-05,
+      "web_name": "Richarlison"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 528,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01306855,
+      "p_rise_24h": 0.00017677,
+      "web_name": "Scarlett"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 578,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.10343306,
+      "p_rise_24h": 2.53e-06,
+      "web_name": "Mudryk"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 601,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.0276121,
+      "p_rise_24h": 0.00283997,
+      "web_name": "Williams-Barnett"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 501,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.01388194,
+      "p_rise_24h": 0.00763104,
+      "web_name": "Danso"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 529,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00025802,
+      "p_rise_24h": 0.00740847,
+      "web_name": "Roefs"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 530,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.0060099,
+      "p_rise_24h": 0.00014184,
+      "web_name": "Patterson"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 531,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.02429464,
+      "p_rise_24h": 0.0059177,
+      "web_name": "Ellborg"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 532,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01999607,
+      "p_rise_24h": 0.00126078,
+      "web_name": "Ballard"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 533,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.00016284,
+      "p_rise_24h": 0.00480211,
+      "web_name": "Mukiele"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 534,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 44,
+      "p_fall_24h": 0.03160103,
+      "p_rise_24h": 0.0005492,
+      "web_name": "Hume"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 535,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.0137563,
+      "p_rise_24h": 0.00067391,
+      "web_name": "Alderete"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 536,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.04477628,
+      "p_rise_24h": 2.464e-05,
+      "web_name": "Reinildo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 537,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00665933,
+      "p_rise_24h": 0.00035657,
+      "web_name": "Seelt"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 538,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.00674937,
+      "p_rise_24h": 0.00019178,
+      "web_name": "Hjelde"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 539,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.02652682,
+      "p_rise_24h": 0.00434274,
+      "web_name": "O'Nien"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 540,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 40,
+      "p_fall_24h": 0.01231143,
+      "p_rise_24h": 9.041e-05,
+      "web_name": "Masuaku"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 541,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01180457,
+      "p_rise_24h": 0.00299452,
+      "web_name": "Meunier"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 542,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.02772025,
+      "p_rise_24h": 0.0003752,
+      "web_name": "E.Le F\u00e9e"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 543,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 54,
+      "p_fall_24h": 0.01203564,
+      "p_rise_24h": 6.386e-05,
+      "web_name": "Diarra"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 544,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.06029313,
+      "p_rise_24h": 0.00517513,
+      "web_name": "Xhaka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 545,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01540084,
+      "p_rise_24h": 0.00128833,
+      "web_name": "Sadiki"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 546,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.01006205,
+      "p_rise_24h": 5.218e-05,
+      "web_name": "Adingra"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 547,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.00383166,
+      "p_rise_24h": 0.00014998,
+      "web_name": "Mundle"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 548,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 49,
+      "p_fall_24h": 0.02712024,
+      "p_rise_24h": 0.00210188,
+      "web_name": "Rigg"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 549,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 53,
+      "p_fall_24h": 0.00017585,
+      "p_rise_24h": 0.00308355,
+      "web_name": "Talbi"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 550,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04282609,
+      "p_rise_24h": 0.01171361,
+      "web_name": "Jocelin.T"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 551,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 50,
+      "p_fall_24h": 0.04183939,
+      "p_rise_24h": 0.00248674,
+      "web_name": "N.Angulo"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 552,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 58,
+      "p_fall_24h": 0.01309867,
+      "p_rise_24h": 0.00066481,
+      "web_name": "Brobbey"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 553,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.05032194,
+      "p_rise_24h": 0.00623796,
+      "web_name": "Isidor"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 612,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.00997383,
+      "p_rise_24h": 0.00444008,
+      "web_name": "Methalie"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 613,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 0.01087386,
+      "p_rise_24h": 0.00297917,
+      "web_name": "Ahoka"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 646,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 55,
+      "p_fall_24h": 0.01941735,
+      "p_rise_24h": 0.00658108,
+      "web_name": "Fofana"
+    },
+    {
+      "confidence": "MEDIUM",
+      "element_id": 651,
+      "model_status": "SHADOW_TRAINED_UNQUALIFIED",
+      "now_cost": 45,
+      "p_fall_24h": 2.86e-06,
+      "p_rise_24h": 0.02711378,
+      "web_name": "J.Angulo"
+    }
+  ],
+  "schema_version": 1,
+  "serving_authorized": false,
+  "source_bootstrap_sha256": "e9b111d12923048fae90ec47feed91d59ef0fdb4c3458938e1bc12e1de9a64e5",
+  "source_snapshot_at_utc": "2026-09-17T11:50:49.162224+00:00"
+}
