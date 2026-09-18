@@ -1,0 +1,167 @@
+{
+  "evaluated_forecasts": 104,
+  "fall": {
+    "average_precision": 0.0662534473604998,
+    "brier": 0.030608932345158643,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.018401651283806813,
+        "n": 42839,
+        "observed_rate": 0.02924904876397675
+      },
+      {
+        "high": 0.2,
+        "low": 0.1,
+        "mean_probability": 0.13999737042923435,
+        "n": 862,
+        "observed_rate": 0.06844547563805105
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.24239550625498008,
+        "n": 251,
+        "observed_rate": 0.06772908366533864
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.34912040416,
+        "n": 125,
+        "observed_rate": 0.048
+      },
+      {
+        "high": 0.5,
+        "low": 0.4,
+        "mean_probability": 0.44531118316831686,
+        "n": 202,
+        "observed_rate": 0.12376237623762376
+      },
+      {
+        "high": 0.6000000000000001,
+        "low": 0.5,
+        "mean_probability": 0.5600254333333333,
+        "n": 3,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 0.7000000000000001,
+        "low": 0.6000000000000001,
+        "mean_probability": 0.655821745,
+        "n": 2,
+        "observed_rate": 0.5
+      },
+      {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "mean_probability": 0.72593694,
+        "n": 3,
+        "observed_rate": 0.6666666666666666
+      },
+      {
+        "high": 0.9,
+        "low": 0.8,
+        "mean_probability": 0.84159398,
+        "n": 4,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 1.0,
+        "low": 0.9,
+        "mean_probability": 0.91127317,
+        "n": 1,
+        "observed_rate": 1.0
+      }
+    ],
+    "log_loss": 0.13571719304984817,
+    "n": 44292,
+    "positives": 1364,
+    "prevalence": 0.03079562900749571
+  },
+  "integration_authorized": false,
+  "label_version": 2,
+  "paired_rows": 44292,
+  "rise": {
+    "average_precision": 0.057208888327156364,
+    "brier": 0.0068128152835856635,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.013614835817661297,
+        "n": 42964,
+        "observed_rate": 0.0033981938367004935
+      },
+      {
+        "high": 0.2,
+        "low": 0.1,
+        "mean_probability": 0.14302800728546408,
+        "n": 571,
+        "observed_rate": 0.047285464098073555
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.2447048477307692,
+        "n": 260,
+        "observed_rate": 0.07692307692307693
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.34126302975409833,
+        "n": 122,
+        "observed_rate": 0.10655737704918032
+      },
+      {
+        "high": 0.5,
+        "low": 0.4,
+        "mean_probability": 0.44689756544692744,
+        "n": 358,
+        "observed_rate": 0.0223463687150838
+      },
+      {
+        "high": 0.6000000000000001,
+        "low": 0.5,
+        "mean_probability": 0.56045715,
+        "n": 5,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 0.7000000000000001,
+        "low": 0.6000000000000001,
+        "mean_probability": 0.638712325,
+        "n": 2,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "mean_probability": 0.764314886,
+        "n": 5,
+        "observed_rate": 0.4
+      },
+      {
+        "high": 0.9,
+        "low": 0.8,
+        "mean_probability": 0.8536181325,
+        "n": 4,
+        "observed_rate": 0.25
+      },
+      {
+        "high": 1.0,
+        "low": 0.9,
+        "mean_probability": 0.90172752,
+        "n": 1,
+        "observed_rate": 1.0
+      }
+    ],
+    "log_loss": 0.03647538455479332,
+    "n": 44292,
+    "positives": 218,
+    "prevalence": 0.004921882055450194
+  },
+  "status": "EVALUATED"
+}
