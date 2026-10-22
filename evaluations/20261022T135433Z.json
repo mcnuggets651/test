@@ -1,0 +1,167 @@
+{
+  "evaluated_forecasts": 225,
+  "fall": {
+    "average_precision": 0.0531800531617377,
+    "brier": 0.024421533149836114,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.017849343964874663,
+        "n": 85807,
+        "observed_rate": 0.023086694558718986
+      },
+      {
+        "high": 0.2,
+        "low": 0.1,
+        "mean_probability": 0.1361763658057554,
+        "n": 1390,
+        "observed_rate": 0.07050359712230216
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.2430559326843658,
+        "n": 339,
+        "observed_rate": 0.07079646017699115
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.34905288522580646,
+        "n": 155,
+        "observed_rate": 0.06451612903225806
+      },
+      {
+        "high": 0.5,
+        "low": 0.4,
+        "mean_probability": 0.4455217368949773,
+        "n": 219,
+        "observed_rate": 0.1415525114155251
+      },
+      {
+        "high": 0.6000000000000001,
+        "low": 0.5,
+        "mean_probability": 0.5543693528571428,
+        "n": 21,
+        "observed_rate": 0.047619047619047616
+      },
+      {
+        "high": 0.7000000000000001,
+        "low": 0.6000000000000001,
+        "mean_probability": 0.657454795,
+        "n": 8,
+        "observed_rate": 0.125
+      },
+      {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "mean_probability": 0.7478701736363637,
+        "n": 11,
+        "observed_rate": 0.45454545454545453
+      },
+      {
+        "high": 0.9,
+        "low": 0.8,
+        "mean_probability": 0.8440902390909091,
+        "n": 11,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 1.0,
+        "low": 0.9,
+        "mean_probability": 0.9514922525,
+        "n": 8,
+        "observed_rate": 0.375
+      }
+    ],
+    "log_loss": 0.1125970058436081,
+    "n": 87969,
+    "positives": 2154,
+    "prevalence": 0.024485898441496436
+  },
+  "integration_authorized": false,
+  "label_version": 2,
+  "paired_rows": 87969,
+  "rise": {
+    "average_precision": 0.05659760223583519,
+    "brier": 0.005348694049058114,
+    "calibration_bins": [
+      {
+        "high": 0.1,
+        "low": 0.0,
+        "mean_probability": 0.007965362296014456,
+        "n": 86337,
+        "observed_rate": 0.0031156977888969965
+      },
+      {
+        "high": 0.2,
+        "low": 0.1,
+        "mean_probability": 0.14308499229691876,
+        "n": 714,
+        "observed_rate": 0.05742296918767507
+      },
+      {
+        "high": 0.30000000000000004,
+        "low": 0.2,
+        "mean_probability": 0.2456780937386018,
+        "n": 329,
+        "observed_rate": 0.1033434650455927
+      },
+      {
+        "high": 0.4,
+        "low": 0.30000000000000004,
+        "mean_probability": 0.3421522903592814,
+        "n": 167,
+        "observed_rate": 0.1377245508982036
+      },
+      {
+        "high": 0.5,
+        "low": 0.4,
+        "mean_probability": 0.44684438064000004,
+        "n": 375,
+        "observed_rate": 0.024
+      },
+      {
+        "high": 0.6000000000000001,
+        "low": 0.5,
+        "mean_probability": 0.5599950213333333,
+        "n": 15,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 0.7000000000000001,
+        "low": 0.6000000000000001,
+        "mean_probability": 0.6423254583333332,
+        "n": 12,
+        "observed_rate": 0.0
+      },
+      {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "mean_probability": 0.7546967027272727,
+        "n": 11,
+        "observed_rate": 0.2727272727272727
+      },
+      {
+        "high": 0.9,
+        "low": 0.8,
+        "mean_probability": 0.84837152625,
+        "n": 8,
+        "observed_rate": 0.125
+      },
+      {
+        "high": 1.0,
+        "low": 0.9,
+        "mean_probability": 0.90172752,
+        "n": 1,
+        "observed_rate": 1.0
+      }
+    ],
+    "log_loss": 0.027433608875824772,
+    "n": 87969,
+    "positives": 381,
+    "prevalence": 0.004331071172799509
+  },
+  "status": "EVALUATED"
+}
